@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter");
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.cl-blue {
+    color: #0476d0;
+}
+
+.bg-blue {
+    background-color: #0476d0;
+}
+
+.btn-blue {
+    background-color: #0476d0;
+    border: none;
+    color: white;
+    padding: 13px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.btn-blue:hover {
+    background-color: #005ba0;
+    color: white;
+}
+
+.btn-white {
+    background-color: #dfcaca;
+    border: none;
+    color: black;
+    padding: 13px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.btn-white:hover {
+    background-color: #e6cdcd;
+    color: black;
+}
+
+.p-top-hero {
+    padding-top: 170px;
+}
+
+.p-top {
+    padding-top: 110px;
+}
+
+.m-top {
+    margin-top: 100px;
+}
+
+.bg-footer {
+    background-color: #0476d0;
+    color: white;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+.form-check label {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.form-check .form-check-input[type=checkbox] {
+    border-radius: .50em;
+    height: 2em;
+    width: 2em;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signup input{
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.form-signup input[id="name"]{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.form-signup input[type="password"] {
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
