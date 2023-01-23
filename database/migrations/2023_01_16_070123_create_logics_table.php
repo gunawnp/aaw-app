@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('logics', function (Blueprint $table) {
             $table->id();
+            $table->string('que');
+            $table->string('program')->nullable();
+            $table->string('answer');
             $table->timestamps();
         });
     }
