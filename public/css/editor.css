@@ -1,0 +1,17 @@
+.editor-container {
+    height: 210px;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 40px;
+}
+
+#editor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+}
