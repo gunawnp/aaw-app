@@ -141,151 +141,161 @@ class DatabaseSeeder extends Seeder
         //01
         Logic::create([
             'que' => 'Empat koin dapat digunakan untuk memainkan bombomcar delapan putaran. Jika mempunyai enam koin, berapa putaran yang didapatkan? Untuk menjawabnya silahkan buat kode program sederhana menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Koin: 4\n
-                Putaran ke-1\n
-                Putaran ke-2\n
-                Putaran ke-3\n
-                Putaran ke-4\n
-                Putaran ke-5\n
-                Putaran ke-6\n
-                Putaran ke-7\n
-                Putaran ke-8\n
+            'program' => 'Koin: 4<br>
+                Putaran ke-1<br>
+                Putaran ke-2<br>
+                Putaran ke-3<br>
+                Putaran ke-4<br>
+                Putaran ke-5<br>
+                Putaran ke-6<br>
+                Putaran ke-7<br>
+                Putaran ke-8<br>
                 Jumlah putaran dari 4 koin adalah 8 putaran',
-            'answer' => '12 putaran'
+            'answer' => '12 putaran',
+            'type' => 'while'
         ]);
         
         //02
         Logic::create([
             'que' => 'Pada permainan bombomcar jika memasukkan tiga koin, maka akan mendapatkan 6 putaran. Jika melakukan 14 putaran, maka berapa koin yang dibutuhkan? Untuk menjawabnya silahkan buat kode program sederhana menggunakan bahasa C dengan fungsi repeat dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Putaran: 6\n
-                2 putaran membutuhkan 1 koin\n
-                4 putaran membutuhkan 2 koin\n
-                6 putaran membutuhkan 3 koin\n
+            'program' => 'Putaran: 6<br>
+                2 putaran membutuhkan 1 koin<br>
+                4 putaran membutuhkan 2 koin<br>
+                6 putaran membutuhkan 3 koin<br>
                 Jumlah koin yang dibutuhkan untuk 6 putaran adalah 3 koin',
-            'answer' => '7 koin'
+            'answer' => '7 koin',
+            'type' => 'do'
         ]);
 
         //03
         Logic::create([
             'que' => 'Terdapat 4 mobil yang memiliki kecepatan konstan yang berbeda. Mobil pertama memiliki kecepatan 30 km/jam, mobil kedua memiliki kecepatan 50 km/jam, mobil ketiga memiliki kecepatan 70 km/jam, mobil keempat memiliki kecepatan 100 km/jam, dan mobil lainnya memiliki kecepatan hanya 20 km/jam. Dalam waktu 3 jam, mobil pertama sudah menempuh 90 km. Berapa km jarak yang sudah ditempuh oleh mobil ketiga dalam waktu 3 jam? Untuk menjawabnya silahkan buat kode program sederhana percabangan bertingkat (if, if else, else) menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Daftar Mobil
-                Mobil 1 - kecepatan 30 km/jam
-                Mobil 2 - kecepatan 50 km/jam
-                Mobil 3 - kecepatan 70 km/jam
-                Mobil 4 - kecepatan 100 km/jam
-                Pilihan mobil: 1
+            'program' => 'Daftar Mobil<br>
+                Mobil 1 - kecepatan 30 km/jam<br>
+                Mobil 2 - kecepatan 50 km/jam<br>
+                Mobil 3 - kecepatan 70 km/jam<br>
+                Mobil 4 - kecepatan 100 km/jam<br>
+                Pilihan mobil: 1<br>
                 Mobil 1 dengan kecepatan 30km/jam sudah menempuh jarak 90 km dalam 3 jam.',
-            'answer' => '210 km'
+            'answer' => '210 km',
+            'type' => 'else if'
         ]);
 
         //04
         Logic::create([
             'que' => 'Di suatu stasiun pengisian bahan bakar terdapat 3 macam bahan bakar, yaitu Pertalite dengan harga Rp10.000, Pertamax dengan harga Rp14.500, dan Pertamax Turbo dengan harga Rp15.900. Sebuah mobil mengisi bahan bakarnya dengan bahan bakar Pertamax dan melakukan pembayaran sejumlah Rp100.000. Mobil tersebut mendapatkan bahan bakar Pertamax sejumlah 6,9 liter. Jika membayar Rp160.000 pada bahan bakar Pertamax turbo, maka akan mendapatkan berapa liter? Untuk menjawabnya silahkan buat kode program sederhana percabangan bertingkat (switch-case) menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Daftar Bahan Bakar\n
-                1. Pertalite - Rp10.000/liter\n
-                2. Pertamax - Rp14.500/liter\n
-                3. Pertamax Turbo - Rp15.900/liter\n\n
-                Pilihan bahan bakar: 2\n
-                Jumlah bayar (Rp.): 100000\n
+            'program' => 'Daftar Bahan Bakar<br>
+                1. Pertalite - Rp10.000/liter<br>
+                2. Pertamax - Rp14.500/liter<br>
+                3. Pertamax Turbo - Rp15.900/liter<br><br>
+                Pilihan bahan bakar: 2<br>
+                Jumlah bayar (Rp.): 100000<br>
                 Pembayaran Pertamax sejumlah Rp. 100.000 mendapatkan 6,9 liter',
-            'answer' => '10 liter'
+            'answer' => '10.062893 liter',
+            'type' => 'switch'
         ]);
 
         //05
         Logic::create([
             'que' => 'Seorang petani membeli biji kacang merah di suatu toko. Harga biji kacang merah tersebut Rp30.000/kg. Jika membeli 5 kg, maka akan mendapatkan diskon 20%. Petani tersebut membeli biji kacang merah sebanyak 7 kg dan membayar Rp210.000, tetapi mendapatkan diskon 20% karena memenuhi syarat diskon. Sehingga petani hanya membayar Rp168.000. Jika petani tersebut membeli 8 kg, apakah petani tersebut mendapatkan diskon, dan jika mendapatkan diskon, berapa total bayar yang petani harus bayar? Untuk menjawabnya silahkan buat kode program sederhana percabangan sederhana menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Selamat datang di toko kami!\n
-                Harga biji kacang merah hari ini yaitu Rp30.000/kg\n
-                Terdapat diskon 20% untuk pembelian biji kacang merah jika membeli lebih dari 5 kg\n\n
-                Berat yang dibeli: 7 kg\n
-                Anda mendapatkan diskon 20%\n
+            'program' => 'Selamat datang di toko kami!<br>
+                Harga biji kacang merah hari ini yaitu Rp30.000/kg<br>
+                Terdapat diskon 20% untuk pembelian biji kacang merah jika membeli lebih dari 5 kg<br><br>
+                Berat yang dibeli: 7 kg<br>
+                Anda mendapatkan diskon 20%<br>
                 Sehingga anda membayar hanya Rp168000',
-            'answer' => 'Rp192000'
+            'answer' => 'Rp192000',
+            'type' => 'else'
         ]);
 
         //06
         Logic::create([
             'que' => 'Seorang petani menanam biji bunga di kebunnya. Kebun petani tersebut akan memuat 3 bibit per petaknya, tetapi jika menggunakan pupuk hanya memuat 2 bibit per petaknya. Petani tersebut akan menanam 30 bibit menggunakan pupuk, maka ia akan menggunakan 15 petak kebunnya. Jika petani tersebut akan menanam 45 bibit tanpa pupuk, berapa petak kebun yang akan digunakan petani? Untuk menjawabnya silahkan buat kode program sederhana percabangan sederhana menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => 'Program penghitung petak kebun\n
-                Jika menggunakan pupuk, maka setiap petak hanya memuat 2 bibit.\n
-                Jika tidak menggunakan pupuk, maka setiap petak memuat 3 bibit.\n
-                Banyak bibit: 30\n
-                Apakah menggunakan pupuk?\n
-                1. Ya\n
-                2. Tidak\n
-                Jawaban: 1\n
-                Anda menggunakan pupuk\n
+            'program' => 'Program penghitung petak kebun<br>
+                Jika menggunakan pupuk, maka setiap petak hanya memuat 2 bibit.<br>
+                Jika tidak menggunakan pupuk, maka setiap petak memuat 3 bibit.<br>
+                Banyak bibit: 30<br>
+                Apakah menggunakan pupuk?<br>
+                1. Ya<br>
+                2. Tidak<br>
+                Jawaban: 1<br>
+                Anda menggunakan pupuk<br>
                 30 bibit, akan menggunakan 15 petak (2 bibit/petak)',
-            'answer' => '15 petak'
+            'answer' => '15 petak',
+            'type' => 'else'
         ]);
 
         //07
         Logic::create([
             'que' => 'Seseorang sedang menangkap tikus yang berada di sawah. Ia mencari tikus yang ideal, tikus yang ideal adalah tikus dengan badan gemuk yaitu lebih dari 100 gram dan memiliki ekor hitam. Jika tikus memiliki berat kurang dari 100 gram atau memiliki ekor putih, maka tikus tersebut tidak ideal. Kemudian didapatkan lah seekor tikus dengan berat 112 gram dengan ekor hitam maka tikus tersebut ideal. Jika menangkap tikus dengan berat 200 gram dan memiliki ekor putih, apakah tikus tersebut ideal? Untuk menjawabnya silahkan buat kode program sederhana dengan percabangan bersarang menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan. ',
-            'program' => '- Penentu tikus ideal -\n
-                Warna ekor putih atau hitam (p/h):h\n
-                Berat tikus: 112 gram\n
+            'program' => '- Penentu tikus ideal -<br>
+                Warna ekor putih atau hitam (p/h):h<br>
+                Berat tikus: 112 gram<br>
                 Tikus tersebut ideal!',
-            'answer' => 'Tikus tersebut tidak ideal!'
+            'answer' => 'Tikus tersebut tidak ideal!',
+            'type' => 'else'
         ]);
 
         //08
         Logic::create([
             'que' => 'Di bawah ini diberikan gambar sejumlah ikan yang ditangkap dari suatu kolam. Jika seekor ikan memiliki badan gemuk dan bergaris tipis maka ikan tersebut mahal, namun jika sebaliknya ikan tersebut murah. Apakah gambar sejumlah tikus di bawah ini cenderung mahal atau tidak? Untuk menjawabnya silahkan buat kode program sederhana dengan perulangan sederhana menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan seperti contoh hasil program yang berada di sebelah kanan.',
-            'program' => '- Ikan yang didapat -\n
-                1 Ikan kurus bergaris tebal\n
-                2 Ikan kurus bergaris tebal\n
-                3 Ikan kurus bergaris tebal\n
-                4 Ikan kurus bergaris tebal\n
-                5 Ikan kurus bergaris tebal\n
-                6 Ikan kurus bergaris tebal\n
-                7 Ikan kurus bergaris tebal\n
-                8 Ikan kurus bergaris tebal\n
-                9 Ikan kurus bergaris tebal\n
+            'program' => '- Ikan yang didapat -<br>
+                1 Ikan kurus bergaris tebal<br>
+                2 Ikan kurus bergaris tebal<br>
+                3 Ikan kurus bergaris tebal<br>
+                4 Ikan kurus bergaris tebal<br>
+                5 Ikan kurus bergaris tebal<br>
+                6 Ikan kurus bergaris tebal<br>
+                7 Ikan kurus bergaris tebal<br>
+                8 Ikan kurus bergaris tebal<br>
+                9 Ikan kurus bergaris tebal<br><br>
 
-                1 Ikan kurus bergaris tipis\n
-                2 Ikan kurus bergaris tipis\n
-                3 Ikan kurus bergaris tipis\n
-                4 Ikan kurus bergaris tipis\n
-                5 Ikan kurus bergaris tipis\n
-                6 Ikan kurus bergaris tipis\n
-                7 Ikan kurus bergaris tipis\n
-                8 Ikan kurus bergaris tipis\n
-                9 Ikan kurus bergaris tipis\n
-                10 Ikan kurus bergaris tipis\n
-                11 Ikan kurus bergaris tipis\n
-                12 Ikan kurus bergaris tipis\n
+                1 Ikan kurus bergaris tipis<br>
+                2 Ikan kurus bergaris tipis<br>
+                3 Ikan kurus bergaris tipis<br>
+                4 Ikan kurus bergaris tipis<br>
+                5 Ikan kurus bergaris tipis<br>
+                6 Ikan kurus bergaris tipis<br>
+                7 Ikan kurus bergaris tipis<br>
+                8 Ikan kurus bergaris tipis<br>
+                9 Ikan kurus bergaris tipis<br>
+                10 Ikan kurus bergaris tipis<br>
+                11 Ikan kurus bergaris tipis<br>
+                12 Ikan kurus bergaris tipis<br><br>
 
-                1 Ikan gemuk bergaris tipis\n
-                2 Ikan gemuk bergaris tipis\n
-                3 Ikan gemuk bergaris tipis\n
-                4 Ikan gemuk bergaris tipis\n
+                1 Ikan gemuk bergaris tipis<br>
+                2 Ikan gemuk bergaris tipis<br>
+                3 Ikan gemuk bergaris tipis<br>
+                4 Ikan gemuk bergaris tipis<br><br>
 
-                1 Ikan gemuk bergaris tebal\n
-                2 Ikan gemuk bergaris tebal\n
-                3 Ikan gemuk bergaris tebal\n
+                1 Ikan gemuk bergaris tebal<br>
+                2 Ikan gemuk bergaris tebal<br>
+                3 Ikan gemuk bergaris tebal<br><br>
 
-                Ikan kurus yang memiliki garis tebal yaitu 9/21 dari keseluruhan ikan kurus\n
-                Ikan gemuk yang memiliki garis tebal yaitu 4/7 dari keseluruhan ikan gemuk\n',
-            'answer' => '9/12'
+                Ikan kurus yang memiliki garis tebal yaitu 9/21 dari keseluruhan ikan kurus<br>
+                Ikan gemuk yang memiliki garis tebal yaitu 4/7 dari keseluruhan ikan gemuk',
+            'answer' => '21 dari keseluruhan ikan kurus',
+            'type' => 'for'
         ]);
 
         //09
         Logic::create([
-            'que' => 'Tiga orang siswa dari kelas I, II, dan III dipilih menjadi anggota pengurus organisasi siswa. Sebuah panitia yang terdiri dari tiga orang harus dibentuk dari setiap kelas harus diwakili oleh seorang siswa. Semua kombinasi yang mungkin harus dipertimbangkan sebelum diambil keputusan.\nDua kombinasi yang mungkin adalah Dedi, Tono, dan Atang (DTA), dan Nani, Ida, dan Rita (NIR). \nAnggota Pengurus:
-            Kelas 1:	Dadi (D), Nani (N), Gito (G)\n
-            Kelas 2:	Tono (T), Ida (I), Susi (S)\n
-            Kelas 3:	Atang (A), Rita (R), Beti (B)\n
+            'que' => 'Tiga orang siswa dari kelas I, II, dan III dipilih menjadi anggota pengurus organisasi siswa. Sebuah panitia yang terdiri dari tiga orang harus dibentuk dari setiap kelas harus diwakili oleh seorang siswa. Semua kombinasi yang mungkin harus dipertimbangkan sebelum diambil keputusan.<br>Dua kombinasi yang mungkin adalah Dedi, Tono, dan Atang (DTA), dan Nani, Ida, dan Rita (NIR). <br>Anggota Pengurus:
+            Kelas 1:	Dadi (D), Nani (N), Gito (G)<br>
+            Kelas 2:	Tono (T), Ida (I), Susi (S)<br>
+            Kelas 3:	Atang (A), Rita (R), Beti (B)<br>
             Apa saja kombinasi yang mungkin selain kedua kombinasi tersebut? Untuk menjawabnya silahkan buat kode program sederhana dengan perulangan bersarang menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan kombinasi nama-nama yang mungkin.',
             'program' => '',
-            'answer' => 'DTA  DTR  DTB  DIA  DIR  DIB  DSA  DSR  DSB  NTA  NTR  NTB  NIA  NIR  NIB  NSA  NSR  NSB  GTA  GTR  GTB  GIA  GIR  GIB  GSA  GSR  GSB'
+            'answer' => 'NIA  NIR  NIB',
+            'type' => 'for'
         ]);
         
         //10
         Logic::create([
             'que' => 'Terdapat dua wadah yang isinya terdapat masing-masing 5 bola berwarna, pada wadah pertama warna-warna bola tersebut yaitu Merah (M), Jingga (J), Kuning (K), Hijau (H), dan Biru (B). Kemudian pada wadah kedua terdapat warna Putih (P), Ungu (U), Abu-abu (A), Coklat (C), dan Toska (T). Bola-bola tersebut dipasangkan antara wadah pertama dengan wadah kedua, untuk disimpan di suatu rak. Pasangan pertama yaitu Merah (M) dan Putih (P). Apa saja pasangan yang memungkinkan selain pasangan tersebut? Untuk menjawabnya silahkan buat kode program sederhana dengan perulangan bersarang menggunakan bahasa C dan dituliskan di bagian jawaban. Program harus menampilkan pasangan bola berwarna lainnya yang memungkinkan.',
             'program' => '',
-            'answer' => 'MP  MU  MA  MC  MT  JP  JU  JA  JC  JT  KP  KU  KA  KC  KT  HP  HU  HA  HC  HT  BP  BU  BA  BC  BT'
+            'answer' => 'KP  KU  KA  KC  KT',
+            'type' => 'for'
         ]);
 
     }

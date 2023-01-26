@@ -56,7 +56,7 @@ int main() {
                 <p>Setelah anda memahami contoh, silahkan untuk memulai tes ini dengan klik tombol di bawah untuk mulai. </p>
             </div>
             
-            <a href="/home/logics/begin" type="button" class="btn btn-blue">Mulai Tes</a>
+            <a href="/home/logics/begin" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">

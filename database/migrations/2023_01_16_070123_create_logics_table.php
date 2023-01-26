@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('que');
             $table->text('program')->nullable();
             $table->string('answer');
+            $table->string('type');
             $table->timestamps();
         });
     }

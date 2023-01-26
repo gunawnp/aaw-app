@@ -28,6 +28,7 @@ return array(
     'App\\Http\\Requests\\StoreTestsRequest' => $baseDir . '/app/Http/Requests/StoreTestsRequest.php',
     'App\\Http\\Requests\\UpdateTestRequest' => $baseDir . '/app/Http/Requests/UpdateTestRequest.php',
     'App\\Http\\Requests\\UpdateTestsRequest' => $baseDir . '/app/Http/Requests/UpdateTestsRequest.php',
+    'App\\Models\\DataLogic' => $baseDir . '/app/Models/DataLogic.php',
     'App\\Models\\DataStyle' => $baseDir . '/app/Models/DataStyle.php',
     'App\\Models\\Logic' => $baseDir . '/app/Models/Logic.php',
     'App\\Models\\Style' => $baseDir . '/app/Models/Style.php',

@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(DataStyle::class);
     }
+
+    public function dataLogic()
+    {
+        return $this->hasOne(DataLogic::class);
+    }
 }

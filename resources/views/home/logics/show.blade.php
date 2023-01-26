@@ -3,28 +3,82 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
         @if ($logics)
-            <div class="lh-lg">
-                <h5 class="fw-bold mb-4">Perhatikan Soal Berikut!</h5>
-                {{-- @error('dataStyle')
-                    <div class="alert alert-danger align-items-center alert-dismissible fade show" role="alert">
-                        <div>
-                            <i class="bi bi-exclamation-triangle pe-3"></i>Pilihan anda terlalu sedikit!
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="fs-6 lh-lg text-justify">
+                <div class="row justify-content-between">
+                    <div class="col-5">
+                        <h5 class="fw-bold mb-3">Perhatikan Soal Berikut!</h5>
+                    </div>
+
+                    @if (session()->has('success'))
+                        <div class="col-5">
+                            <div class="alert alert-success alert-oke alert-dismissible fade show d-flex align-items-center py-2 m-0" role="alert">
+                                <i class="bi bi-check-circle-fill pe-3"></i>
+                                <div>
+                                    {{ session('success') }}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+                
+                @foreach ($logics as $logic)
+                    <p>
+                        {{ $logic->id }}. {{ $logic->que }}
+                    </p>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="editor-container" style="height: 630px">
+                                        <pre id="editor"></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <form method="post" action="/home/logics/begin" id="myform" class="d-md-flex justify-content-center">
+                                @csrf
+                                <input type="hidden" name="code" id="code" value="">
+                                <input type="hidden" name="no" value="{{ $logic->id }}">
+                                <input type="hidden" name="type" value="{{ $logic->type }}">
+                                <input type="hidden" name="answer" value="{{ $logic->answer }}">
+                                <input type="submit" value="Submit" class="btn btn-blue py-2 my-3">
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="card mb-4 px-0 fs-6">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6>Hasil Program</h6>
+                                        <i class="bi bi-question-circle" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="custom-tooltip"
+                                        data-bs-title="Tidak ada kode inputan seperti scanf, semua nilai disimpan dalam suatu variabel"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="font-monospace"> {!! $logic->program !!}</p>
+                                    </div>
+                                </div>
+                                @if (isset($data_l))
+                                    @if ($data_l["logic_" . $logic->id] !== null)
+                                        <div class="alert alert-success" role="alert">
+                                            Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
+                                        </div>
+                                    @endif
+                                @endif
+                            </div>
                         </div>
                     </div>
-                @enderror --}}
-                <form action="/home/styles/begin" method="post">
-                    @csrf
-                    {{-- @foreach ($styles as $style)
-                        <div class="form-check mb-3">
-                            <input class="form-check-input p-3 me-3" type="checkbox" value="{{ $style->id }}" id="check-{{ $style->id }}" name="dataStyle[]" @checked(is_array(old('dataStyle')) && in_array($style->id, old('dataStyle')))>
-                            <label class="form-check-label fs-6" for="check-{{ $style->id }}">
-                                {{ $style->id }}. {{ $style->que }}
-                            </label>
+                    @if ($logic->id == 10)
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="text-center">
+                                <a href="/home/logics/score" type="button" class="btn btn-blue mb-5">Selesai</a>
+                            </div>
                         </div>
-                    @endforeach --}}
-                    <button class="btn btn-blue mt-3 mb-5" type="submit">Submit</button>
-                </form>
+                    @endif
+                @endforeach
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $logics->links() }}
             </div>
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
@@ -35,5 +89,29 @@
             </div>
         @endif
         
+        <script>
+
+            var editor = document.querySelector("#editor");
+
+            ace.edit(editor, {
+                theme: 'ace/theme/xcode',
+                mode: 'ace/mode/c_cpp',
+                enableBasicAutocompletion: true
+            })
+            
+            var editor = ace.edit("editor");
+
+            editor.setValue("#include <stdio.h>\nint main(){\n\n\t\n\n\treturn 0;\n}");
+
+            var position = {row: 3, column: 1};
+
+            editor.moveCursorToPosition(position);
+            editor.clearSelection();
+            editor.textInput.focus();
+
+            setTimeout(function() {
+                $(".alert-oke").alert('close');
+            }, 2500);
+        </script>
     </main>
 @endsection

@@ -543,6 +543,7 @@ class ComposerStaticInit1bc08b0ddffdd205ab2ef6231537d615
         'App\\Http\\Requests\\StoreTestsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreTestsRequest.php',
         'App\\Http\\Requests\\UpdateTestRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTestRequest.php',
         'App\\Http\\Requests\\UpdateTestsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTestsRequest.php',
+        'App\\Models\\DataLogic' => __DIR__ . '/../..' . '/app/Models/DataLogic.php',
         'App\\Models\\DataStyle' => __DIR__ . '/../..' . '/app/Models/DataStyle.php',
         'App\\Models\\Logic' => __DIR__ . '/../..' . '/app/Models/Logic.php',
         'App\\Models\\Style' => __DIR__ . '/../..' . '/app/Models/Style.php',
