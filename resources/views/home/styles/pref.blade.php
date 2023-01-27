@@ -6,7 +6,7 @@
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
                     <h5 class="fs-4 fw-bold mb-4">Data belum tersedia, silahkan ikuti tes!</h5>
-                    <a href="/home/styles/begin" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
+                    <a href="/home/styles" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
                 </div>
             </div>
         @else

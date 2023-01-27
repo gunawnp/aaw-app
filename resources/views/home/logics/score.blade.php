@@ -2,86 +2,100 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if ($empty)
+        @if (!$done)
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
                     <h5 class="fs-4 fw-bold mb-4">Data belum tersedia, silahkan ikuti tes!</h5>
-                    <a href="/home/logics/begin" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
+                    <a href="/home/logics" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
                 </div>
             </div>
         @else
-            <div class="lh-lg row mt-3 justify-content-center">
+            <div class="lh-lg row mt-3 ">
                 <h4 class="fw-bold mb-4">Penilaian</h4>
-                <p class="fs-6">Berikut adalah hasil dari tes gaya belajar Kolb. Di bawah ini terdapat dua tabel, tabel pertama (sebelah kiri) yaitu jawaban atau penentu gaya belajar yang didapatkan dari sumber. Dan tabel kedua (sebelah kanan) adalah nomor-nomor yang diisi olehmu pada tes ini.</p>
-                {{-- <div class="col-md-5 me-5 mt-4">
-                    <table class="table table-striped table-hover table-info table-bordered border-info w-auto text-center">
-                        <thead>
-                            <tr>
-                                <th class="fs-6" colspan="5">Nomor Pernyataan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for ($i = 0; $i < 20; $i++)
-                                <tr>
-                                    <td>{{ $datavalue[0][$i] }}</td>
-                                    <td>{{ $datavalue[1][$i] }}</td>
-                                    <td>{{ $datavalue[2][$i] }}</td>
-                                    <td>{{ $datavalue[3][$i] }}</td>
-                                </tr>
-                            @endfor
-
-                            <tr class="fw-bold">
-                                <td class="px-4">Activist</td>
-                                <td class="px-4">Reflector</td>
-                                <td class="px-4">Theorist</td>
-                                <td class="px-4">Pragmatist</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-6">
+                    <p class="fs-6 mb-4">Berikut adalah hasil dari tes tingkatan berpikir logis. Di bawah ini diberikan sebuah nilai secara keseluruhan dengan rentang 10-100. Semakin tinggi nilai, semakin bagus. Kemudian di bawah bagian nilai terdapat detail kemampuan berpikir logis siswa yang bisa diperhatikan setiap poinnya. </p>
                 </div>
-
-                <div class="col-md-5 me-5 mt-4 mb-3">
-                    <table class="table table-striped table-hover table-primary table-bordered border-info w-auto text-center">
-                        <thead>
-                            <tr>
-                                <th class="fs-6" colspan="5">Nomor Pernyataan Yang Diisi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for ($i = 0; $i < 20; $i++)
-                                <tr>
-                                    <td></td>
-                                    <td>{{ $datainclude[0][$i] }}</td>
-                                    <td>{{ $datainclude[1][$i] }}</td>
-                                    <td>{{ $datainclude[2][$i] }}</td>
-                                    <td>{{ $datainclude[3][$i] }}</td>
-                                </tr>
-                            @endfor
-                            
-                            <tr class="fw-bold">
-                                <td></td>
-                                <td class="px-4">Activist</td>
-                                <td class="px-4">Reflector</td>
-                                <td class="px-4">Theorist</td>
-                                <td class="px-4">Pragmatist</td>
-                            </tr>
-
-                            <tr class="fw-bold">
-                                <td>Total</td>
-                                @foreach ($countdata as $cd)
-                                    <td class="px-4 fs-6">{{ $cd }}</td>
-                                @endforeach
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div> --}}
-                <hr>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-5 text-center">Nilai Anda</h5>
+                    <h1 class="text-center mb-5">{{ $data->sum*10 }}</h1>
+                </div>
             </div>
-            {{-- <div class="text-center">
-                <p class="fs-6 mt-3"> Untuk melihat preferensi gaya belajar silahkan tekan tombol di bawah ini atau pilih Preferensi di bagian Tes Gaya Belajar pada sidebar.</p>
-                <a href="/home/styles/pref" type="button" class="btn btn-blue mb-5">Preferensi</a>
-            </div> --}}
+
+            <hr>
+
+            <div class="lh-lg row mt-5 justify-content-center">
+                <h5 class="fw-bold mb-4 text-center">Skor Hasil Tes Berpikir Logis</h5>
+                <table class="table table-striped table-hover table-info table-bordered border-info w-auto text-center justify-content-center">
+                    <thead>
+                        <tr>
+                            <th class="fs-6">No</th>
+                            <th class="fs-6">Indikator Berpikir Logis</th>
+                            <th class="fs-6">Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-5">1</td>
+                            <td class="px-5">Penalaran Proporsional</td>
+                            <td class="px-5">{{ $data->logic_1 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">2</td>
+                            <td class="px-5">Penalaran Proporsional</td>
+                            <td class="px-5">{{ $data->logic_2 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">3</td>
+                            <td class="px-5">Pengontrolan Variabel</td>
+                            <td class="px-5">{{ $data->logic_3 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">4</td>
+                            <td class="px-5">Pengontrolan Variabel</td>
+                            <td class="px-5">{{ $data->logic_4 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">5</td>
+                            <td class="px-5">Penalaran Probabilistik</td>
+                            <td class="px-5">{{ $data->logic_5 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">6</td>
+                            <td class="px-5">Penalaran Probabilistik</td>
+                            <td class="px-5">{{ $data->logic_6 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">7</td>
+                            <td class="px-5">Penalaran Korelasional</td>
+                            <td class="px-5">{{ $data->logic_7 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">8</td>
+                            <td class="px-5">Penalaran Korelasional</td>
+                            <td class="px-5">{{ $data->logic_8 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">9</td>
+                            <td class="px-5">Penalaran Kombinatorial</td>
+                            <td class="px-5">{{ $data->logic_9 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5">10</td>
+                            <td class="px-5">Penalaran Kombinatorial</td>
+                            <td class="px-5">{{ $data->logic_10 * 10 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 fw-bold" colspan="2">Total</td>
+                            <td class="px-5 fw-bold">{{ $data->sum*10 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            <div class="text-center">
+                <a href="/home/styles/pref" type="button" class="btn btn-blue mt-3 mb-5">Selesai</a>
+            </div>
         @endif
     </main>
-@endsection
+@endsection 

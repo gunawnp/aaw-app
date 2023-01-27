@@ -27,7 +27,6 @@
                 <div class="collapse {{ Request::is('home/logics*') ? 'show' : '' }}" id="collapse-logic">
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics', 'home/logics/next', 'home/logics/begin') ? 'active' : '' }}" href="/home/logics">Mulai</a>
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics/score') ? 'active' : '' }}" href="/home/logics/score">Penilaian</a>
-                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics/result') ? 'active' : '' }}" href="/home/logics/result">Hasil Tes</a>
                 </div>
             </li>
         </ul>

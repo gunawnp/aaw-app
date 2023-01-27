@@ -2,7 +2,7 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if ($logics)
+        @if ($done == false)
             <div class="fs-6 lh-lg text-justify me-4">
                 <h4 class="fw-bold mb-4">Contoh Soal</h4>
                 <p>

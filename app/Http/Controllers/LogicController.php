@@ -41,10 +41,22 @@ class LogicController extends Controller
 {
 
     public function index() {
+        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+
+        if ($data) {
+            $done = true;
+            if ($data->sum === null) {
+                $done = false;
+            }
+        } else {
+            $done = false;
+        }
+
         return view('home.logics.index', [
             "title" => "Tes Berpikir Logis",
             "header" => "Tes Berpikir Logis",
-            "logics" => true
+            "data" => $data,
+            "done" => $done
         ]);
     }
 
@@ -55,21 +67,42 @@ class LogicController extends Controller
     }
 
     public function indextwo() {
+        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+
+        if ($data) {
+            $done = true;
+            if ($data->sum === null) {
+                $done = false;
+            }
+        } else {
+            $done = false;
+        }
+
         return view('home.logics.indextwo', [
             "title" => "Tes Berpikir Logis",
             "header" => "Tes Berpikir Logis",
-            "logics" => true
+            "data" => $data,
+            "done" => $done
         ]);
     }
 
     public function show() {
-        $logics = Logic::paginate(1)->withQueryString();
         $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+        $logics = Logic::paginate(1)->withQueryString();
+        if ($data) {
+            $done = true;
+            if ($data->sum === null) {
+                $done = false;
+            }
+        }else {
+            $done = false;
+        }
         return view('home.logics.show', [
             "title" => "Tes Berpikir Logis",
             "header" => "Tes Berpikir Logis",
             "logics" => $logics,
-            "data_l" => $data
+            "data" => $data,
+            "done" => $done
         ]);
     }
 
@@ -141,20 +174,33 @@ class LogicController extends Controller
 
     public function score() {
         $data = DataLogic::firstWhere('user_id', auth()->user()->id);
-        $sum = 0;
-        for ($i=1; $i < 11; $i++) { 
-            $val = $data['logic_' . $i];
-            $sum = $sum + $val;
+        if ($data && $data->sum === null) {
+            $sum = 0;
+            for ($i=1; $i < 11; $i++) { 
+                $val = $data['logic_' . $i];
+                $done = true;
+                if ($val === null) {
+                    $done = false;
+                }
+                $sum = $sum + $val;
+            }
+    
+            if ($done) {
+                $dataInput['sum'] = $sum;
+                //update ke database
+                $data->update($dataInput);
+            }
+        }elseif ($data && $data->sum !== null) {
+            $done = true;
+        }else {
+            $done = false;
         }
-
-        $dataInput['sum'] = $sum;
-        //update ke database
-        $data->update($dataInput);
 
         return view('home.logics.score', [
             "title" => "Tes Berpikir Logis",
             "header" => "Penilaian Tes Berpikir Logis",
-            "empty" => false
+            "data" => $data,
+            "done" => $done
         ]);
     }
 

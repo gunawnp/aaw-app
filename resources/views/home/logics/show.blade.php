@@ -2,7 +2,7 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if ($logics)
+        @if ($done == false)
             <div class="fs-6 lh-lg text-justify">
                 <div class="row justify-content-between">
                     <div class="col-5">
@@ -58,8 +58,8 @@
                                         <p class="font-monospace"> {!! $logic->program !!}</p>
                                     </div>
                                 </div>
-                                @if (isset($data_l))
-                                    @if ($data_l["logic_" . $logic->id] !== null)
+                                @if (isset($data))
+                                    @if ($data["logic_" . $logic->id] !== null)
                                         <div class="alert alert-success" role="alert">
                                             Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
                                         </div>
@@ -84,7 +84,7 @@
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
                     <h5 class="fs-4 fw-bold mb-4">Data sudah diisi, silahkan lihat bagian penilaian</h5>
-                    <a href="/home/styles/score" type="button" class="btn btn-blue mb-5">Penilaian</a>
+                    <a href="/home/logics/score" type="button" class="btn btn-blue mb-5">Penilaian</a>
                 </div>
             </div>
         @endif
