@@ -2,7 +2,7 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if ($done == false)
+        @if (true)
             <div class="fs-6 lh-lg text-justify">
                 <div class="row justify-content-between">
                     <div class="col-5">

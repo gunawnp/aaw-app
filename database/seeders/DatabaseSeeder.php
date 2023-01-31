@@ -4,9 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use App\Models\Logic;
 use App\Models\Style;
-use App\Models\User;
+use App\Models\Answer;
+use App\Models\Maintest;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -298,5 +300,358 @@ class DatabaseSeeder extends Seeder
             'type' => 'for'
         ]);
 
+        //Maintest - membuat soal untuk pretest dan posttest di database
+
+        //1.2.
+        Maintest::create([
+            'no' => '1.2.',
+            'que' => 'Suatu hari Tama pergi ke suatu toko swalayan, dia membeli beberapa makanan dan minuman. Kemudian dia ke kasir untuk menghitung harga dan membayar belanjaannya. Total harga barang yang Tama bawa yaitu 110,000, ternyata Tama mendapatkan diskon 30%, karena total belanjanya sudah melebihi 100,000. Pada kasus ini, bagaimana cara membuat suatu kode program pada kondisi tersebut?',
+            'answer_id' => '1',
+        ]);
+
+        Answer::create([
+            'program' => 'Harga total belanja: 110000<br>
+            Anda mendapatkan diskon 30 persen karena total belanja lebih dari Rp. 100.000<br>
+            Total bayar: 77000',
+            'answer' => '>100000',
+            'type' => 'if'
+        ]);
+
+        //1.1.
+        Maintest::create([
+            'no' => '1.1.',
+            'que' => 'Pada suatu toko terdapat promo diskon. Jika harga belanja lebih dari 100,000 maka total belanja akan mendapatkan diskon 30%. Pemilik toko ingin menambahkan kondisi tersebut di program kasir miliknya, bagaimana penulisan kode pada bagian kondisi tersebut?',
+            'answer_id' => '1',
+        ]);
+
+        //1.
+        Maintest::create([
+            'no' => '1.',
+            'que' => 'Terdapat suatu kasus dalam berbelanja dan akan dibuat suatu program. Program diawali dengan sebuah masukkan yang akan disimpan pada variabel harga. Jika harga yang dimasukkan lebih dari 100,000 maka akan mendapatkan diskon 30%, kemudian hasil dari diskon tersebut disimpan dalam variabel total. Bagaimana penulisan kode pada bagian kondisi tersebut?',
+            'answer_id' => '1',
+        ]);
+
+        //1.a.
+        Maintest::create([
+            'no' => '1.a.',
+            'que' => 'Terdapat suatu kasus dalam berbelanja. Jika harga lebih dari 100,000 maka harga akan dikalikan 30% dan hasilnya disimpan di variabel total. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '1',
+        ]);
+
+        //1.b.
+        Maintest::create([
+            'no' => '1.b.',
+            'que' => 'Jika harga > 100000, maka harga dikali 0,3 dan hasilnya disimpan di variabel total. Bagaimana penulisan kode tersebut dengan percabangan sederhana tunggal?',
+            'answer_id' => '1',
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //2.2.
+        Maintest::create([
+            'no' => '2.2.',
+            'que' => 'Suatu hari Tama pergi ke suatu toko baju yang akan dia bawa untuk keluarganya sebagai oleh-oleh, dia membeli 12 baju dan ternyata Tama mendapatkan promo yaitu mendapatkan 3 baju tambahan gratis, karena baju yang dia beli lebih dari 10 pcs. Pada kasus ini, bagaimana cara membuat suatu kode program pada kondisi tersebut?',
+            'answer_id' => '2',
+        ]);
+
+        Answer::create([
+            'program' => 'Jumlah baju yang dibeli: 12<br>
+            Mendapatkan 3 bonus baju!<br>
+            Baju yang diterima yaitu sebanyak 15',
+            'answer' => '>10',
+            'type' => 'if'
+        ]);
+
+        //2.1.
+        Maintest::create([
+            'no' => '2.1.',
+            'que' => 'Pada suatu toko baju terdapat promo. Jika banyak baju yang dibeli lebih dari 10 pcs maka akan mendapatkan 3 bonus baju. Pemilik toko ingin membuat program tersebut, bagaimana penulisan kode pada tersebut?',
+            'answer_id' => '2',
+        ]);
+
+        //2.
+        Maintest::create([
+            'no' => '2.',
+            'que' => 'Terdapat suatu kasus dalam pembelian baju dan akan dibuat suatu program. Program diawali dengan sebuah masukkan yang akan disimpan pada variabel baju, yang berfungsi untuk masukkan jumlah baju yang dibeli. Jika jumlah baju yang dibeli lebih dari 10 pcs maka akan mendapatkan 3 bonus baju, kemudian jumlah baju yang didapatkan disimpan dalam variabel baju. Bagaimana penulisan kode pada bagian kondisi tersebut?',
+            'answer_id' => '2',
+        ]);
+
+        //2.a.
+        Maintest::create([
+            'no' => '2.a.',
+            'que' => 'Terdapat suatu kasus dalam pembelian baju. Jika pembelian baju lebih dari 10 pcs maka akan mendapatkan 3 bonus baju, sehingga jumlah baju bertambah dan hasilnya disimpan di variabel baju. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '2',
+        ]);
+
+        //2.b.
+        Maintest::create([
+            'no' => '2.b.',
+            'que' => 'Jika variabel baju lebih dari 10, maka variabel baju ditambah 3. Bagaimana penulisan kode tersebut dengan percabangan sederhana tunggal?',
+            'answer_id' => '2',
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //3.2.
+        Maintest::create([
+            'no' => '3.2.',
+            'que' => 'Di suatu jalan raya, Tama melihat peraturan ganjil genap pada kendaraan, namun dia bingung dan belum mengetahui bagaimana cara membedakannya. Ayahnya memberi tahu dia bahwa untuk nilai genap itu sama dengan suatu bilangan modulus terhadap dua akan menghasilkan nol, maka bilangan tersebut genap, jika tidak berarti bilangan tersebut ganjil. Untuk membantu Tama, bagaimana menuliskan kode pada suatu program tersebut?',
+            'answer_id' => '3',
+        ]);
+
+        Answer::create([
+            'program' => 'Cek bilangan ganjil atau genap: 6<br>
+            Bilangan tersebut genap',
+            'answer' => '%2==0',
+            'type' => 'else'
+        ]);
+
+        //3.1.
+        Maintest::create([
+            'no' => '3.1.',
+            'que' => 'Seseorang mempunyai sebuah program pengecekan bilangan untuk menilai bilangan tersebut genap atau ganjil. Pada sistem kerja pengecekannya jika bilangan tersebut modulus 2 sama dengan 0 maka bilangan tersebut genap, dan jika tidak berarti ganjil. Bagaimana menuliskan kode pada kasus tersebut?',
+            'answer_id' => '3',
+        ]);
+
+        //3.
+        Maintest::create([
+            'no' => '3.',
+            'que' => 'Terdapat suatu program untuk menentukan bilangan tersebut ganjil atau genap. Program tersebut diawali dengan masukkan suatu variabel bilangan. Ketika memasukkan bilangan, program akan berjalan dilakukan pengecekan. Jika variabel bilangan modulus 2 sama dengan 0, maka variabel bilangan tersebut genap. dan jika tidak sama dengan 0 maka bilangan tersebut ganjil. Bagaimana menuliskan kode tersebut?',
+            'answer_id' => '3',
+        ]);
+
+        //3.a.
+        Maintest::create([
+            'no' => '3.a.',
+            'que' => 'Terdapat suatu bilangan, jika bilangan tersebut dilakukan operasi yaitu variabel bilangan modulus 2 maka jika hasilnya 0, bilangan tersebut termasuk bilangan genap, jika tidak maka bilangan itu ganjil. Bagaimana menuliskan kode tersebut?',
+            'answer_id' => '3',
+        ]);
+
+        //3.b.
+        Maintest::create([
+            'no' => '3.b.',
+            'que' => 'Terdapat suatu bilangan, jika variabel bilangan modulus dua sama dengan 0 (bilangan % 2 == 0) maka bilangan tersebut genap, jika tidak maka bilangan tersebut ganjil. Bagaimana menuliskan kode tersebut dengan percabangan sederhana ganda?',
+            'answer_id' => '3',
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //4.2.
+        Maintest::create([
+            'no' => '4.2.',
+            'que' => 'Pada suatu hari Tama berkunjung ke suatu pos polisi, di sana ia melihat ada suatu program pengukur kecepatan kendaraan yang lewat. Kemudian terdapat kendaraan yang memiliki kecepatan kendaraan 90 km/jam maka kendaraan tersebut terlalu cepat dan akan terkena tilang, jika kendaraan tersebut memiliki kecepatan tidak lebih dari 80 km/jam maka kecepatannya normal. Untuk memahaminya, Tama mencoba membuat program tersebut. Bagaimana cara menuliskan kode pada program tersebut?',
+            'answer_id' => '4',
+        ]);
+
+        Answer::create([
+            'program' => 'Masukkan kecepatan kendaraan: 90<br>
+            terlalu cepat, terkena tilang',
+            'answer' => '>80',
+            'type' => 'else'
+        ]);
+
+        //4.1.
+        Maintest::create([
+            'no' => '4.1.',
+            'que' => 'Sebuah program pengukur kecepatan kendaraan, menilai apakah suatu kendaraan terlalu cepat atau tidak. Jika kecepatan lebih dari 80 maka kecepatan suatu kendaraan terlalu cepat dan akan terkena tilang, dan jika tidak akan diberitahu bahwa kecepatan suatu kendaraan normal. Bagaimana menuliskan kode pada kasus tersebut?',
+            'answer_id' => '4',
+        ]);
+
+        //4.
+        Maintest::create([
+            'no' => '4.',
+            'que' => 'Terdapat suatu program untuk mengukur kecepatan kendaraan. Program tersebut diawali dengan masukkan suatu variabel kecepatan. Ketika memasukkan nilainya, program akan berjalan dan melakukan pengecekan. Jika variabel kecepatan lebih dari 80, maka variabel akan memberi peringatan yang dicetak pada program yaitu “terlalu cepat, terkena tilang”. Dan jika tidak, maka hanya akan memberi tahu pada program bahwa “kecepatan normal”. Bagaimana menuliskan kode tersebut?',
+            'answer_id' => '4',
+        ]);
+
+        //4.a.
+        Maintest::create([
+            'no' => '4.a.',
+            'que' => 'Terdapat suatu pengukur kecepatan kendaraan, jika kecepatan lebih dari 80 maka kendaraan itu terlalu cepat dan akan mencetak “terlalu cepat, terkena tilang”, jika tidak maka kecepatan kendaraan itu masih normal sehingga akan mencetak “kecepatan normal”. Bagaimana menuliskan kode tersebut?',
+            'answer_id' => '4',
+        ]);
+
+        //4.b.
+        Maintest::create([
+            'no' => '4.b.',
+            'que' => 'Terdapat suatu pengukur kecepatan kendaraan, jika variabel kecepatan > 80 maka akan mencetak “terlalu cepat, terkena tilang”, jika tidak maka akan mencetak “kecepatan normal”. Bagaimana menuliskan kode tersebut dengan percabangan sederhana ganda?',
+            'answer_id' => '4',
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //5.2.
+        Maintest::create([
+            'no' => '5.2.',
+            'que' => 'Di suatu kegiatan, Tama ditugaskan menjadi panitia konsumsi. Kemudian dengan budget Rp. 200,000 Tama harus membeli paket makan untuk panitia yang lain. Terdapat 4 paket utama dengan harga yang berbeda-beda, yaitu sebagai berikut.
+
+            Paket	Harga
+            Paket 1 Ayam Goreng	Rp. 12,000
+            Paket 2 Ayam Bakar	Rp. 15,000
+            Paket 3 Ayam Komplit	Rp. 18,000
+            Paket 4 Bebek Goreng	Rp. 20,000
+
+            Tama menentukan paket 4 yang dia pilih. Dengan budget Rp. 200,000, dia mendapatkan 10 bungkus. Bagaimana cara membuat sebuah program pemilihan paket makan dengan harga yang berbeda-beda tersebut dan dapat diketahui banyak bungkus yang diterima?',
+            'answer_id' => '5',
+        ]);
+
+        Answer::create([
+            'program' => '- Daftar Paket Makan -<br>
+            Paket    Harga<br>
+            Paket 1 Ayam Goreng      Rp. 12,000<br>
+            Paket 2 Ayam Bakar       Rp. 15,000<br>
+            Paket 3 Ayam Komplit     Rp. 18,000<br>
+            Paket 4 Bebek Goreng     Rp. 20,000<br>
+            Masukkan nomor paket makanan yang akan dibeli: 4<br>
+            Paket makanan yang dia dapatkan sejumlah 10 bungkus.',
+            'answer' => '==4',
+            'type' => 'else if'
+        ]);
+
+        //5.1.
+        Maintest::create([
+            'no' => '5.1.',
+            'que' => 'Di suatu warung makan terdapat paket-paket makanan. Terdapat 4 paket utama. Paket-paket ini memiliki harga yang berbeda beda yaitu sebagai berikut. 
+
+            Paket	Harga
+            Paket 1 Ayam Goreng	Rp. 12,000
+            Paket 2 Ayam Bakar	Rp. 15,000
+            Paket 3 Ayam Komplit	Rp. 18,000
+            Paket 4 Bebek Goreng	Rp. 20,000
+
+            Bagaimana cara membuat sebuah program pemilihan paket dengan harga yang berbeda-beda tersebut?',
+            'answer_id' => '5',
+        ]);
+
+        //5.
+        Maintest::create([
+            'no' => '5.',
+            'que' => 'Pada sebuah program terdapat pemilihan paket makan dengan harga yang berbeda-beda, seperti pada tabel berikut.
+
+            Paket	Harga
+            Paket 1 Ayam Goreng	Rp. 12,000
+            Paket 2 Ayam Bakar	Rp. 15,000
+            Paket 3 Ayam Komplit	Rp. 18,000
+            Paket 4 Bebek Goreng	Rp. 20,000
+
+            Program akan berjalan diawali dengan menampilkan pilihan kemudian memberikan sebuah masukkan yang menggunakan variabel paket. Variabel paket akan memeriksa pilihan, pilihan-pilihan ini akan berisi seperti tabel. Bagaimana untuk membuat program pemilihan seperti pada tabel tersebut?',
+            'answer_id' => '5',
+        ]);
+
+        //5.a.
+        Maintest::create([
+            'no' => '5.a.',
+            'que' => 'Buatlah sebuah program pemilihan paket makan. Pada program tersebut terdapat variabel paket dan variabel harga. Setiap kondisi atau pemilihan paket nomor ke berapa, maka terdapat harga sesuai dengan paket yang dipilih. Berikut tabelnya.
+
+            Paket	Harga
+            Paket 1 Ayam Goreng	Rp. 12,000
+            Paket 2 Ayam Bakar	Rp. 15,000
+            Paket 3 Ayam Komplit	Rp. 18,000
+            Paket 4 Bebek Goreng	Rp. 20,000',
+            'answer_id' => '5',
+        ]);
+
+        //5.b.
+        Maintest::create([
+            'no' => '5.b.',
+            'que' => 'Terdapat sebuah menu paket makanan.
+
+            Paket	Harga
+            Paket 1 Ayam Goreng	Rp. 12,000
+            Paket 2 Ayam Bakar	Rp. 15,000
+            Paket 3 Ayam Komplit	Rp. 18,000
+            Paket 4 Bebek Goreng	Rp. 20,000
+
+            Buatlah sebuah menu pemilihan motor seperti ketentuan berikut dengan percabangan bertingkat (if, else if, else).
+            Jika memilih paket 1, maka harganya Rp. 12,000. Jika memilih paket 2, maka harganya Rp. 15,000. Begitu seterusnya hingga pada pilihan terakhir',
+            'answer_id' => '5',
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //6.2.
+        Maintest::create([
+            'no' => '6.2.',
+            'que' => 'Tama melakukan touring motor dari kota Malang ke kota Surabaya. Jarak dari kedua kota itu yaitu 100 km. Terdapat 3 motor utama dengan kecepatan yang paling cepat dan motor lainnya dengan kecepatan standar, yaitu sebagai berikut.
+
+            Motor	Kecepatan
+            Motor 1	25 km/jam
+            Motor 2	50 km/jam
+            Motor 3	80 km/jam
+            Motor lainnya	20 km/jam
+
+            Tama menggunakan motor 2 dengan kecepatan 50 km/jam. Waktu yang ia tempuh yaitu 2 jam. Untuk mengetahui waktu yang ditempuh menggunakan motor lain, maka menggunakan rumus kecepatan. Waktu = jarak / kecepatan. Bagaimana cara membuat sebuah program pemilihan motor dengan kecepatan yang berbeda-beda tersebut sehingga akan mendapatkan waktu tempuhnya?',
+            'answer_id' => '6',
+        ]);
+
+        Answer::create([
+            'program' => 'Jarak = 100km<br>
+            motor 1: 25km/jam<br>
+            motor 2: 50km/jam<br>
+            motor 3: 80km/jam<br>
+            motor lainnya: 20km/jam<br>
+            pilihan: 2<br>
+            Waktu tempuh: 2.0 jam',
+            'answer' => '==3',
+            'type' => 'else if'
+        ]);
+
+        //6.1.
+        Maintest::create([
+            'no' => '6.1.',
+            'que' => 'Jarak antara kota Malang ke kota Surabaya adalah 100 km. Terdapat 3 motor utama dan motor lainnya yang digunakan untuk menempuh jarak tersebut. Motor-motor ini memiliki kecepatan berbeda beda yaitu sebagai berikut. 
+
+            Motor	Kecepatan
+            Motor 1	25 km/jam
+            Motor 2	50 km/jam
+            Motor 3	80 km/jam
+            Motor lainnya	20 km/jam
+
+            Bagaimana cara membuat sebuah program pemilihan motor dengan kecepatan yang berbeda-beda tersebut?',
+            'answer_id' => '6',
+        ]);
+
+        //6.
+        Maintest::create([
+            'no' => '6.',
+            'que' => 'Pada sebuah program terdapat pemilihan motor dengan kecepatan berbeda, seperti tabel berikut.
+
+            Motor	Kecepatan
+            Motor 1	25 km/jam
+            Motor 2	50 km/jam
+            Motor 3	80 km/jam
+            Motor lainnya	20 km/jam
+
+            Pada program tersebut akan menggunakan variabel motor untuk pemilihan dan variabel kecepatan. Program diawali dengan menampilkan pilihan motor yang tersedia, kemudian terdapat masukkan untuk memilih motor tersebut, dan terdapat beberapa kondisi untuk setiap pemilihan. Bagaimana untuk membuat program pemilihan motor tersebut?',
+            'answer_id' => '6',
+        ]);
+
+        //6.a.
+        Maintest::create([
+            'no' => '6.a.',
+            'que' => 'Buatlah sebuah program pemilihan motor. Pada program tersebut terdapat variabel motor dan variabel kecepatan. Setiap kondisi atau pemilihan motor nomor ke berapa, maka memiliki kecepatan sesuai dengan motor yang dipilih. Berikut tabelnya.
+
+            Motor	Kecepatan
+            Motor 1	25 km/jam
+            Motor 2	50 km/jam
+            Motor 3	80 km/jam
+            Motor lainnya	20 km/jam',
+            'answer_id' => '6',
+        ]);
+
+        //6.b.
+        Maintest::create([
+            'no' => '6.b.',
+            'que' => 'Terdapat sebuah tabel motor beserta kecepatannya.
+            Motor	Kecepatan
+            Motor 1	25 km/jam
+            Motor 2	50 km/jam
+            Motor 3	80 km/jam
+            Motor lainnya	20 km/jam
+
+            Buatlah sebuah menu pemilihan motor seperti ketentuan berikut dengan percabangan bertingkat (if, else if, else).
+            Jika memilih motor 1, maka kecepatannya 25 km/jam. Jika memilih motor 2, maka kecepatannya 50 km/jam. Begitu seterusnya hingga pada pilihan terakhir.',
+            'answer_id' => '6',
+        ]);
     }
 }

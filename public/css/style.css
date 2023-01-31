@@ -48,6 +48,10 @@ body {
     color: black;
 }
 
+.btn-secondary {
+    border-radius: 15px;
+}
+
 .p-top-hero {
     padding-top: 170px;
 }

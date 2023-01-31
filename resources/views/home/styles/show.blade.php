@@ -23,7 +23,26 @@
                             </label>
                         </div>
                     @endforeach
-                    <button class="btn btn-blue mt-3 mb-5" type="submit">Submit</button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-blue mt-3 mb-5" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                    Submit
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="border-radius: 15px">
+                            <div class="modal-body">
+                                <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
+                            </div>
+                            <div class="modal-footer justify-content-center ">
+                                <button class="btn btn-blue px-4 py-2" type="submit">Ya</button>
+                                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         @else

@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(DataLogic::class);
     }
+
+    public function dataPretest()
+    {
+        return $this->hasOne(Pretest::class);
+    }
 }

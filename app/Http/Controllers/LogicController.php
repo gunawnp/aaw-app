@@ -54,7 +54,7 @@ class LogicController extends Controller
 
         return view('home.logics.index', [
             "title" => "Tes Berpikir Logis",
-            "header" => "Tes Berpikir Logis",
+            "header" => "Pendahuluan Tes Berpikir Logis",
             "data" => $data,
             "done" => $done
         ]);
@@ -80,7 +80,7 @@ class LogicController extends Controller
 
         return view('home.logics.indextwo', [
             "title" => "Tes Berpikir Logis",
-            "header" => "Tes Berpikir Logis",
+            "header" => "Pendahuluan Tes Berpikir Logis",
             "data" => $data,
             "done" => $done
         ]);

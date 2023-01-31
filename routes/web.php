@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\DataStyleController;
 use App\Http\Controllers\LogicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PretestController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\StyleController;
 
@@ -58,4 +58,12 @@ Route::controller(LogicController::class)->group(function () {
     Route::get('/home/logics/begin', 'show')->middleware('auth');
     Route::post('/home/logics/begin', 'store')->middleware('auth');
     Route::get('/home/logics/score', 'score')->middleware('auth');
+});
+
+Route::controller(PretestController::class)->group(function () {
+    Route::get('/home/pretest', 'index')->middleware('auth');
+    Route::post('/home/pretest', 'exone')->middleware('auth');
+    Route::get('/home/pretest/begin', 'show')->middleware('auth');
+    Route::post('/home/pretest/begin', 'store')->middleware('auth');
+    Route::get('/home/pretest/score', 'score')->middleware('auth');
 });

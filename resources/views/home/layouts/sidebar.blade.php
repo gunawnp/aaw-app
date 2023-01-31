@@ -29,6 +29,17 @@
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics/score') ? 'active' : '' }}" href="/home/logics/score">Penilaian</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('home/pretest*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-pretest" role="button" aria-expanded="false" aria-controls="collapse-pretest">
+                <i class="fs-5 bi-card-checklist pe-2"></i>
+                Pretest Asesmen
+                <p class="ms-4 ps-2 mb-0">Adaptif</p> 
+                </a>
+                <div class="collapse {{ Request::is('home/pretest*') ? 'show' : '' }}" id="collapse-pretest">
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/pretest', 'home/pretest/begin') ? 'active' : '' }}" href="/home/pretest">Mulai</a>
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/pretest/score') ? 'active' : '' }}" href="/home/pretest/score">Penilaian</a>
+                </div>
+            </li>
         </ul>
 
         {{-- @can('admin')
