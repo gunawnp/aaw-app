@@ -545,6 +545,7 @@ class ComposerStaticInit1bc08b0ddffdd205ab2ef6231537d615
         'App\\Http\\Requests\\UpdateTestsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTestsRequest.php',
         'App\\Models\\Answer' => __DIR__ . '/../..' . '/app/Models/Answer.php',
         'App\\Models\\DataLogic' => __DIR__ . '/../..' . '/app/Models/DataLogic.php',
+        'App\\Models\\DataPretest' => __DIR__ . '/../..' . '/app/Models/DataPretest.php',
         'App\\Models\\DataStyle' => __DIR__ . '/../..' . '/app/Models/DataStyle.php',
         'App\\Models\\Logic' => __DIR__ . '/../..' . '/app/Models/Logic.php',
         'App\\Models\\Maintest' => __DIR__ . '/../..' . '/app/Models/Maintest.php',

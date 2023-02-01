@@ -11,6 +11,6 @@ class Answer extends Model
 
     public function maintest()
     {
-        return $this->belongsTo(Maintest::class);
+        return $this->hasMany(Maintest::class);
     }
 }

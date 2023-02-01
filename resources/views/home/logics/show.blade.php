@@ -26,6 +26,14 @@
                         {{ $logic->id }}. {{ $logic->que }}
                     </p>
 
+                    @if ($logic->id == 7)
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-07.png" alt="tikus" width="500px">
+                    @endif
+
+                    @if ($logic->id == 8)
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-08.png" alt="ikan" width="500px">
+                    @endif
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="card">
@@ -90,7 +98,25 @@
                     @if ($logic->id == 10)
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="text-center">
-                                <a href="/home/logics/score" type="button" class="btn btn-blue mb-5">Selesai</a>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                                Selesai
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="border-radius: 15px">
+                                <div class="modal-body">
+                                    <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
+                                </div>
+                                <div class="modal-footer justify-content-center ">
+                                    <a href="/home/logics/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
+                                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     @endif

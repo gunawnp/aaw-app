@@ -302,13 +302,6 @@ class DatabaseSeeder extends Seeder
 
         //Maintest - membuat soal untuk pretest dan posttest di database
 
-        //1.2.
-        Maintest::create([
-            'no' => '1.2.',
-            'que' => 'Suatu hari Tama pergi ke suatu toko swalayan, dia membeli beberapa makanan dan minuman. Kemudian dia ke kasir untuk menghitung harga dan membayar belanjaannya. Total harga barang yang Tama bawa yaitu 110,000, ternyata Tama mendapatkan diskon 30%, karena total belanjanya sudah melebihi 100,000. Pada kasus ini, bagaimana cara membuat suatu kode program pada kondisi tersebut?',
-            'answer_id' => '1',
-        ]);
-
         Answer::create([
             'program' => 'Harga total belanja: 110000<br>
             Anda mendapatkan diskon 30 persen karena total belanja lebih dari Rp. 100.000<br>
@@ -317,18 +310,12 @@ class DatabaseSeeder extends Seeder
             'type' => 'if'
         ]);
 
-        //1.1.
-        Maintest::create([
-            'no' => '1.1.',
-            'que' => 'Pada suatu toko terdapat promo diskon. Jika harga belanja lebih dari 100,000 maka total belanja akan mendapatkan diskon 30%. Pemilik toko ingin menambahkan kondisi tersebut di program kasir miliknya, bagaimana penulisan kode pada bagian kondisi tersebut?',
-            'answer_id' => '1',
-        ]);
-
         //1.
         Maintest::create([
             'no' => '1.',
             'que' => 'Terdapat suatu kasus dalam berbelanja dan akan dibuat suatu program. Program diawali dengan sebuah masukkan yang akan disimpan pada variabel harga. Jika harga yang dimasukkan lebih dari 100,000 maka akan mendapatkan diskon 30%, kemudian hasil dari diskon tersebut disimpan dalam variabel total. Bagaimana penulisan kode pada bagian kondisi tersebut?',
             'answer_id' => '1',
+            'score' => '3'
         ]);
 
         //1.a.
@@ -336,6 +323,7 @@ class DatabaseSeeder extends Seeder
             'no' => '1.a.',
             'que' => 'Terdapat suatu kasus dalam berbelanja. Jika harga lebih dari 100,000 maka harga akan dikalikan 30% dan hasilnya disimpan di variabel total. Bagaimana penulisan kode pada kasus tersebut?',
             'answer_id' => '1',
+            'score' => '2'
         ]);
 
         //1.b.
@@ -343,6 +331,7 @@ class DatabaseSeeder extends Seeder
             'no' => '1.b.',
             'que' => 'Jika harga > 100000, maka harga dikali 0,3 dan hasilnya disimpan di variabel total. Bagaimana penulisan kode tersebut dengan percabangan sederhana tunggal?',
             'answer_id' => '1',
+            'score' => '1'
         ]);
 
         // ----------------------------------------------------------------------------------------
@@ -352,6 +341,7 @@ class DatabaseSeeder extends Seeder
             'no' => '2.2.',
             'que' => 'Suatu hari Tama pergi ke suatu toko baju yang akan dia bawa untuk keluarganya sebagai oleh-oleh, dia membeli 12 baju dan ternyata Tama mendapatkan promo yaitu mendapatkan 3 baju tambahan gratis, karena baju yang dia beli lebih dari 10 pcs. Pada kasus ini, bagaimana cara membuat suatu kode program pada kondisi tersebut?',
             'answer_id' => '2',
+            'score' => '5'
         ]);
 
         Answer::create([
@@ -367,6 +357,7 @@ class DatabaseSeeder extends Seeder
             'no' => '2.1.',
             'que' => 'Pada suatu toko baju terdapat promo. Jika banyak baju yang dibeli lebih dari 10 pcs maka akan mendapatkan 3 bonus baju. Pemilik toko ingin membuat program tersebut, bagaimana penulisan kode pada tersebut?',
             'answer_id' => '2',
+            'score' => '4'
         ]);
 
         //2.
@@ -374,6 +365,7 @@ class DatabaseSeeder extends Seeder
             'no' => '2.',
             'que' => 'Terdapat suatu kasus dalam pembelian baju dan akan dibuat suatu program. Program diawali dengan sebuah masukkan yang akan disimpan pada variabel baju, yang berfungsi untuk masukkan jumlah baju yang dibeli. Jika jumlah baju yang dibeli lebih dari 10 pcs maka akan mendapatkan 3 bonus baju, kemudian jumlah baju yang didapatkan disimpan dalam variabel baju. Bagaimana penulisan kode pada bagian kondisi tersebut?',
             'answer_id' => '2',
+            'score' => '3'
         ]);
 
         //2.a.
@@ -381,6 +373,7 @@ class DatabaseSeeder extends Seeder
             'no' => '2.a.',
             'que' => 'Terdapat suatu kasus dalam pembelian baju. Jika pembelian baju lebih dari 10 pcs maka akan mendapatkan 3 bonus baju, sehingga jumlah baju bertambah dan hasilnya disimpan di variabel baju. Bagaimana penulisan kode pada kasus tersebut?',
             'answer_id' => '2',
+            'score' => '2'
         ]);
 
         //2.b.
@@ -388,6 +381,7 @@ class DatabaseSeeder extends Seeder
             'no' => '2.b.',
             'que' => 'Jika variabel baju lebih dari 10, maka variabel baju ditambah 3. Bagaimana penulisan kode tersebut dengan percabangan sederhana tunggal?',
             'answer_id' => '2',
+            'score' => '1'
         ]);
 
         // ----------------------------------------------------------------------------------------
@@ -397,6 +391,7 @@ class DatabaseSeeder extends Seeder
             'no' => '3.2.',
             'que' => 'Di suatu jalan raya, Tama melihat peraturan ganjil genap pada kendaraan, namun dia bingung dan belum mengetahui bagaimana cara membedakannya. Ayahnya memberi tahu dia bahwa untuk nilai genap itu sama dengan suatu bilangan modulus terhadap dua akan menghasilkan nol, maka bilangan tersebut genap, jika tidak berarti bilangan tersebut ganjil. Untuk membantu Tama, bagaimana menuliskan kode pada suatu program tersebut?',
             'answer_id' => '3',
+            'score' => '5'
         ]);
 
         Answer::create([
@@ -411,6 +406,7 @@ class DatabaseSeeder extends Seeder
             'no' => '3.1.',
             'que' => 'Seseorang mempunyai sebuah program pengecekan bilangan untuk menilai bilangan tersebut genap atau ganjil. Pada sistem kerja pengecekannya jika bilangan tersebut modulus 2 sama dengan 0 maka bilangan tersebut genap, dan jika tidak berarti ganjil. Bagaimana menuliskan kode pada kasus tersebut?',
             'answer_id' => '3',
+            'score' => '4'
         ]);
 
         //3.
@@ -418,6 +414,7 @@ class DatabaseSeeder extends Seeder
             'no' => '3.',
             'que' => 'Terdapat suatu program untuk menentukan bilangan tersebut ganjil atau genap. Program tersebut diawali dengan masukkan suatu variabel bilangan. Ketika memasukkan bilangan, program akan berjalan dilakukan pengecekan. Jika variabel bilangan modulus 2 sama dengan 0, maka variabel bilangan tersebut genap. dan jika tidak sama dengan 0 maka bilangan tersebut ganjil. Bagaimana menuliskan kode tersebut?',
             'answer_id' => '3',
+            'score' => '3'
         ]);
 
         //3.a.
@@ -425,6 +422,7 @@ class DatabaseSeeder extends Seeder
             'no' => '3.a.',
             'que' => 'Terdapat suatu bilangan, jika bilangan tersebut dilakukan operasi yaitu variabel bilangan modulus 2 maka jika hasilnya 0, bilangan tersebut termasuk bilangan genap, jika tidak maka bilangan itu ganjil. Bagaimana menuliskan kode tersebut?',
             'answer_id' => '3',
+            'score' => '2'
         ]);
 
         //3.b.
@@ -432,6 +430,7 @@ class DatabaseSeeder extends Seeder
             'no' => '3.b.',
             'que' => 'Terdapat suatu bilangan, jika variabel bilangan modulus dua sama dengan 0 (bilangan % 2 == 0) maka bilangan tersebut genap, jika tidak maka bilangan tersebut ganjil. Bagaimana menuliskan kode tersebut dengan percabangan sederhana ganda?',
             'answer_id' => '3',
+            'score' => '1'
         ]);
 
         // ----------------------------------------------------------------------------------------
@@ -441,6 +440,7 @@ class DatabaseSeeder extends Seeder
             'no' => '4.2.',
             'que' => 'Pada suatu hari Tama berkunjung ke suatu pos polisi, di sana ia melihat ada suatu program pengukur kecepatan kendaraan yang lewat. Kemudian terdapat kendaraan yang memiliki kecepatan kendaraan 90 km/jam maka kendaraan tersebut terlalu cepat dan akan terkena tilang, jika kendaraan tersebut memiliki kecepatan tidak lebih dari 80 km/jam maka kecepatannya normal. Untuk memahaminya, Tama mencoba membuat program tersebut. Bagaimana cara menuliskan kode pada program tersebut?',
             'answer_id' => '4',
+            'score' => '5'
         ]);
 
         Answer::create([
@@ -455,6 +455,7 @@ class DatabaseSeeder extends Seeder
             'no' => '4.1.',
             'que' => 'Sebuah program pengukur kecepatan kendaraan, menilai apakah suatu kendaraan terlalu cepat atau tidak. Jika kecepatan lebih dari 80 maka kecepatan suatu kendaraan terlalu cepat dan akan terkena tilang, dan jika tidak akan diberitahu bahwa kecepatan suatu kendaraan normal. Bagaimana menuliskan kode pada kasus tersebut?',
             'answer_id' => '4',
+            'score' => '4'
         ]);
 
         //4.
@@ -462,6 +463,7 @@ class DatabaseSeeder extends Seeder
             'no' => '4.',
             'que' => 'Terdapat suatu program untuk mengukur kecepatan kendaraan. Program tersebut diawali dengan masukkan suatu variabel kecepatan. Ketika memasukkan nilainya, program akan berjalan dan melakukan pengecekan. Jika variabel kecepatan lebih dari 80, maka variabel akan memberi peringatan yang dicetak pada program yaitu “terlalu cepat, terkena tilang”. Dan jika tidak, maka hanya akan memberi tahu pada program bahwa “kecepatan normal”. Bagaimana menuliskan kode tersebut?',
             'answer_id' => '4',
+            'score' => '3'
         ]);
 
         //4.a.
@@ -469,6 +471,7 @@ class DatabaseSeeder extends Seeder
             'no' => '4.a.',
             'que' => 'Terdapat suatu pengukur kecepatan kendaraan, jika kecepatan lebih dari 80 maka kendaraan itu terlalu cepat dan akan mencetak “terlalu cepat, terkena tilang”, jika tidak maka kecepatan kendaraan itu masih normal sehingga akan mencetak “kecepatan normal”. Bagaimana menuliskan kode tersebut?',
             'answer_id' => '4',
+            'score' => '2'
         ]);
 
         //4.b.
@@ -476,6 +479,7 @@ class DatabaseSeeder extends Seeder
             'no' => '4.b.',
             'que' => 'Terdapat suatu pengukur kecepatan kendaraan, jika variabel kecepatan > 80 maka akan mencetak “terlalu cepat, terkena tilang”, jika tidak maka akan mencetak “kecepatan normal”. Bagaimana menuliskan kode tersebut dengan percabangan sederhana ganda?',
             'answer_id' => '4',
+            'score' => '1'
         ]);
 
         // ----------------------------------------------------------------------------------------
@@ -493,6 +497,7 @@ class DatabaseSeeder extends Seeder
 
             Tama menentukan paket 4 yang dia pilih. Dengan budget Rp. 200,000, dia mendapatkan 10 bungkus. Bagaimana cara membuat sebuah program pemilihan paket makan dengan harga yang berbeda-beda tersebut dan dapat diketahui banyak bungkus yang diterima?',
             'answer_id' => '5',
+            'score' => '5'
         ]);
 
         Answer::create([
@@ -521,6 +526,7 @@ class DatabaseSeeder extends Seeder
 
             Bagaimana cara membuat sebuah program pemilihan paket dengan harga yang berbeda-beda tersebut?',
             'answer_id' => '5',
+            'score' => '4'
         ]);
 
         //5.
@@ -536,6 +542,7 @@ class DatabaseSeeder extends Seeder
 
             Program akan berjalan diawali dengan menampilkan pilihan kemudian memberikan sebuah masukkan yang menggunakan variabel paket. Variabel paket akan memeriksa pilihan, pilihan-pilihan ini akan berisi seperti tabel. Bagaimana untuk membuat program pemilihan seperti pada tabel tersebut?',
             'answer_id' => '5',
+            'score' => '3'
         ]);
 
         //5.a.
@@ -549,6 +556,7 @@ class DatabaseSeeder extends Seeder
             Paket 3 Ayam Komplit	Rp. 18,000
             Paket 4 Bebek Goreng	Rp. 20,000',
             'answer_id' => '5',
+            'score' => '2'
         ]);
 
         //5.b.
@@ -565,6 +573,7 @@ class DatabaseSeeder extends Seeder
             Buatlah sebuah menu pemilihan motor seperti ketentuan berikut dengan percabangan bertingkat (if, else if, else).
             Jika memilih paket 1, maka harganya Rp. 12,000. Jika memilih paket 2, maka harganya Rp. 15,000. Begitu seterusnya hingga pada pilihan terakhir',
             'answer_id' => '5',
+            'score' => '1'
         ]);
 
         // ----------------------------------------------------------------------------------------
@@ -582,6 +591,7 @@ class DatabaseSeeder extends Seeder
 
             Tama menggunakan motor 2 dengan kecepatan 50 km/jam. Waktu yang ia tempuh yaitu 2 jam. Untuk mengetahui waktu yang ditempuh menggunakan motor lain, maka menggunakan rumus kecepatan. Waktu = jarak / kecepatan. Bagaimana cara membuat sebuah program pemilihan motor dengan kecepatan yang berbeda-beda tersebut sehingga akan mendapatkan waktu tempuhnya?',
             'answer_id' => '6',
+            'score' => '5'
         ]);
 
         Answer::create([
@@ -609,6 +619,7 @@ class DatabaseSeeder extends Seeder
 
             Bagaimana cara membuat sebuah program pemilihan motor dengan kecepatan yang berbeda-beda tersebut?',
             'answer_id' => '6',
+            'score' => '4'
         ]);
 
         //6.
@@ -624,6 +635,7 @@ class DatabaseSeeder extends Seeder
 
             Pada program tersebut akan menggunakan variabel motor untuk pemilihan dan variabel kecepatan. Program diawali dengan menampilkan pilihan motor yang tersedia, kemudian terdapat masukkan untuk memilih motor tersebut, dan terdapat beberapa kondisi untuk setiap pemilihan. Bagaimana untuk membuat program pemilihan motor tersebut?',
             'answer_id' => '6',
+            'score' => '3'
         ]);
 
         //6.a.
@@ -637,6 +649,7 @@ class DatabaseSeeder extends Seeder
             Motor 3	80 km/jam
             Motor lainnya	20 km/jam',
             'answer_id' => '6',
+            'score' => '2'
         ]);
 
         //6.b.
@@ -652,6 +665,372 @@ class DatabaseSeeder extends Seeder
             Buatlah sebuah menu pemilihan motor seperti ketentuan berikut dengan percabangan bertingkat (if, else if, else).
             Jika memilih motor 1, maka kecepatannya 25 km/jam. Jika memilih motor 2, maka kecepatannya 50 km/jam. Begitu seterusnya hingga pada pilihan terakhir.',
             'answer_id' => '6',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //7.2.
+        Maintest::create([
+            'no' => '7.2.',
+            'que' => 'Saat liburan akhir tahun, Tama dengan temannya bermain ke Yogyakarta. Di sana mereka berencana menyewa sebuah sepeda motor, setiap motor memiliki harga yang berbeda-beda sebagai berikut.
+
+            Nomor	Motor	Harga
+            1	Beat	50.000/hari
+            2	Vario	70.000/hari
+            3	Vespa	100.000/hari
+
+            Kemudian Tama diminta untuk memilih nomor pada motor dan jumlah hari sewa untuk menentukan harganya. Selain ke tiga nomor tersebut, motor tidak tersedia. Tama memilih motor 1 yaitu Beat dengan harga Rp. 50.000 dengan lama 3 hari. Untuk membuat sebuah tampilan menu dan mengetahui harga total penyewaannya, maka dibuatkan sebuah program dengan percabangan bertingkat (switch)?',
+            'answer_id' => '7',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => '        - Daftar Motor - <br>
+            No.      Motor           Harga<br>
+            1.       Beat            Rp. 50,000/hari<br>
+            2.       Vario           Rp. 70,000/hari<br>
+            3.       Vespa           Rp. 100,000/hari<br>
+            Masukkan nomor pilihan motor yang akan disewa: 1<br>
+            Berapa hari: 3<br>
+            Motor yang dipilih yaitu motor Beat dengan lama 3 hari<br>
+            Harga total penyewaan yaitu Rp. 150000',
+            'answer' => '100000',
+            'type' => 'switch'
+        ]);
+
+        //7.1.
+        Maintest::create([
+            'no' => '7.1.',
+            'que' => 'Pada suatu tempat terdapat penyewaan motor, dengan daftar sebagai berikut.
+
+            Nomor	Motor	Harga
+            1	Beat	50.000/hari
+            2	Vario	70.000/hari
+            3	Vespa	100.000/hari
+
+            Jika pemilik penyewaan ingin mempermudah perhitungan pada pelanggan yang akan menyewa, maka dibuatkan sebuah program pemilihan motor serta jumlah hari untuk menyewa. Program diawali dengan pemilihan nomor pada motor kemudian jumlah hari untuk menentukan harganya. Dalam program tersebut bagaimana kode untuk membuat pemilihan tersebut dengan percabangan bertingkat (switch)?',
+            'answer_id' => '7',
+            'score' => '4'
+        ]);
+
+        //7.
+        Maintest::create([
+            'no' => '7.',
+            'que' => 'Pada suatu program terdapat nomor, motor, dan harga untuk penyewaan seperti pada tabel berikut.
+            Nomor	Motor	Harga
+            1	Beat	50.000/hari
+            2	Vario	70.000/hari
+            3	Vespa	100.000/hari
+
+            Pada program tersebut akan menggunakan variabel nomor, motor, dan harga. Program diawali dengan menampilkan motor yang tersedia beserta harganya kemudian terdapat menu pemilihan untuk memilih motor yang diikuti dengan pernyataan di dalamnya. Ketika dipilih akan mengisi variabel yang digunakan. Namun pada saat pemilihan memilih selain ke tiga nomor yang tersedia, maka akan menampilkan “motor tidak tersedia”. Bagaimana untuk membuat program pemilihan motor tersebut dengan percabangan bertingkat (switch)?',
+            'answer_id' => '7',
+            'score' => '3'
+        ]);
+
+        //7.a.
+        Maintest::create([
+            'no' => '7.a.',
+            'que' => 'Buatlah sebuah program pemilihan motor dengan percabangan bertingkat (switch). Pada program tersebut terdapat variabel nomor, variabel motor, dan variabel harga. Setiap kondisi atau pemilihan motor nomor ke berapa, maka memiliki harga sesuai dengan motor yang dipilih. Namun selain ke tiga nomor tersebut, motor tidak tersedia. Berikut tabelnya.
+
+            Nomor	Motor	Harga
+            1	Beat	50.000/hari
+            2	Vario	70.000/hari
+            3	Vespa	100.000/hari',
+            'answer_id' => '7',
+            'score' => '2'
+        ]);
+
+        //7.b.
+        Maintest::create([
+            'no' => '7.b.',
+            'que' => 'Terdapat sebuah tabel motor beserta harganya.
+            Nomor	Motor	Harga
+            1	Beat	50.000/hari
+            2	Vario	70.000/hari
+            3	Vespa	100.000/hari
+
+            Buatlah sebuah menu pemilihan motor seperti ketentuan berikut dengan percabangan bertingkat (switch).
+            Jika memilih nomor 1, maka motor = “Beat” dengan harga = 50.000. Jika memilih nomor 2, maka motor = “Vario” dengan harga = 70.000. Jika memilih nomor 3, maka motor = “Vespa” dengan 
+            harga = 100.000, dan jika selain nomor 1 sampai 3, maka “motor tidak tersedia”.',
+            'answer_id' => '7',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //8.2.
+        Maintest::create([
+            'no' => '8.2.',
+            'que' => 'Tama berencana membeli sepatu yang akan dia jual kembali di rumahnya, ia membeli sepatu di suatu toko grosir. Di sana terdapat sepatu berbeda-beda dan harganya pun beragam pula, untuk daftarnya yaitu pada tabel berikut.
+
+            Nomor	Sepatu	Harga
+            1	Ventela	Rp. 300,000
+            2	Adidas	Rp. 500,000
+            3	Converse	Rp. 650,000
+            4	Nike	Rp. 800,000
+
+            Untuk pembeliannya, Tama diminta untuk memilih nomor pada sepatu dan banyak sepatu yang dibeli untuk menentukan harganya. Tetapi jika pemilihan selain dari 4 sepatu seperti pada tabel, maka sepatu tidak tersedia. Kemudian Tama memilih sepatu nomor 1 yaitu Ventela dengan harga Rp. 300,000 dengan banyak 3 sepatu. Untuk membuat sebuah program menu dan mengetahui total harga sepatu maka dibuat sebuah program. Bagaimana membuat sebuah program tersebut dengan program switch? ',
+            'answer_id' => '8',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => '        - Daftar Sepatu -
+            No.      Sepatu          Harga
+            1.       Ventela         Rp. 300,000
+            2.       Adidas          Rp. 500,000
+            3.       Converse        Rp. 650,000
+            4.       Nike            Rp. 800,000
+            Masukkan nomor pilihan sepatu yang akan dibeli: 1
+            Banyak sepatu: 3
+            Sepatu yang dipilih yaitu sepatu Ventela dengan banyak 3
+            Harga total yaitu Rp. 900000',
+            'answer' => '300000',
+            'type' => 'switch'
+        ]);
+
+        //8.1.
+        Maintest::create([
+            'no' => '8.1.',
+            'que' => 'Suatu toko menjual beberapa macam sepatu dengan harga yang berbeda-beda, seperti pada daftar sebagai berikut.
+
+            Nomor	Sepatu	Harga
+            1	Ventela	Rp. 300,000
+            2	Adidas	Rp. 500,000
+            3	Converse	Rp. 650,000
+            4	Nike	Rp. 800,000
+
+            Jika pemilik toko ingin membuat suatu program untuk penjualan, maka dibuatkan sebuah program pemilihan sepatu serta banyak pembeliannya. Program diawali dengan pemilihan nomor pada sepatu kemudian banyak pembelian untuk menentukan harga totalnya. Dalam program tersebut bagaimana kode untuk membuat pemilihan sepatu dengan switch?',
+            'answer_id' => '8',
+            'score' => '4'
+        ]);
+
+        //8.
+        Maintest::create([
+            'no' => '8.',
+            'que' => 'Pada suatu program terdapat nomor, sepatu, dan harga untuk pembelian seperti pada tabel berikut.
+
+            Nomor	Sepatu	Harga
+            1	Ventela	Rp. 300,000
+            2	Adidas	Rp. 500,000
+            3	Converse	Rp. 650,000
+            4	Nike	Rp. 800,000
+
+            Pada program tersebut akan menggunakan variabel nomor, sepatu, dan harga. Program diawali dengan menampilkan sepatu-sepatu seperti pada tabel kemudian terdapat menu pemilihan untuk memilih sepatu yang diikuti dengan pernyataan di dalamnya yaitu penentuan harga sepatu. Ketika memilih, maka variabel yang digunakan akan diisi sesuai dengan yang dipilih. Jika pemilihan nomor selain ke empat nomor seperti pada tabel, maka akan menampilkan “sepatu tidak tersedia”. Bagaimana untuk membuat program pemilihan sepatu tersebut dengan switch?',
+            'answer_id' => '8',
+            'score' => '3'
+        ]);
+
+        //8.a.
+        Maintest::create([
+            'no' => '8.a.',
+            'que' => 'Buatlah sebuah program pemilihan sepatu dengan program switch. Pada program tersebut terdapat variabel nomor, variabel sepatu, dan variabel harga. Setiap kondisi atau pemilihan sepatu nomor ke berapa, maka memiliki harga sesuai dengan yang dipilih. Namun selain keempat nomor tersebut, sepatu tidak tersedia. Berikut tabelnya.
+
+            Nomor	Sepatu	Harga
+            1	Ventela	Rp. 300,000
+            2	Adidas	Rp. 500,000
+            3	Converse	Rp. 650,000
+            4	Nike	Rp. 800,000',
+            'answer_id' => '8',
+            'score' => '2'
+        ]);
+
+        //8.b.
+        Maintest::create([
+            'no' => '8.b.',
+            'que' => 'Terdapat sebuah tabel sepatu beserta harganya.
+            Nomor	Sepatu	Harga
+            1	Ventela	Rp. 300,000
+            2	Adidas	Rp. 500,000
+            3	Converse	Rp. 650,000
+            4	Nike	Rp. 800,000
+
+            Buatlah sebuah menu pemilihan sepatu seperti ketentuan berikut dengan percabangan bertingkat (switch).
+            Jika memilih nomor 1, maka sepatu = “Ventela” dengan harga = 300,000. Jika memilih nomor 2, maka sepatu = “Adidas” dengan harga = 500,000. Dan seterusnya seperti tabel, jika pilihan selain nomor 1 sampai 4, maka “sepatu tidak tersedia”.',
+            'answer_id' => '8',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //9.2.
+        Maintest::create([
+            'no' => '9.2.',
+            'que' => 'Di waktu weekend, Tama dan keluarganya mengunjungi restoran SushiKu. Kemudian melakukan pemesanan dengan total harga Rp. 300.000. Tidak disangka, ternyata Tama mendapatkan diskon Rp. 50.000, karena pembelian sudah melewati Rp. 200.000 dan Tama termasuk member di restoran tersebut. Ternyata restoran ini sedang mengadakan suatu promo diskon yaitu ditampilkan sebagai berikut.
+
+            Total Pembelian	Diskon
+            Member SushiKu
+            > Rp. 200.000	Rp. 50.000
+            > Rp. 100.000	Rp. 30.000
+            Bukan Member SushiKu
+            > Rp. 100.000	Rp. 10.000
+
+
+            Kemudian Tama berpikir, jika ingin menuangkan dalam suatu kode program, bagaimana kode program pada tersebut dibuat, terutama pada kondisi promo yang ditampilkan?',
+            'answer_id' => '9',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Apakah anda member SushiKu (y/t): y<br>
+            Total harga pembelian: 300000<br>
+            Total pembayaran: Rp. 250000',
+            'answer' => '>200000',
+            'type' => 'else if'
+        ]);
+
+        //9.1.
+        Maintest::create([
+            'no' => '9.1.',
+            'que' => 'Terdapat suatu program untuk menghitung total pembayaran di suatu restoran sushi. Program diawali dengan memasukkan apakah pengguna termasuk member atau tidak dan kemudian memasukkan total harga pembelian. Restoran ini sedang mengadakan suatu promo diskon, baik untuk member ataupun tidak. Untuk promo diskonnya, disajikan pada tabel berikut.
+
+            Total Pembelian	Diskon
+            Member SushiKu
+            > Rp. 200.000	Rp. 50.000
+            > Rp. 100.000	Rp. 30.000
+            Bukan Member SushiKu
+            > Rp. 100.000	Rp. 10.000
+
+            Setelah melalui pemeriksaan total pembelian untuk mendapatkan diskon, maka akan dilakukan perhitungan pembayaran, yaitu harga total beli dikurangi dengan harga diskon. Dan akan menampilkan total pembayaran keseluruhan. Untuk itu bagaimana penulisan kode pada program pemeriksaan dan penentuan diskon tersebut?',
+            'answer_id' => '9',
+            'score' => '4'
+        ]);
+
+        //9.
+        Maintest::create([
+            'no' => '9.',
+            'que' => 'Suatu program pembayaran restoran sushi memiliki diskon tertentu untuk member ataupun yang tidak.
+            Program diawali dengan menampilkan seperti tabel kemudian terdapat masukkan apakah pengguna termasuk member atau tidak yang akan disimpan datanya pada variabel member. Kemudian memasukkan total harga pembelian yang akan disimpan datanya pada variabel beli. Untuk kondisi diskon, disajikan pada tabel berikut.
+
+            Total Pembelian	Diskon
+            Member SushiKu
+            > Rp. 200.000	Rp. 50.000
+            > Rp. 100.000	Rp. 30.000
+            Bukan Member SushiKu
+            > Rp. 100.000	Rp. 10.000
+
+            Bagaimana penulisan kode pada program tersebut?',
+            'answer_id' => '9',
+            'score' => '3'
+        ]);
+
+        //9.a.
+        Maintest::create([
+            'no' => '9.a.',
+            'que' => 'Terdapat suatu program pembayaran restoran yang memiliki diskon tertentu dengan kondisi-kondisi tertentu. 
+
+            Jika  termasuk member dari restoran tersebut, maka terdapat tiga kondisi diskon yang bisa didapatkan. Pembelian menggunakan variabel beli. Jika pembelian lebih dari Rp. 200.000, maka akan mendapatkan diskon Rp. 50.000. Jika pembelian lebih dari Rp. 100.000, maka akan mendapatkan diskon Rp. 30.000. Dan jika tidak memenuhi kondisi diskon tersebut, maka tidak mendapatkan diskon.
+
+            Jika bukan termasuk member, maka terdapat dua kondisi diskon yang bisa didapatkan. Jika pembelian lebih dari Rp. 100.000, maka akan mendapatkan diskon Rp. 10.000. Dan jika tidak memenuhi kondisi diskon tersebut, maka tidak mendapatkan diskon.
+
+            Bagaimana penulisan kode pada program tersebut?',
+            'answer_id' => '9',
+            'score' => '2'
+        ]);
+
+        //9.b.
+        Maintest::create([
+            'no' => '9.b.',
+            'que' => 'Pada suatu program pembayaran restoran terdapat diskon dengan kondisi tertentu. Dalam program diawali dengan memasukkan apakah termasuk member atau tidak yang menggunakan variabel member. Kemudian dilanjutkan dengan memasukkan total harga pembelian.
+
+            Jika  member, maka terdapat 3 kondisi diskon yang bisa didapatkan. Jika variabel beli > 200000, maka diskon = 50000. Jika variabel beli > 100000, maka diskon = 30000. Dan jika selain itu, maka diskon = 0.
+
+            Jika bukan member, maka terdapat 2 kondisi diskon yang bisa didapatkan. Jika variabel beli > 100000, maka diskon 10000. Dan jika selain itu, maka diskon = 0.
+
+            Bagaimana menuliskan kode tersebut dengan percabangan bersarang?',
+            'answer_id' => '9',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //10.2.
+        Maintest::create([
+            'no' => '10.2.',
+            'que' => 'Selepas lulus sekolah, Tama dan Timi mengikuti tes masuk tentara dan lulus seleksi administrasi. Kemudian dilakukan tes tinggi badan. Syarat kelulusannya yaitu sebagai berikut.
+            Jenis Kelamin	Tinggi Badan
+            Laki-laki	> 165 cm
+            Perempuan	> 155 cm
+
+            Saat dilakukan pemeriksaan pada suatu program, Timi memiliki tinggi badan 160 cm sehingga pada program menampilkan “Selamat anda lolos seleksi” karena berat badannya lebih dari 155 cm. Namun Tama dengan tinggi badan 164 cm sehingga pada program menampilkan “Maaf, anda tidak lolos seleksi” karena Tama berat badannya tidak lebih dari 165 cm. Pada kasus ini, bagaimana kode program pada kondisi tersebut?',
+            'answer_id' => '10',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Program Seleksi Tinggi Badan Calon Tentara<br>
+            =========================================<br>
+            ==jenis kelamin==<br>
+            1.Laki-Laki<br>
+            2.Perempuan<br>
+            Pilih jenis kelamin anda : 2<br><br>
+
+            ==Tinggi badan==<br>
+            Masukkan tinggi badan anda :160<br>
+            Selamat anda lolos seleksi',
+            'answer' => '>=165',
+            'type' => 'else if'
+        ]);
+
+        //10.1.
+        Maintest::create([
+            'no' => '10.1.',
+            'que' => 'Terdapat suatu program untuk menentukan lolos atau tidaknya seseorang pada tes tinggi badan masuk tentara. Program diawali dengan memilih jenis kelamin (jk) kemudian memasukkan tinggi badan. Program berjalan dengan memiliki dua kondisi yaitu perempuan atau laki-laki, sesuai pemilihan. Kemudian dilanjutkan pemeriksaan tinggi badan pada laki-laki atau perempuan memenuhi syarat atau tidak dengan ketentuan sebagai berikut.
+
+            Jenis Kelamin	Tinggi Badan
+            Laki-laki	> 165 cm
+            Perempuan	> 155 cm
+
+            Jika sesuai syarat, maka akan menampilkan “Selamat anda lolos seleksi” pada program. Dan jika tidak lolos maka akan menampilkan “Maaf, anda tidak lolos seleksi”. Untuk membuat syarat tersebut pada suatu program, bagaimana penulisan kodenya?',
+            'answer_id' => '10',
+            'score' => '4'
+        ]);
+
+        //10.
+        Maintest::create([
+            'no' => '10.',
+            'que' => 'Pada tes masuk tentara terdapat tes tinggi badan dengan syarat sebagai berikut.
+            Jenis Kelamin	Tinggi Badan
+            Laki-laki	> 165 cm
+            Perempuan	> 155 cm
+
+            Pada program diawali dengan menampilkan persyaratannya kemudian memilih jenis kelamin atau variabel jk. Dan memasukkan tinggi badan atau variabel tinggi.
+            Jika sesuai syarat yaitu melebihi nilai tinggi badan, maka akan menampilkan “Selamat anda lolos seleksi” pada program. Dan jika tidak lolos yaitu tidak melebihi nilai tinggi badan maka akan menampilkan “Maaf, anda tidak lolos seleksi”. Untuk membuat syarat tersebut pada suatu program, bagaimana penulisan kodenya?',
+            'answer_id' => '10',
+            'score' => '3'
+        ]);
+
+        //10.a.
+        Maintest::create([
+            'no' => '10.a.',
+            'que' => 'Jenis Kelamin	Tinggi Badan
+            Laki-laki	> 165 cm
+            Perempuan	> 155 cm
+
+            Terdapat suatu kasus dalam pemeriksaan tinggi badan. Pada kondisi pertama jika laki-laki dengan variabel jk = 1 dan tinggi badannya lebih dari 165 maka lolos seleksi, jika tidak lebih dari 165 maka tidak lolos seleksi. Kemudian pada kondisi kedua jika perempuan dengan variabel jk = 2 dan tinggi badannya lebih dari 155 maka lolos seleksi, jika tidak lebih dari 155 maka tidak lolos seleksi. Untuk lolos seleksi akan menampilkan “Selamat anda lolos seleksi” dan untuk tidak lolos seleksi akan menampilkan “Maaf, anda tidak lolos seleksi”. Kemudian untuk pemilihan jenis kelamin selain 1 dan 2 akan menampilkan “Tidak ada pilihan tersebut”. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '10',
+            'score' => '2'
+        ]);
+
+        //10.b.
+        Maintest::create([
+            'no' => '10.b.',
+            'que' => '
+            Jenis Kelamin	Tinggi Badan
+            Laki-laki	> 165 cm
+            Perempuan	> 155 cm
+
+            Pada suatu program kasus pemeriksa tinggi badan. Terdapat dua jenis kelamin. Untuk laki-laki memiliki nilai variabel jk 1 dan untuk perempuan memiliki nilai variabel 2. 
+
+            Jika laki-laki kemudian jika variabel tinggi > 165, maka akan menampilkan “Selamat anda lolos seleksi”. Jika tidak maka akan menampilkan “Maaf, anda tidak lolos seleksi”.
+
+            Jika perempuan kemudian jika variabel tinggi > 155, maka akan menampilkan “Selamat anda lolos seleksi”. Jika tidak maka akan menampilkan “Maaf, anda tidak lolos seleksi”.
+
+            Jika tidak memilih 1 atau 2 untuk jenis kelamin, maka akan menampilkan "Tidak ada pilihan tersebut". 
+            Bagaimana menuliskan kode tersebut dengan percabangan bersarang?',
+            'answer_id' => '10',
+            'score' => '1'
         ]);
     }
 }

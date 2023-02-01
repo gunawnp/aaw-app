@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('no');
             $table->text('que');
             $table->string('answer_id');
+            $table->integer('score');
             $table->timestamps();
         });
     }

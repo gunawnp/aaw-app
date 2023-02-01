@@ -2,8 +2,8 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if (true)
-            <div class="fs-6 lh-lg text-justify">
+        @if (!$done)
+            <div class="fs-6 lh-lg text-justify mb-5">
                 <div class="row justify-content-between">
                     <div class="col-5">
                         <h5 class="fw-bold mb-3">Perhatikan Soal Berikut!</h5>
@@ -21,9 +21,9 @@
                     @endif
                 </div>
                 
-                @foreach ($logics as $logic)
+                @foreach ($datatest as $dt)
                     <p>
-                        {{ $logic->id }}. {{ $logic->que }}
+                        {{ $dt->no }} {{ $dt->que }}
                     </p>
 
                     <div class="row">
@@ -35,12 +35,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <form method="post" action="/home/logics/begin" id="myform" class="d-md-flex justify-content-center">
+                            <form method="post" action="/home/pretest/begin" id="myform" class="d-md-flex justify-content-center">
                                 @csrf
                                 <input type="hidden" name="code" id="code" value="">
-                                <input type="hidden" name="no" value="{{ $logic->id }}">
-                                <input type="hidden" name="type" value="{{ $logic->type }}">
-                                <input type="hidden" name="answer" value="{{ $logic->answer }}">
+                                <input type="hidden" name="id" value="{{ $dt->id }}">
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-blue btn btn-blue py-2 my-3" data-bs-toggle="modal" data-bs-target="#mulaiModal">
@@ -74,30 +72,38 @@
                                         data-bs-title="Tidak ada kode inputan seperti scanf, semua nilai disimpan dalam suatu variabel"></i>
                                     </div>
                                     <div class="card-body">
-                                        <p class="font-monospace"> {!! $logic->program !!}</p>
+                                        <p class="font-monospace"> {!! $dt->answer->program !!}</p>
                                     </div>
                                 </div>
-                                @if (isset($data))
-                                    @if ($data["logic_" . $logic->id] !== null)
-                                        <div class="alert alert-success" role="alert">
-                                            Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
-                                        </div>
-                                    @endif
-                                @endif
+                                
                             </div>
                         </div>
                     </div>
-                    @if ($logic->id == 10)
+                    @if (session()->has('end'))
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="text-center">
-                                <a href="/home/logics/score" type="button" class="btn btn-blue mb-5">Selesai</a>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                                {{ session('end') }}
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="border-radius: 15px">
+                                <div class="modal-body">
+                                    <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
+                                </div>
+                                <div class="modal-footer justify-content-center ">
+                                    <a href="/home/pretest/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
+                                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     @endif
                 @endforeach
-            </div>
-            <div class="d-flex justify-content-center">
-                {{ $logics->links() }}
             </div>
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">

@@ -11,6 +11,6 @@ class Maintest extends Model
 
     public function answer()
     {
-        return $this->hasOne(Answer::class);
+        return $this->belongsTo(Answer::class);
     }
 }

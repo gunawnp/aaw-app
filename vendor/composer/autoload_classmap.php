@@ -30,6 +30,7 @@ return array(
     'App\\Http\\Requests\\UpdateTestsRequest' => $baseDir . '/app/Http/Requests/UpdateTestsRequest.php',
     'App\\Models\\Answer' => $baseDir . '/app/Models/Answer.php',
     'App\\Models\\DataLogic' => $baseDir . '/app/Models/DataLogic.php',
+    'App\\Models\\DataPretest' => $baseDir . '/app/Models/DataPretest.php',
     'App\\Models\\DataStyle' => $baseDir . '/app/Models/DataStyle.php',
     'App\\Models\\Logic' => $baseDir . '/app/Models/Logic.php',
     'App\\Models\\Maintest' => $baseDir . '/app/Models/Maintest.php',
