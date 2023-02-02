@@ -199,7 +199,7 @@ class PretestController extends Controller
                     $dataInput['no_' . $no] = $score;
                     $dataInput['co_' . $no] = 0;
                 }
-
+                $dataInput['judge'] = 0;
                 if (str_contains($datatest->no, 'b')) {
                     $picker = $id + 5;
                     if ($no == 20) {

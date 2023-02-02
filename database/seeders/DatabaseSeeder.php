@@ -300,6 +300,8 @@ class DatabaseSeeder extends Seeder
             'type' => 'for'
         ]);
 
+
+        
         //Maintest - membuat soal untuk pretest dan posttest di database
 
         Answer::create([
@@ -1030,6 +1032,708 @@ class DatabaseSeeder extends Seeder
             Jika tidak memilih 1 atau 2 untuk jenis kelamin, maka akan menampilkan "Tidak ada pilihan tersebut". 
             Bagaimana menuliskan kode tersebut dengan percabangan bersarang?',
             'answer_id' => '10',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //11.2.
+        Maintest::create([
+            'no' => '11.2.',
+            'que' => 'Pada pelajaran matematika, Tama ditugaskan untuk menuliskan kelipatan angka 3 dari mulai 12 hingga 100. Tama mendapatkan sebagian angka-angkanya yaitu 12, 15, 18, 21, dan seterusnya. Namun untuk mempermudah menuliskannya, Tama membuat sebuah program pencetak sederhana dengan menggunakan perulangan. Pada program tersebut akan dicetak angka-angka kelipatan 3, tetapi jika sudah 10 angka, akan membuat baris baru untuk penulisannya. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '11',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => '12 15 18 21 24 27 30 33 36 39<br>
+            42 45 48 51 54 57 60 63 66 69<br>
+            72 75 78 81 84 87 90 93 96 99<br>
+            Jumlah angka: 30',
+            'answer' => 'i+3',
+            'type' => 'for'
+        ]);
+
+        //11.1.
+        Maintest::create([
+            'no' => '11.1.',
+            'que' => 'Seseorang siswa ingin mengetahui angka kelipatan 3 yang dimulai dari 12 hingga 100 untuk mendapatkan polanya. Untuk itu, ia harus membuat suatu program yang di dalamnya terdapat perulangan. Dalam perulangan tersebut terdapat perintah untuk mencetak setiap angka kelipatan 3. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '11',
+            'score' => '4'
+        ]);
+
+        //11.
+        Maintest::create([
+            'no' => '11.',
+            'que' => 'Terdapat suatu kasus untuk menampilkan angka-angka kelipatan 3. Program ini digunakan untuk mengetahui terdapat angka berapa saja pada kelipatan 3. Program diawali dengan deklarasi variabel-variabel yang digunakan yaitu variabel i dan variabel enter. Kemudian terdapat suatu perulangan yang di dalamnya mencetak angka dari mulai 12 sampai kelipatan 3 berikutnya hingga nilainya kurang dari 100. Kemudian dalam pencetakannya harus mencetak enter setelah terdapat 10 angka. Bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '11',
+            'score' => '3'
+        ]);
+
+        //11.a.
+        Maintest::create([
+            'no' => '11.a.',
+            'que' => 'Terdapat suatu program perulangan. Program tersebut dibuat menggunakan perulangan for dengan variabel i, yang diawali dengan nilai 12 hingga 100. Iterasi atau naiknya nilai adalah 3. Pernyataan pada perulangan ini yaitu mencetak angka-angka yang menggunakan variabel i. Namun jika sudah 10 angka dicetak, harus mencetak enter. Bagaimana penulisan kode program perulangan tersebut?',
+            'answer_id' => '11',
+            'score' => '2'
+        ]);
+
+        //11.b.
+        Maintest::create([
+            'no' => '11.b.',
+            'que' => 'Terdapat suatu program perulangan sederhana. Program dibuat dengan menggunakan perulangan for, yang di dalamnya terdapat nilai awal dengan variabel i yaitu i=12, batas perulangan yaitu i<100, dan iterasi atau naiknya nilai yaitu i=i+3. Pernyataan  pertama pada perulangan ini yaitu sebuah kondisi, jika variabel enter % 10 == 0, maka akan mencetak \n atau enter. Dan setelahnya terdapat iterasi lain yaitu variabel enter++. Tujuan dari kondisi dan iterasi ini yaitu sebagai penghitung jika sudah 10 angka, maka akan mencetak enter. Selanjutnya yaitu mencetak variabel i. Bagaimana penulisan kode program perulangan sederhana ini?',
+            'answer_id' => '11',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //12.2.
+        Maintest::create([
+            'no' => '12.2.',
+            'que' => 'Suatu waktu Tama menjual risol kepada teman-temannya di sekolah. Harga risol yang dijual yaitu Rp. 2,500. Ternyata saat menjualnya Tama kebingungan dalam menghitung banyak orang yang membeli dan berapa banyak risol yang dibeli setiap orangnya. Untuk itu ia membuat sebuah program untuk membantunya yang digunakan untuk memasukkan jumlah orang yang membeli, menghitung harga yang dibeli setiap orang yang tergantung pada banyaknya risol, dan terakhir dia menjumlahkan pendapatan totalnya. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '12',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Jumlah orang yang membeli: 3<br>
+            Banyak risol orang ke-1: 3<br>
+            Harganya: Rp.7500<br><br>
+
+            Banyak risol orang ke-2: 4<br>
+            Harganya: Rp.10000<br><br>
+
+            Banyak risol orang ke-3: 2<br>
+            Harganya: Rp.5000<br><br>
+
+            Total harga keseluruhan yaitu Rp.22500',
+            'answer' => '*2500',
+            'type' => 'for'
+        ]);
+
+        //12.1.
+        Maintest::create([
+            'no' => '12.1.',
+            'que' => 'Seseorang menjual risol dengan harga Rp. 2,500. Untuk menghitung pendapatan pada setiap pembeli dan total pembeli, dimuatkan ke dalam suatu program dengan memasukkan banyak orang yang membeli dan banyak risol yang dibeli setiap orang. Dengan program ini akan ditampilkan harga total setiap orang dan total pendapatan penjualan. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '12',
+            'score' => '4'
+        ]);
+
+        //12.
+        Maintest::create([
+            'no' => '12.',
+            'que' => 'Terdapat suatu kasus pada penjualan risol dan dibuatkan pada suatu program. Program ini digunakan untuk mengetahui harga perorang dan harga total pendapatan. Program diawali dengan memasukkan nilai banyak orang yang membeli pada variabel orang. Kemudian memasukkan banyak risol yang dibeli setiap orang dan diinisialisasikan pada variabel risol yang selanjutnya program akan menampilkan harga total pada setiap orang yang tergantung pada banyak risol yang dibeli tersebut, begitu seterusnya pada sejumlah orang yang membeli. Program diakhiri dengan menampilkan total harga keseluruhan. Bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '12',
+            'score' => '3'
+        ]);
+
+        //12.a.
+        Maintest::create([
+            'no' => '12.a.',
+            'que' => 'Terdapat suatu kasus dalam pembelian makanan yaitu risol yang dibuatkan dalam sebuah program. Pada program tersebut terdapat perulangan. Perulangan tersebut akan berulang sejumlah orang yang membeli. Dalam perulangan tersebut meminta untuk memasukkan jumlah risol pada orang pertama, menghitung harga total risol untuk orang pertama tersebut, dan menampilkannya, begitu seterusnya hingga orang yang terakhir. Dan diakhiri dengan menampilkan total harga keseluruhan penjualan. Bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '12',
+            'score' => '2'
+        ]);
+
+        //12.b.
+        Maintest::create([
+            'no' => '12.b.',
+            'que' => 'Pada suatu program terdapat perulangan for dengan batas variabel orang. Isi pada perulangan yaitu menampilkan “Banyak risol orang ke-...”, bagian titik-titik diisi dengan variabel iterasi pada perulangan. Dilanjutkan dengan mengisi nilainya dengan menyimpan pada variabel risol. Selanjutnya melakukan perhitungan jumlah risol dikalikan dengan harga risol yaitu 2500 dan menampilkan total perhitungan tersebut dengan variabel total. Setelah itu menjumlahkan harga masing-masing orang yang ditotalkan pada variabel total. Dilakukan perulangan sebanyak jumlah orang membeli kemudian menampilkan “total harga keseluruhan yaitu Rp. ...” dengan diikuti variabel total. Bagaimana penulisan kode tersebut dengan perulangan sederhana (for)?',
+            'answer_id' => '12',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //13.2.
+        Maintest::create([
+            'no' => '13.2.',
+            'que' => 'Suatu hari Tama berencana untuk menabung, rencana untuk menabungnya yaitu Rp. 20.000 dalam 2 tahun atau 24 bulan. Namun Tama ingin mengetahui setiap bulan ia mendapatkan total tabungan berapa dan total tabungan terakhirnya ia akan mendapatkan berapa total uang yang ia dapatkan. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '13',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Masukkan uang yang ditabungkan setiap bulan: Rp. 20000<br>
+            Masukkan berapa bulan tujuan menabung: 24<br>
+            Semangat untuk menabung!<br>
+            --------------------------------<br>
+            Bulan ke-1 mendapatkan Rp. 20000<br>
+            Bulan ke-2 mendapatkan Rp. 40000<br>
+            Bulan ke-3 mendapatkan Rp. 60000<br>
+            Bulan ke-4 mendapatkan Rp. 80000<br>
+            Bulan ke-5 mendapatkan Rp. 100000<br>
+            Bulan ke-6 mendapatkan Rp. 120000<br>
+            Bulan ke-7 mendapatkan Rp. 140000<br>
+            Bulan ke-8 mendapatkan Rp. 160000<br>
+            Bulan ke-9 mendapatkan Rp. 180000<br>
+            Bulan ke-10 mendapatkan Rp. 200000<br>
+            Bulan ke-11 mendapatkan Rp. 220000<br>
+            Bulan ke-12 mendapatkan Rp. 240000<br>
+            Bulan ke-13 mendapatkan Rp. 260000<br>
+            Bulan ke-14 mendapatkan Rp. 280000<br>
+            Bulan ke-15 mendapatkan Rp. 300000<br>
+            Bulan ke-16 mendapatkan Rp. 320000<br>
+            Bulan ke-17 mendapatkan Rp. 340000<br>
+            Bulan ke-18 mendapatkan Rp. 360000<br>
+            Bulan ke-19 mendapatkan Rp. 380000<br>
+            Bulan ke-20 mendapatkan Rp. 400000<br>
+            Bulan ke-21 mendapatkan Rp. 420000<br>
+            Bulan ke-22 mendapatkan Rp. 440000<br>
+            Bulan ke-23 mendapatkan Rp. 460000<br>
+            Bulan ke-24 mendapatkan Rp. 480000<br>
+            --------------------------------<br>
+            Total tabungan di bulan ke 24 yaitu sebesar Rp. 480000',
+            'answer' => '<=bulan',
+            'type' => 'while'
+        ]);
+
+        //13.1.
+        Maintest::create([
+            'no' => '13.1.',
+            'que' => 'Seseorang sedang memikirkan bagaimana membuat sebuah alat perhitungan untuk merencanakan menabung dengan jumlah tertentu dan dengan rentang waktu tertentu dalam bulan. Kemudian ia memikirkan untuk membuat suatu program perulangan sederhana yang tujuannya untuk mengetahui jumlah tabungan setiap bulan dan pada bulan terakhir ia akan mendapatkan berapa total uang yang ia dapatkan. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '13',
+            'score' => '4'
+        ]);
+
+        //13.
+        Maintest::create([
+            'no' => '13.',
+            'que' => 'Terdapat suatu program penghitung rencana tabungan dengan jumlah uang yang sama. Program diawali dengan deklarasi variabel yang digunakan untuk program utamanya. Setelah itu ditampilkan suatu perintah untuk memasukkan nilai uang dan berapa bulan untuk menabung. Masukkan tersebut disimpan di variabel uang dan variabel bulan. Selanjutnya terdapat perulangan yang berulang sebanyak variabel bulan. Dalam perulangan ini terdapat operasi penjumlahan uang yang disimpan di tabungan dan dicetak jumlah tersebut agar mengetahui jumlah tabungan setiap bulannya. Pernyataan terakhir terdapat increment agar perulangan berjalan. Terakhir yang terdapat pada program ini yaitu mencetak total perhitungan tabungan sebanyak berapa bulan menabung. Untuk membuat program ini, bagaimana menuliskan kode perulangannya?',
+            'answer_id' => '13',
+            'score' => '3'
+        ]);
+
+        //13.a.
+        Maintest::create([
+            'no' => '13.a.',
+            'que' => 'Terdapat suatu program penghitung rencana tabungan dengan jumlah uang yang sama. Program tersebut menggunakan program perulangan, program akan berulang sebanyak berapa bulan yang dimasukkan pada variabel bulan. Di dalam perulangan terdapat operasi pada variabel tabungan, menjumlahkan setiap uang yang masuk pada tabungan yang selanjutnya menampilkan total tabungan di setiap bulannya tersebut. Terakhir berisi iterasi increment pada variabel i agar perulangan berjalan sesuai tujuan. Bagaimana penulisan kode tersebut?',
+            'answer_id' => '13',
+            'score' => '2'
+        ]);
+
+        //13.b.
+        Maintest::create([
+            'no' => '13.b.',
+            'que' => 'Terdapat suatu program penghitung rencana tabungan. Program tersebut menggunakan perulangan while dengan kondisinya yaitu variabel i <= bulan, artinya perulangan akan berulang sebanyak yang dimasukkan pada variabel bulan. Di dalam perulangan terdapat operasi pada variabel tabungan, yaitu tabungan dijumlahkan dengan variabel uang. Kemudian menampilkan total tabungan di setiap bulannya. Dan terakhir berisi iterasi increment pada variabel i. Bagaimana penulisan kode tersebut dengan perulangan sederhana (while)?',
+            'answer_id' => '13',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //14.2.
+        Maintest::create([
+            'no' => '14.2.',
+            'que' => 'Di kelas Tama terdapat 36 siswa. Pada saat pembelajaran, guru ingin membagi ke dalam dua kelompok belajar. Pertama yaitu kelompok dengan nomor absen genap dan kedua yaitu kelompok dengan nomor absen ganjil. Kemudian guru ingin mengetahui berapa banyak siswa dengan nomor absen genap dan absen berapa saja. Setelah itu ditampilkan rasio dari siswa absen genap dengan total siswa. Pada kasus ini bagaimana cara membuat suatu kode program untuk memenuhi kebutuhan kasus ini?',
+            'answer_id' => '14',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Total siswa<br>
+            absen: 2<br>
+            absen: 4<br>
+            absen: 6<br>
+            absen: 8<br>
+            absen: 10<br>
+            absen: 12<br>
+            absen: 14<br>
+            absen: 16<br>
+            absen: 18<br>
+            absen: 20<br>
+            absen: 22<br>
+            absen: 24<br>
+            absen: 26<br>
+            absen: 28<br>
+            absen: 30<br>
+            absen: 32<br>
+            absen: 34<br>
+            absen: 36<br><br>
+
+            Ganjil = 18 orang<br>
+            Genap = 18 orang<br><br>
+
+            Rasio Ganjil = 18/36',
+            'answer' => '%2==0',
+            'type' => 'while'
+        ]);
+
+        //14.1.
+        Maintest::create([
+            'no' => '14.1.',
+            'que' => 'Pada suatu kelas, dibagi menjadi dua kelompok, kelompok nomor absen genap dan kelompok nomor absen ganjil. Jumlah total siswa yang ada di kelas tersebut 36 siswa. Untuk mengetahui berapa banyak siswa dengan nomor absen genap. Pada program tersebut bagaimana cara membuat suatu kode program untuk menampilkan banyaknya siswa dengan absen genap dan di akhir kode menampilkan rasio antara total absen genap dengan total siswa keseluruhan?',
+            'answer_id' => '14',
+            'score' => '4'
+        ]);
+
+        //14.
+        Maintest::create([
+            'no' => '14.',
+            'que' => 'Terdapat suatu kasus dalam pembagian kelompok kelas. Siswa di kelas tersebut yaitu 36 siswa. Dibutuhkan dua kelompok yaitu kelompok dengan nomor absen ganjil dan kelompok dengan nomor absen genap. Untuk menghitung salah satu kelompok dibutuhkan suatu program perulangan dengan sebanyak jumlah siswa yang dihitung, sehingga variabel siswa dijadikan batas perulangan. Program diawali dengan menginisialisasikan suatu nilai yaitu banyaknya siswa yang disimpan dalam variabel siswa, kemudian terdapat suatu perulangan yang digunakan untuk menghitung siswa dengan absen ganjil dan siswa dengan absen genap. Di dalam perulangan ini terdapat suatu kondisi pemeriksaan variabel i yaitu iterasi pada nomor absen diperiksa apakah variabel tersebut genap atau tidak, jika genap maka, variabel genap akan menghitung iterasinya sehingga terjadi perhitungan jumlah siswa dengan absen genap. Pada program tersebut bagaimana cara membuat suatu kode program untuk menghitung banyaknya siswa dengan absen genap?',
+            'answer_id' => '14',
+            'score' => '3'
+        ]);
+
+        //14.a.
+        Maintest::create([
+            'no' => '14.a.',
+            'que' => 'Terdapat suatu kasus penghitungan jumlah siswa dengan absen genap. Pada penghitungannya menggunakan suatu program perulangan dengan batas sejumlah siswa, yaitu 36 dengan menggunakan variabel siswa. Selanjutnya di dalam perulangan tersebut, dilakukan pemeriksaan terhadap variabel i yaitu variabel iterasi, jika variabel tersebut habis dibagi dua, maka variabel tersebut genap dan selanjutnya variabel genap akan bertambah satu, begitu seterusnya hingga mendapatkan total dari siswa dengan absen genap ada berapa siswa. Bagaimana penulisan kode program pada kasus tersebut?',
+            'answer_id' => '14',
+            'score' => '2'
+        ]);
+
+        //14.b.
+        Maintest::create([
+            'no' => '14.b.',
+            'que' => 'Terdapat variabel siswa, yaitu dengan nilai 36. Dan digunakan sebagai batas akhir dari suatu program perulangan. Pada perulangan tersebut, terdapat suatu pemeriksaan, apakah variabel i mod 2 sama dengan 0, jika iya berarti variabel tersebut genap, dan variabel genap akan bertambah satu nilai. Begitu seterusnya hingga perulangan selesai dan akan mendapatkan total siswa dengan nomor absen genap. Bagaimana penulisan kode tersebut dengan perulangan sederhana (while)?',
+            'answer_id' => '14',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //15.2.
+        Maintest::create([
+            'no' => '15.2.',
+            'que' => 'Suatu hari Tama mengikuti balapan di sirkuit Bogor. Peraturan yang berlaku di sana yaitu setiap pembalap yang mencapai 3 lap, akan mendapatkan 1 poin dalam waktu 1 jam. Kemudian balapan pun dimulai. Lap yang didapatkan oleh Tama yaitu 18 lap, sedangkan temannya Tama yaitu Tami mendapatkan 12 lap. Mereka ingin mengetahui berapa poin yang mereka dapatkan dan di lap berapa mereka mendapatkan poinnya. Selain itu akan terlihat rasio perbedaan antara mereka. Pada kasus ini, bagaimana cara membuat suatu kode programnya?',
+            'answer_id' => '15',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Masukkan jumlah lap: 18<br>
+            Lap ke-3<br>
+            Poin: 1<br><br>
+
+            Lap ke-6<br>
+            Poin: 2<br><br>
+
+            Lap ke-9<br>
+            Poin: 3<br><br>
+
+            Lap ke-12<br>
+            Poin: 4<br><br>
+
+            Lap ke-15<br>
+            Poin: 5<br><br>
+
+            Lap ke-18<br>
+            Poin: 6<br><br>
+
+            Dengan jumlah lap tersebut mendapatkan 6 poin',
+            'answer' => '%3==0',
+            'type' => 'do'
+        ]);
+
+        //15.1.
+        Maintest::create([
+            'no' => '15.1.',
+            'que' => 'Pada suatu balapan terdapat sistem poin, jika pembalap mencapai 3 lap maka akan mendapatkan 1 poin. Karena ada beberapa pembalap maka dibuatkan sebuah program yang isinya yaitu perulangan yang terdapat percabangan yang menghitung poin, menampilkan lap yang mendapatkan poin, dan jumlah poin yang didapatkan. Dalam perulangan tersebut terdapat suatu batasan yaitu jumlah lap yang didapatkan seorang pembalap. Untuk kasus tersebut bagaimana penulisan kode tersebut?',
+            'answer_id' => '15',
+            'score' => '4'
+        ]);
+
+        //15.
+        Maintest::create([
+            'no' => '15.',
+            'que' => 'Terdapat suatu kasus pada balapan yaitu untuk menghitung poin, yang kemudian akan dibuatkan pada suatu program. Program diawali dengan memasukkan sebuah jumlah lap pada seorang pembalap yang disimpan pada variabel lap. Kemudian dilanjutkan pada suatu perulangan yang digunakan untuk mengetahui lap ke berapa mendapatkan poin dan mengetahui poinnya berapa. Pada perulangannya berisi sebuah kondisi penambahan poin dan mencetak lap dan poin yang didapatkan. Kemudian terdapat variabel i increment untuk menjalankan perulangan. Kondisi pada perulangannya yaitu variabel i harus kurang dari lap yang dimasukkan. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '15',
+            'score' => '3'
+        ]);
+
+        //15.a.
+        Maintest::create([
+            'no' => '15.a.',
+            'que' => 'Terdapat sebuah program untuk menghitung poin pada suatu lap balapan. Dalam program tersebut terdapat sebuah perulangan yang di dalamnya yaitu terdapat suatu kondisi jika variabel i modulus 3 menghasilkan 0, maka menjalankan suatu pernyataan. Pada pernyataannya yaitu menjalankan increment pada variabel poin, mencetak lap, dan poin yang didapatkan. Selanjutnya terdapat increment pada variabel i untuk berjalannya perulangan. Dilakukan perulangan terus menerus hingga variabel i yang dimasukkan tidak memenuhi kondisi perulangan lagi. Bagaimana penulisan kode tersebut?',
+            'answer_id' => '15',
+            'score' => '2'
+        ]);
+
+        //15.b.
+        Maintest::create([
+            'no' => '15.b.',
+            'que' => 'Terdapat sebuah program perulangan yang di dalamnya yaitu suatu kondisi untuk memeriksa yaitu apakah i%3==3, jika iya maka menjalankan  increment pada variabel poin (poin++) artinya yang digunakan untuk menghitung poinnya kemudian mencetak putaran ke berapa dan berapa poin yang didapatkan. Selanjutnya terdapat increment pada variabel i (i++). Dilakukan perulangan terus menerus hingga variabel i kurang dari variabel lap atau tidak memenuhi kondisi perulangan lagi. Bagaimana penulisan kode tersebut dengan percabangan sederhana (repeat/do-while)?',
+            'answer_id' => '15',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //16.2.
+        Maintest::create([
+            'no' => '16.2.',
+            'que' => 'Suatu hari Tama mengunjungi sebuah tempat permainan, di sana banyak sekali permainan yang tersedia. Kemudian terdapat suatu permainan untuk memasukkan bola berwarna ke keranjang, warna-warna yang dimiliki bola adalah warna biru, kuning, dan merah. Bola-bola tersebut memiliki nomor urutannya tersendiri secara berurutan dari 1 hingga 3. Ketika bola dimasukkan ke keranjang, maka bola dengan warna tersebut akan dihitung. Tama memainkan permainan tersebut dan mendapatkan hasil bola warna biru 3, bola warna kuning 5, dan warna merah 4. Untuk membuat program pencacah kemudian dihitung hasilnya, bagaimana menuliskan kode programnya?',
+            'answer_id' => '16',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Warna bola<br>
+            1. Biru<br>
+            2. Kuning<br>
+            3. Merah<br>
+            4. Keluar<br>
+            Masukkan nomor bola: 2<br>
+            Bola dihitung!<br>
+            Masukkan nomor bola: 3<br>
+            Bola dihitung!<br>
+            Masukkan nomor bola: 1<br>
+            Bola dihitung!<br>
+            Masukkan nomor bola: 2<br>
+            Bola dihitung!<br>
+            Masukkan nomor bola: 3<br>
+            Bola dihitung!<br>
+            Masukkan nomor bola: 4<br>
+            Anda keluar dari perhitungan!<br><br>
+
+            Jumlah bola<br>
+            biru: 1<br>
+            kuning: 2<br>
+            merah: 2',
+            'answer' => '==3',
+            'type' => 'do'
+        ]);
+
+        //16.1.
+        Maintest::create([
+            'no' => '16.1.',
+            'que' => 'Terdapat penghitung warna bola, bola terdiri dari warna biru, kuning, dan merah. Bola-bola tersebut memiliki nomor urutannya tersendiri secara berurutan dari 1 hingga 3. Bola dihitung pada saat bola tersebut masuk ke dalam keranjang. Agar memudahkan dalam perhitungan, dibuatlah suatu program untuk menghitung  setiap warna yang masuk. Ketika masuk suatu bola dengan warna tertentu, program mencacah bola itu. Dan di akhir program mencetak jumlah masing-masing warna bola. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '16',
+            'score' => '4'
+        ]);
+
+        //16.
+        Maintest::create([
+            'no' => '16.',
+            'que' => 'Di suatu tempat bermain terdapat suatu program yang digunakan untuk menghitung warna-warna bola yang dimasukkan dikeranjang. Program diawali dengan membuat suatu variabel penampung untuk masing-masing warna bola, dengan warna biru, kuning, dan merah. Kemudian terdapat suatu perulangan yang dalam pernyataannya terdapat suatu perintah untuk memasukkan pilihan nomor bola, setiap bola yang dipilih akan maka variabel penampung akan bertambah 1 sebagai penghitungnya. Bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '16',
+            'score' => '3'
+        ]);
+
+        //16.a.
+        Maintest::create([
+            'no' => '16.a.',
+            'que' => 'Terdapat sebuah program perulangan yang bertujuan sebagai penghitung warna bola yang masuk dikeranjangnya masing-masing. Bola yang tersedia yaitu bola berwarna biru, kuning, dan merah. Program dibuat dengan menggunakan perulangan. Pada perulangan terdapat suatu masukkan untuk nomor bola yang disimpan di variabel nomor. Kemudian selanjutnya terdapat percabangan bertingkat yang di setiap kondisinya menghitung bola yang dipilih. Dan di akhir program terdapat jumlah bola yang dihitung masing-masing warna. Bagaimana penulisan kode program perulangan tersebut?',
+            'answer_id' => '16',
+            'score' => '2'
+        ]);
+
+        //16.b.
+        Maintest::create([
+            'no' => '16.b.',
+            'que' => 'Terdapat suatu program perulangan sederhana dengan perulangan repeat yang digunakan sebagai penghitung warna bola. Bola yang dihitung yaitu warna biru, kuning, dan merah dengan nomor 1 sampai 3. Perulangan ini memiliki pernyataan dimulai dari perintah memasukkan nomor bola yang memiliki warna kemudian disimpan pada variabel nomor. Kemudian nomor tersebut diperiksa pada kode program percabangan bertingkat yang di dalam setiap percabangannya terdapat increment untuk variabel warna yang dihitung, yaitu biru++, kuning++, dan merah++. Setelah menghitung dilanjutkan dengan menampilkan tulisan bahwa bola dihitung dan tampilan ketika masukkan tidak sesuai seperti nomor tidak ada pada pilihan maka akan menampilkan “tidak ada pilihan tersebut”, kondisi untuk perulangan repeat ini yaitu nomor!=4. Kemudian diakhiri menampilkan jumlah bola dari masing-masing warna. Bagaimana penulisan kode program perulangan sederhana repeat ini?',
+            'answer_id' => '16',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //17.2.
+        Maintest::create([
+            'no' => '17.2.',
+            'que' => 'Suatu hari di perumahan Tama terdapat jadwal patroli satpam, satpam yang tersedia terdapat satpam tua dan satpam muda, untuk lebih jelasnya sebagai berikut.
+            Satpam tua: Ahmad (A), Budi (B), Candra (C)
+            Satpam muda: Doni (D), Erpan (E), Fauzi (F)
+            Dalam pembagian jadwal, patroli harus terdiri dari dua orang yaitu satpam tua dan muda. Pada kombinasi pertama yaitu Ahmad dan Doni (AD). Untuk mengetahui kombinasi yang mungkin terjadi, Tama membantu para satpam dengan membuat suatu program. Bagaimana cara membuat program tersebut?',
+            'answer_id' => '17',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'AD<br>
+            AE<br>
+            AF<br>
+            BD<br>
+            BE<br>
+            BF<br>
+            CD<br>
+            CE<br>
+            CF',
+            'answer' => '<3',
+            'type' => 'for'
+        ]);
+
+        //17.1.
+        Maintest::create([
+            'no' => '17.1.',
+            'que' => 'Pada suatu perumahan terdapat pembagian jadwal untuk patroli. Satpam yang tersedia yaitu satpam tua dan satpam muda, untuk lebih jelasnya sebagai berikut.
+            Satpam tua: Ahmad (A), Budi (B), Candra (C)
+            Satpam muda: Doni (D), Erpan (E), Fauzi (F)
+            Dalam pembagian jadwal, patroli harus terdiri dari dua orang yaitu satpam tua dan muda. Pada kombinasi pertama yaitu Ahmad dan Doni (AD).  Untuk mendapatkan kombinasi yang mungkin terjadi dibutuhkan suatu program perulangan yang dapat menampilkan inisial nama satpam. Bagaimana penulisan kode tersebut?',
+            'answer_id' => '17',
+            'score' => '4'
+        ]);
+
+        //17.
+        Maintest::create([
+            'no' => '17.',
+            'que' => 'Terdapat suatu kasus pada pembagian jadwal patroli satpam. Satpam yang tersedia yaitu satpam muda dan satpam tua, untuk lebih jelasnya sebagai berikut.
+            Satpam tua: Ahmad (A), Budi (B), Candra (C)
+            Satpam muda: Doni (D), Erpan (E), Fauzi (F)
+            Dalam pembagian jadwal, patroli harus terdiri dari dua orang yaitu satpam tua dan muda. Pada kombinasi pertama yaitu Ahmad dan Doni (AD).  
+            Untuk mendapatkan kombinasi yang mungkin terjadi dibutuhkan suatu program perulangan. Program diawali dengan menampilkan nama-nama yang tersedia pada satpam tua dan satpam muda. Kemudian dilanjutkan pada perulangan dengan menggunakan variabel i dan di dalamnya terdapat perulangan ke dua dengan menggunakan variabel j. Di dalam perulangan ke dua terdapat dua pencetak yang mencetak inisial nama satpam tua secara berurutan dikombinasikan dengan inisial nama satpam muda untuk mengetahui kombinasi yang dibutuhkan. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '17',
+            'score' => '3'
+        ]);
+
+        //17.a.
+        Maintest::create([
+            'no' => '17.a.',
+            'que' => 'Terdapat suatu kasus dalam pembagian jadwal patroli satpam, pembagiannya harus mempunyai kombinasi antara satpam tua dan satpam muda. Kasus ini dimuatkan dalam program perulangan. Perulangan yang pertama memiliki batas kurang dari 3 dengan variabel i, karena terdapat tiga nama untuk satpam tua. Dalam perulangan pertama ini memiliki perulangan lagi yang memiliki batas kurang dari 3 juga dengan variabel j, karena terdapat tiga nama untuk satpam muda. Kemudian dalam perulangan ke dua terdapat kode program untuk menampilkan inisial satpam tua dan inisial satpam muda (variabel yang digunakan yaitu variabel tua dan variabel muda). Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '17',
+            'score' => '2'
+        ]);
+
+        //17.b.
+        Maintest::create([
+            'no' => '17.b.',
+            'que' => 'Terdapat sebuah perulangan dengan batas variabel i < 3, di dalam perulangan itu terdapat perulangan lagi dengan kondisi yang mirip yaitu variabel j < 3. Di dalam perulangan ke dua terdapat kode program untuk menampilkan huruf untuk variabel tua yaitu tua[i] dan terdapat kode program untuk menampilkan huruf untuk variabel muda yaitu muda[j]. Tujuan dari kedua pencetak ini berguna untuk menampilkan huruf kombinasi dari dua variabel dengan bantuan dua perulangan. Bagaimana penulisan kode tersebut dengan perulangan bersarang?',
+            'answer_id' => '17',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //18.2.
+        Maintest::create([
+            'no' => '18.2.',
+            'que' => 'Pada pelajaran matematika, Tama diberikan tugas oleh gurunya untuk membuat suatu tabel perkalian, setiap orang harus membuat sebanyak yang mereka bisa. Tama menemukan hasil dari tabel perkalian seperti berikut ini.
+
+
+            1	2	3	4	5	...
+            2	4	6	8	10	...
+            3	6	9	12	15	...
+            4	8	12	16	20	...
+            5	10	15	20	25	...
+            ...	...	...	...	...	...
+
+            Pada tabel yang ditemukan oleh Tama hanya sampai perkalian 5 saja, untuk itu dia membuat suatu program penghitung untuk menemukan perkalian yang lainnya. Program tersebut terdapat operasi perkalian sebanyak yang diinginkan untuk tabel perkalian, dan kemudian ditampilkan hasil hitungnya. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '18',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Masukkan batas perkalian: 5<br>
+            1 2 3 4 5<br>
+            2 4 6 8 10<br>
+            3 6 9 12 15<br>
+            4 8 12 16 20<br>
+            5 10 15 20 25',
+            'answer' => 'i*j',
+            'type' => 'for'
+        ]);
+
+        //18.1.
+        Maintest::create([
+            'no' => '18.1.',
+            'que' => 'Pada suatu pembelajaran matematika, guru meminta untuk membuat suatu tabel perkalian. Tabel ini akan berbentuk seperti berikut ini.
+
+            1	2	3	4	5	...
+            2	4	6	8	10	...
+            3	6	9	12	15	...
+            4	8	12	16	20	...
+            5	10	15	20	25	...
+            ...	...	...	...	...	...
+
+            Untuk membuat tabel perkalian ini lebih mudah, maka dibuatkan dalam suatu program perulangan. Dalam program tersebut terdapat operasi perkalian sebanyak yang diinginkan untuk tabel perkalian, dan kemudian ditampilkan hasil hitungnya. Pada kasus ini, bagaimana cara menuliskan kode program tersebut?',
+            'answer_id' => '18',
+            'score' => '4'
+        ]);
+
+        //18.
+        Maintest::create([
+            'no' => '18.',
+            'que' => 'Terdapat suatu kasus pada pembelajaran matematika, yaitu membuat sebuah tabel perkalian. Tabel ini akan berbentuk seperti berikut ini.
+
+            1	2	3	4	5	...
+            2	4	6	8	10	...
+            3	6	9	12	15	...
+            4	8	12	16	20	...
+            5	10	15	20	25	...
+            ...	...	...	...	...	...
+
+            Untuk mendapatkan hasil perkalian dan menjadi sebuah tabel perkalian dibutuhkan suatu program perulangan. Pada program perulangan ini diawali dengan memasukkan suatu nilai yang akan digunakan untuk batas akhir nilai dari tabel perkalian tersebut. Perulangan yang terdapat pada program ini terdapat 2 perulangan. Pada perulangan yang ke 1 menggunakan variabel i dan perulangan ke dua menggunakan variabel j. Di dalam perulangan ke dua terdapat operasi perkalian dari variabel yang digunakan pada perulangan dan ditampilkan hasilnya. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '18',
+            'score' => '3'
+        ]);
+
+        //18.a.
+        Maintest::create([
+            'no' => '18.a.',
+            'que' => 'Terdapat suatu kasus pada pembelajaran matematika, yaitu membuat sebuah tabel perkalian. Kemudian tabel ini dibuat dari suatu program perulangan. Perulangan yang pertama memiliki batas yang dimasukkan oleh pengguna program yang disimpan dalam variabel input, di dalam perulangan itu terdapat perulangan ke dua dengan kondisi sama. Di dalam perulangan ke dua terdapat operasi aritmatika yaitu operasi perkalian variabel i dengan variabel j yang disimpan dalam variabel hitung dan kemudian mencetak variabel hitung tersebut. Setelah perulangan kedua selesai, kemudian mencetak enter. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '18',
+            'score' => '2'
+        ]);
+
+        //18.b.
+        Maintest::create([
+            'no' => '18.b.',
+            'que' => 'Terdapat sebuah perulangan dengan batas yang dimasukkan dengan variabel input, di dalam perulangan itu terdapat perulangan ke dua dengan kondisi sama, yaitu memiliki batas yang dimasukkan. Di dalam perulangan ke dua terdapat operasi aritmatika yaitu variabel hitung yang isinya hitung = i * j dan kemudian mencetak variabel hitung tersebut. Setelah perulangan kedua selesai, kemudian mencetak enter. Bagaimana penulisan kode tersebut dengan perulangan bersarang (for di dalam for)?',
+            'answer_id' => '18',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //19.2.
+        Maintest::create([
+            'no' => '19.2.',
+            'que' => 'Akhir pekan ini Tama akan pergi berlibur ke kota Jakarta dengan mobil pribadi. Untuk menempuh perjalanan, Tama menemukan 4 jalur utama yang akan digunakan Tama untuk pergi dan untuk pulang, jalur tersebut yaitu jalur Cipanas, jalur Jonggol, jalur Lembang, dan jalur Padalarang.  Salah satu kombinasi jalur pergi dan pulang oleh Tama yaitu pergi melalui jalur Cipanas dan pulang melalui jalur Jonggol (CJ). Kemudian Tama membuat suatu program untuk mengetahui kombinasi jalur lain yang dapat dilalui dan menghitung banyaknya pilihan jalur. Bagaimana cara membuat program tersebut?',
+            'answer_id' => '19',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'Jalur Bandung - Jakarta<br><br>
+
+            Jalur Cipanas (C)<br>
+            Jalur Jonggol (J)<br>
+            Jalur Lembang (L)<br>
+            Jalur Padalarang (P)<br><br>
+
+            C - C | C - J | C - L | C - P |<br>
+            J - C | J - J | J - L | J - P |<br>
+            L - C | L - J | L - L | L - P |<br>
+            P - C | P - J | P - L | P - P |<br><br>
+
+            Banyak kombinasi jalur yaitu 16 jalur',
+            'answer' => '<=3',
+            'type' => 'for'
+        ]);
+
+        //19.1.
+        Maintest::create([
+            'no' => '19.1.',
+            'que' => 'Pada suatu perjalanan dari kota Bandung ke kota Jakarta terdapat 4 jalur utama yang dapat dilalui yaitu jalur Cipanas, jalur Jonggol, jalur Lembang, dan jalur Padalarang. Jalur pergi dan pulang dapat dilalui dengan jalur yang sama ataupun dengan jalur yang berbeda. Pada jalur pergi dan pulang kombinasi pertama yaitu jalur Cipanas - Cipanas (CC) atau jika dengan jalur yang berbeda yaitu Cipanas - Jonggol (CJ).  
+            Untuk mendapatkan kombinasi yang mungkin terjadi dibutuhkan suatu program yang dapat menampilkan inisial nama jalur yang dikombinasikan. Program akan menampilkan jalur yang tersedia, menampilkan banyaknya kombinasi jalur yang memungkinkan, dan total hitung kombinasi jalur yang dapat dilalui. Bagaimana penulisan kode tersebut?',
+            'answer_id' => '19',
+            'score' => '4'
+        ]);
+
+        //19.
+        Maintest::create([
+            'no' => '19.',
+            'que' => 'Terdapat suatu kasus pada pemilihan jalur berangkat dan pulang dari kota Bandung ke kota Jakarta. Jalur yang tersedia terdapat 4 jalur utama, yaitu jalur Cipanas, jalur Jonggol, jalur Lembang, dan jalur Padalarang. Jalur pergi dan pulang dapat dilalui dengan jalur yang sama ataupun dengan jalur yang berbeda. Pada jalur pergi dan pulang kombinasi pertama yaitu jalur Cipanas - Cipanas (CC) atau jika dengan jalur yang berbeda yaitu Cipanas - Jonggol (CJ).  
+            Untuk mendapatkan kombinasi yang mungkin terjadi dibutuhkan suatu program. Pada program ini diawali dengan menampilkan jalur yang tersedia, kemudian terdapat sebuah perulangan dengan menggunakan variabel i dan di dalamnya terdapat perulangan ke dua dengan menggunakan variabel j. Kemudian di dalam perulangan ke dua terdapat dua pencetak yang mencetak inisial nama jalur pergi dikombinasikan dengan inisial nama jalur pulang untuk mengetahui kombinasi yang lainnya. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '19',
+            'score' => '3'
+        ]);
+
+        //19.a.
+        Maintest::create([
+            'no' => '19.a.',
+            'que' => 'Terdapat sebuah perulangan yang berulang dari 0 sampai 3, di dalam perulangan tersebut terdapat perulangan ke dua yang berulang sama seperti perulangan ke satu. Di dalam perulangan ke dua terdapat kode program untuk menampilkan huruf inisial suatu jalur dengan variabel pergi dan huruf inisial suatu jalur dengan variabel pulang. Terakhir terdapat suatu penghitung dengan variabel hitung. Setelah melakukan perulangan kedua, terdapat pencetak enter. Bagaimana penulisan kode perulangan tersebut?',
+            'answer_id' => '19',
+            'score' => '2'
+        ]);
+
+        //19.b.
+        Maintest::create([
+            'no' => '19.b.',
+            'que' => 'Terdapat sebuah perulangan dengan batas variabel i <= 3, di dalam perulangan itu terdapat perulangan ke dua dengan kondisi yang mirip yaitu variabel j < 3. Di dalam perulangan ke dua terdapat kode program untuk menampilkan huruf inisial suatu jalur dengan variabel pergi [i] dan huruf inisial suatu jalur dengan variabel pulang[j]. Terakhir terdapat suatu penghitung dengan variabel hitung, kodenya ditulis dengan hitung++. Setelah melakukan perulangan kedua, terdapat pencetak enter. Bagaimana penulisan kode tersebut dengan perulangan bersarang?',
+            'answer_id' => '19',
+            'score' => '1'
+        ]);
+
+        // ----------------------------------------------------------------------------------------
+
+        //20.2.
+        Maintest::create([
+            'no' => '20.2.',
+            'que' => 'Suatu hari Tama disekolahnya diminta untuk mengatur siapa yang akan mengikuti perlombaan. Gurunya meminta tiga orang perwakilan dari setiap kelas yaitu dari kelas satu, kelas dua, dan kelas tiga. Siswa yang didapatkan oleh Tama yaitu sebagai berikut.
+            Kelas 1: Lidya (L), Arta (A), Oliv (O)
+            Kelas 2: Makara (M), Nurul (N), Tiwi (T)
+            Kelas 3: Wahyu (W), Zidan (Z), Permata (P)
+
+            Kemudian guru meminta untuk dibuatkan kelompok dari kombinasi kelas-kelas tersebut. Kombinasi pertama yang didapatkan adalah Lidya, Makara, dan Wahyu (LMW). Untuk mengetahui kombinasi yang mungkin terjadi, Tama membuat sebuah program. Bagaimana cara membuat program tersebut?',
+            'answer_id' => '20',
+            'score' => '5'
+        ]);
+
+        Answer::create([
+            'program' => 'LMW<br>
+            LMZ<br>
+            LMP<br><br>
+
+            LNW<br>
+            LNZ<br>
+            LNP<br><br>
+
+            LTW<br>
+            LTZ<br>
+            LTP<br><br>
+
+            AMW<br>
+            AMZ<br>
+            AMP<br><br>
+
+            ANW<br>
+            ANZ<br>
+            ANP<br><br>
+
+            ATW<br>
+            ATZ<br>
+            ATP<br><br>
+
+            OMW<br>
+            OMZ<br>
+            OMP<br><br>
+
+            ONW<br>
+            ONZ<br>
+            ONP<br><br>
+
+            OTW<br>
+            OTZ<br>
+            OTP<br><br>
+
+            Jumlah: 27',
+            'answer' => '<3',
+            'type' => 'for'
+        ]);
+
+        //20.1.
+        Maintest::create([
+            'no' => '20.1.',
+            'que' => 'Pada suatu sekolah siswanya akan mengikuti perlombaan, dan membutuhkan dari kelas satu, kelas dua, dan kelas tiga. Setiap kelas mempunyai perwakilan 3 siswa. Siswa yang didapat yaitu dengan rincian berikut.
+            Kelas 1: Lidya (L), Arta (A), Oliv (O)
+            Kelas 2: Makara (M), Nurul (N), Tiwi (T)
+            Kelas 3: Wahyu (W), Zidan (Z), Permata (P)
+
+            Dari ke tiga kelas tersebut nantinya siswa akan dibuat dalam satu kelompok dari setiap perwakilan kelas dengan jumlah tiga siswa. Kelompok pada kombinasi pertama yaitu Lidya, Makara, dan Wahyu (LMW). Untuk mendapatkan kombinasi yang mungkin terjadi dibutuhkan suatu program perulangan yang dapat menampilkan inisial nama-namanya. Bagaimana penulisan kode tersebut?',
+            'answer_id' => '20',
+            'score' => '4'
+        ]);
+
+        //20.
+        Maintest::create([
+            'no' => '20.',
+            'que' => 'Terdapat suatu kasus pada perwakilan siswa untuk perlombaan, dibutuhkan tiga orang setiap kelas yang terdiri dari kelas satu, kelas dua, dan kelas tiga. Siswa yang bersedia yaitu dengan rincian berikut.
+            Kelas 1: Lidya (L), Arta (A), Oliv (O)
+            Kelas 2: Makara (M), Nurul (N), Tiwi (T)
+            Kelas 3: Wahyu (W), Zidan (Z), Permata (P)
+
+            Kemudian dari ke tiga kelas tersebut dibuat dalam satu kelompok dari setiap perwakilan kelas dengan jumlah tiga siswa. Kelompok pada kombinasi pertama yaitu Lidya, Makara, dan Wahyu (LMW).
+            Untuk mendapatkan kombinasi lain yang mungkin terjadi dibutuhkan suatu program perulangan. Program diawali dengan menampilkan nama-nama di setiap kelas, kemudian terdapat program perulangan dengan menggunakan tiga perulangan yang menggunakan variabel i, variabel j, dan variabel k. Di dalam perulangan ke tiga terdapat tiga pencetak yang mencetak inisial nama dari siswa pada setiap kelas yang untuk mengetahui kombinasi yang dibutuhkan. Bagaimana penulisan kode pada kasus tersebut? ',
+            'answer_id' => '20',
+            'score' => '3'
+        ]);
+
+        //20.a.
+        Maintest::create([
+            'no' => '20.a.',
+            'que' => 'Terdapat suatu kasus dalam perwakilan setiap kelas untuk perlombaan, terdapat 3 kelas yang akan mewakili dan setiap kelas terdapat salah satu dari tiga siswa yang dipilih. Kemudian kasus ini dimuatkan dalam program perulangan. Perulangan yang pertama yaitu memiliki batas kurang dari 3 dengan variabel i, karena terdapat tiga nama untuk kelas pertama. Dalam perulangan pertama ini memiliki perulangan lagi yang memiliki batas kurang dari 3 juga dengan variabel j, karena terdapat tiga nama untuk kelas kedua. Dan terakhir terdapat perulangan ke tiga yang memiliki batas kurang dari 3 juga dengan variabel k, karena terdapat tiga nama untuk kelas ke tiga. Kemudian dalam perulangan ke tiga terdapat kode program untuk menampilkan inisial-inisial nama pada setiap kelas yang menggunakan variabel satu, variabel dua, dan variabel tiga. Bagaimana penulisan kode pada kasus tersebut?',
+            'answer_id' => '20',
+            'score' => '2'
+        ]);
+
+        //20.b.
+        Maintest::create([
+            'no' => '20.b.',
+            'que' => 'Terdapat sebuah perulangan dengan batas variabel i < 3, di dalam perulangan itu terdapat perulangan lagi dengan kondisi yang mirip yaitu variabel j < 3, dan di dalam perulangan ke dua terdapat perulangan ke tiga dengan kondisi yang mirip yaitu variabel k < 3. Di dalam perulangan ke tiga terdapat kode program untuk menampilkan huruf untuk variabel satu yaitu satu[i], terdapat kode program untuk menampilkan huruf untuk variabel dua yaitu dua[j], dan terdapat kode program untuk menampilkan huruf untuk variabel tiga yaitu tiga[k]. Tujuan dari ketiga pencetak ini berguna untuk menampilkan huruf kombinasi dari tiga variabel dengan bantuan tiga perulangan. Bagaimana penulisan kode tersebut dengan perulangan bersarang?',
+            'answer_id' => '20',
             'score' => '1'
         ]);
     }
