@@ -57,6 +57,9 @@ return new class extends Migration
             $table->string('co_19')->nullable();
             $table->string('co_20')->nullable();
             $table->integer('judge')->nullable();
+            $table->integer('correct')->nullable();
+            $table->integer('wrong')->nullable();
+            $table->integer('total')->nullable();
             $table->integer('sum')->nullable();
             $table->timestamps();
         });

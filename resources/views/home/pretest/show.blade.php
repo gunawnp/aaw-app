@@ -9,16 +9,24 @@
                         <h5 class="fw-bold mb-3">Perhatikan Soal Berikut!</h5>
                     </div>
 
-                    @if (session()->has('success'))
-                        <div class="col-5">
+                    <div class="col-5">
+                        @if (session()->has('success'))
                             <div class="alert alert-success alert-oke alert-dismissible fade show d-flex align-items-center py-2 m-0" role="alert">
                                 <i class="bi bi-check-circle-fill pe-3"></i>
                                 <div>
                                     {{ session('success') }}
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @endif
+                        @if (session()->has('end'))
+                            <div class="alert alert-success alert-dismissible fade show d-flex align-items-center py-2 m-0" role="alert">
+                                <i class="bi bi-check-circle-fill pe-3"></i>
+                                <div>
+                                    Tes sudah selesai, silahkan klik tombol selesai di bawah!
+                                </div>
+                            </div>
+                        @endif
+                    </div>
                 </div>
                 
                 @foreach ($datatest as $dt)

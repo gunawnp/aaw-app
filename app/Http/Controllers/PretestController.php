@@ -103,7 +103,7 @@ class PretestController extends Controller
 
         if ($data) {
             $done = true;
-            if ($data->no_10 === null) {
+            if ($data->sum === null) {
                 $done = false;
             }
         } else {
@@ -168,6 +168,10 @@ class PretestController extends Controller
                 }
 
                 //update ke database
+                $total = $data->total;
+                $total = $total + 1;
+                $dataInput['total'] = $total;
+
                 Pretest::where('user_id', auth()->user()->id)->update($dataInput);
                 if ($no == 20) {
                     return redirect('home/pretest/begin?page=' . $id)->with(['success' => 'Nomor ' . $no . ' sudah terisi!', 'end' => 'Selesai']);
@@ -178,6 +182,7 @@ class PretestController extends Controller
                 $dataInput['no_' . $no] = $score;
                 $dataInput['co_' . $no] = 1;
                 $dataInput['judge'] = 1;
+                $dataInput['total'] = 1;
                 $picker = $id + 5;
                 //isi ke database
                 Pretest::create($dataInput);
@@ -200,6 +205,14 @@ class PretestController extends Controller
                     $dataInput['co_' . $no] = 0;
                 }
                 $dataInput['judge'] = 0;
+
+                $total = $data->total;
+                $total = $total + 1;
+                $dataInput['total'] = $total;
+                
+                //update ke database
+                Pretest::where('user_id', auth()->user()->id)->update($dataInput);
+
                 if (str_contains($datatest->no, 'b')) {
                     $picker = $id + 5;
                     if ($no == 20) {
@@ -208,15 +221,13 @@ class PretestController extends Controller
                 }else {
                     $picker = $id + 1;
                 }
-                
-                //update ke database
-                Pretest::where('user_id', auth()->user()->id)->update($dataInput);
             } else {
                 // ga ada, isi
                 $dataInput['user_id'] = auth()->user()->id;
                 $dataInput['no_' . $no] = $score;
                 $dataInput['co_' . $no] = 0;
                 $dataInput['judge'] = 0;
+                $dataInput['total'] = 1;
                 $picker = $id + 1;
                 //isi ke database
                 Pretest::create($dataInput);
@@ -225,5 +236,45 @@ class PretestController extends Controller
         
         return redirect('home/pretest/begin?page=' . $picker)->with('success', 'Nomor ' . $no . ' sudah terisi!');
 
+    }
+
+    public function score() {
+        $data = Pretest::firstWhere('user_id', auth()->user()->id);
+        if ($data && $data->correct === null) {
+            $correct = 0;
+            for ($i = 1; $i < 21; $i++) {
+                if (str_contains($data['co_' . $i], '1')) {
+                    $val = 1;
+                }
+                $done = true;
+                if ($val === null) {
+                    $done = false;
+                }
+                $correct = $correct + $val;
+            }
+
+            $total = $data->total;
+            $wrong = $total - $correct;
+            $sum = $correct / $total * 100;
+
+            if ($done) {
+                $dataInput['correct'] = $correct;
+                $dataInput['wrong'] = $wrong;
+                $dataInput['sum'] = $sum;
+                //update ke database
+                $data->update($dataInput);
+            }
+        } elseif ($data && $data->correct !== null) {
+            $done = true;
+        } else {
+            $done = false;
+        }
+
+        return view('home.pretest.score', [
+            "title" => "Pretest Asesmen Adaptif",
+            "header" => "Penilaian Pretest Asesmen Adaptif",
+            "data" => $data,
+            "done" => $done
+        ]);
     }
 }
