@@ -411,7 +411,7 @@ int main() {
                                         </p>
                                     </div>
                                 </div>
-                                <div class="card mb-3" style="width: 30rem;">
+                                <div class="card mb-5" style="width: 30rem;">
                                     <div class="card-body">
                                         <p class="font-monospace ms-3 mb-0">
                                             Selamat datang di provider favoritmu!<br>
@@ -429,6 +429,8 @@ int main() {
                             </div>
                         </div>
                     </div>
+
+                    <hr>
 
                     {{-- Bersarang --}}
                     <div id="nested-if">
@@ -518,7 +520,7 @@ int main() {
                                     </p>
                                 </div>
                             </div>
-                            <div class="card mb-3" style="width: 22rem;">
+                            <div class="card mb-5" style="width: 22rem;">
                                 <div class="card-body">
                                     <p class="font-monospace ms-3 mb-0">
                                         Masukkan nilai: 70<br>
@@ -531,6 +533,8 @@ int main() {
 
                         </div>
                     </div>
+
+                    <hr>
 
                     {{-- Tak bersyarat --}}
                     <div id="unconditional-if">
@@ -578,7 +582,7 @@ int main() {
                             </p>
 
                             <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
-                            <div class="card mb-3" style="width: 22rem;">
+                            <div class="card mb-5" style="width: 22rem;">
                                 <div class="card-body">
                                     <p class="font-monospace ms-3 mb-0">
                                         hello rpl! <br>
@@ -590,8 +594,10 @@ int main() {
                         </div>
                     </div>
 
+                    <hr>
+
                     {{-- Catatan Percabangan --}}
-                    <div id="note-if">
+                    <div id="note-if" class="mb-5">
                         <h4 class="fw-bold mt-5">Catatan Untuk Percabangan</h4>
                         <div class="fs-6 lh-lg mt-4">
                             <p>
@@ -667,6 +673,32 @@ int main() {
                         </div>
                     </div>
 
+                    <hr>
+
+                    <div id="dl-modul" class="mb-4">
+                        <h5 class="fw-bold mt-5 mb-4">Unduh Modul Materi Percabangan</h5>
+                        <a href="https://drive.google.com/u/0/uc?id=1HJasMP96J55tTFRQF5UZBCjSyHLf9cOa&export=download" class="btn btn-blue p-2 px-4">Unduh</a>
+                    </div>
+
+                    <div id="reference" class="mb-5 fs-6 lh-lg">
+                        <h5 class="fw-bold mt-5 mb-4">Referensi</h5>
+                        <p>
+                            Suarga. 2012. Algoritma dan Pemrograman. Yogyakarta. Andi Offset.
+                        </p>
+                        <p>
+                            Kristanto, Andri. 2013. Algoritma dan Pemrograman dengan C++ Edisi 3. Yogyakarta. Graha Ilmu.
+                        </p>
+                        <p>
+                            Wahid, Fathul. 2004. Dasar-Dasar Algoritma dan Pemrograman. Yogyakarta. Penerbit Andi.
+                        </p>
+                        <p>
+                            Sukamto, Rosa Ariani. 2010. Modul Pembelajaran Algoritma dan Pemrograman. Bandung. Modula
+                        </p>
+                        <p>
+                            Muhardian, Ahmad. 2019. “Belajar Pemrograman C #07: Mengenal 6 Macam Bentuk Blok Percabangan”, https://www.petanikode.com/c-percabangan/
+                        </p>
+                    </div>
+
                 </div>
                 <div class="col-md-3">
                     <div class="sticky-top" style="top: 6rem;">
@@ -681,8 +713,10 @@ int main() {
                                 <li class="mb-2 ms-4"><a href="#perintah-pertama" class="text-decoration-none text-muted">Perintah if . . else if . . else</a></li>
                                 <li class="mb-2 ms-4"><a href="#perintah-switch" class="text-decoration-none text-muted">Perintah Switch</a></li>
                             <li class="mb-2"><a href="#nested-if" class="text-decoration-none text-muted">Percabangan Bersarang</a></li>
+                            <li class="mb-2"><a href="#unconditional-if" class="text-decoration-none text-muted">Percabangan Tidak Bersyarat</a></li>
                             <hr>
                             <li class="mb-2"><a href="#note-if" class="text-decoration-none text-muted">Catatan Percabangan</a></li>
+                            <li class="mb-2"><a href="#dl-modul" class="text-decoration-none text-muted">Unduh Modul</a></li>
                         </ol>
                     </div>
                 </div>
