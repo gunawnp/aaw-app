@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="editor-container" style="height: 740px">
-                                        <pre id="editor"></pre>
+                                        <pre id="editor" class="editor"></pre>
                                     </div>
                                 </div>
                             </div>

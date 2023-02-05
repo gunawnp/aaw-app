@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\PretestChart;
 use App\Models\Pretest;
 use App\Models\Maintest;
 use Illuminate\Http\Request;
@@ -74,7 +75,7 @@ class PretestController extends Controller
 
         if ($data) {
             $done = true;
-            if ($data->no_10 === null) {
+            if ($data->sum === null) {
                 $done = false;
             }
         } else {
@@ -270,11 +271,31 @@ class PretestController extends Controller
             $done = false;
         }
 
+        
+        $array = [];
+        $datachart = [];
+        for ($i=1; $i < 21; $i++) { 
+            $no = explode(',', $data['no_'. $i]);
+            $co = explode(',', $data['co_'. $i]);
+            $combine = array_combine($no,$co);
+            array_push($array, $combine);
+
+            $value = substr($data['no_' . $i], -1);
+            array_push($datachart, $value);
+        }
+
+        $chart = new PretestChart;
+        $chart->labels(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
+        $chart->dataset('Grafik Hasil Pretest', 'line', $datachart);
+    
+
         return view('home.pretest.score', [
             "title" => "Pretest Asesmen Adaptif",
             "header" => "Penilaian Pretest Asesmen Adaptif",
+            "array" => $array,
             "data" => $data,
-            "done" => $done
+            "done" => $done,
+            "chart" => $chart
         ]);
     }
 }

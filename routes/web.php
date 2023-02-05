@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\LogicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogicController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StyleController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PretestController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\StyleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,4 +67,10 @@ Route::controller(PretestController::class)->group(function () {
     Route::get('/home/pretest/begin', 'show')->middleware('auth');
     Route::post('/home/pretest/begin', 'store')->middleware('auth');
     Route::get('/home/pretest/score', 'score')->middleware('auth');
+});
+
+Route::controller(MateriController::class)->group(function () {
+    Route::get('home/materi', 'index')->middleware('auth');
+    Route::get('home/materi/percabangan', 'nest')->middleware('auth');
+    Route::get('home/materi/perulangan', 'loop')->middleware('auth');
 });

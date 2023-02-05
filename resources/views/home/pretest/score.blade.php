@@ -33,36 +33,58 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($i = 1; $i < 21; $i++)
+                            @foreach ($array as $ar)
+                            
                                 <tr>
-                                    <td>{{ $i }}</td>
-                                    @if (str_contains($data['no_' . $i],'1') )
-                                        <td>✓</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    
+                                    @if (array_key_exists(1, $ar))
+                                        @if ($ar[1] == 1)
+                                            <td>✓</td>
+                                        @else
+                                            <td>✕</td>
+                                        @endif
                                     @else
                                         <td>-</td>
                                     @endif
-                                    @if (str_contains($data['no_' . $i],'2') )
-                                        <td>✓</td>
+                                    @if (array_key_exists(2, $ar))
+                                        @if ($ar[2] == 1)
+                                            <td>✓</td>
+                                        @else
+                                            <td>✕</td>
+                                        @endif
                                     @else
                                         <td>-</td>
                                     @endif
-                                    @if (str_contains($data['no_' . $i],'3') )
-                                        <td>✓</td>
+                                    @if (array_key_exists(3, $ar))
+                                        @if ($ar[3] == 1)
+                                            <td>✓</td>
+                                        @else
+                                            <td>✕</td>
+                                        @endif
                                     @else
                                         <td>-</td>
                                     @endif
-                                    @if (str_contains($data['no_' . $i],'4') )
-                                        <td>✓</td>
+                                    @if (array_key_exists(4, $ar))
+                                        @if ($ar[4] == 1)
+                                            <td>✓</td>
+                                        @else
+                                            <td>✕</td>
+                                        @endif
                                     @else
                                         <td>-</td>
                                     @endif
-                                    @if (str_contains($data['no_' . $i],'5') )
-                                        <td>✓</td>
+                                    @if (array_key_exists(5, $ar))
+                                        @if ($ar[5] == 1)
+                                            <td>✓</td>
+                                        @else
+                                            <td>✕</td>
+                                        @endif
                                     @else
                                         <td>-</td>
                                     @endif
                                 </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -79,6 +101,11 @@
 
             <hr>
 
+            <div class="lh-lg row mt-3 ">
+                <div>
+                    {!! $chart->container() !!}
+                </div>
+            </div>
             
             
             <div class="text-center">
@@ -86,4 +113,7 @@
             </div>
         @endif
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {!! $chart->script() !!}
 @endsection 

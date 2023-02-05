@@ -40,6 +40,12 @@
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/pretest/score') ? 'active' : '' }}" href="/home/pretest/score">Penilaian</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('home/materi*') ? 'active' : '' }}" href="/home/materi">
+                <i class="fs-5 bi-card-checklist pe-2"></i>
+                Materi Pembelajaran
+                </a>
+            </li>
         </ul>
 
         {{-- @can('admin')

@@ -13,7 +13,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="editor-container">
-                                    <pre id="editor">#include &lt;stdio.h&gt
+                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
 int main() {
 
 	

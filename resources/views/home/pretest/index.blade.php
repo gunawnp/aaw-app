@@ -2,7 +2,7 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if (true)
+        @if (!$done)
             <div class="fs-6 lh-lg text-justify me-4">
                 <div class="mb-5">
                     <h4 class="fw-bold mb-4">Deskripsi Pretest Asesmen Adaptif</h4>
@@ -25,7 +25,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="editor-container">
-                                    <pre id="editor">#include &lt;stdio.h&gt
+                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
 int main() {
 
 	int x, y, z;
