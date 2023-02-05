@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StyleController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PretestController;
+use App\Http\Controllers\PosttestController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -73,4 +74,12 @@ Route::controller(MateriController::class)->group(function () {
     Route::get('home/materi', 'index')->middleware('auth');
     Route::get('home/materi/percabangan', 'nest')->middleware('auth');
     Route::get('home/materi/perulangan', 'loop')->middleware('auth');
+});
+
+Route::controller(PosttestController::class)->group(function () {
+    Route::get('/home/posttest', 'index')->middleware('auth');
+    Route::post('/home/posttest', 'exone')->middleware('auth');
+    Route::get('/home/posttest/begin', 'show')->middleware('auth');
+    Route::post('/home/posttest/begin', 'store')->middleware('auth');
+    Route::get('/home/posttest/score', 'score')->middleware('auth');
 });

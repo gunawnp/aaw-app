@@ -46,6 +46,17 @@
                 Materi Pembelajaran
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('home/posttest*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-posttest" role="button" aria-expanded="false" aria-controls="collapse-posttest">
+                <i class="fs-5 bi-card-checklist pe-2"></i>
+                Posttest Asesmen
+                <p class="ms-4 ps-2 mb-0">Adaptif</p> 
+                </a>
+                <div class="collapse {{ Request::is('home/posttest*') ? 'show' : '' }}" id="collapse-posttest">
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/posttest', 'home/posttest/begin') ? 'active' : '' }}" href="/home/posttest">Mulai</a>
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/posttest/score') ? 'active' : '' }}" href="/home/posttest/score">Penilaian</a>
+                </div>
+            </li>
         </ul>
 
         {{-- @can('admin')
