@@ -38,7 +38,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="editor-container" style="height: 740px">
+                                    <div class="editor-container" style="height: 780px">
                                         <pre id="editor" class="editor"></pre>
                                     </div>
                                 </div>
@@ -91,13 +91,13 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#selesaiModal">
                                 {{ session('end') }}
                                 </button>
                             </div>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content" style="border-radius: 15px">
                                 <div class="modal-body">

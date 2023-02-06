@@ -12,16 +12,26 @@
             </span>
             <div class="dropdown">
                 <button class="btn py-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Halo, {{ auth()->user()->name }}
+                    @if ( auth()->user()->image )
+                        <img src="{{ asset('storage/' . auth()->user()->image) }}" alt="profile" width="35px" class="rounded-circle me-2">
+                    @else
+                        <img src="{{ asset('storage/profile-image/profile.png') }}" alt="profile" width="35px" class="rounded-circle me-2">
+                    @endif
+                    {{ auth()->user()->name }}
                 </button>
                 <ul class="dropdown-menu">
                     <li>
                         <form action="/logout" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item">
-                                <i class="bi bi-box-arrow-right"></i> Sign out
+                                <i class="bi bi-box-arrow-right me-3"></i>Sign out
                             </button>
                         </form>
+                    </li>
+                    <li>
+                        <a href="/home/profile" class="dropdown-item">
+                            <i class="bi bi-person me-3"></i>Profile
+                        </a>
                     </li>
                 </ul>
             </div>

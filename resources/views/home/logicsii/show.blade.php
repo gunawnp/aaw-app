@@ -2,51 +2,53 @@
 
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 pt-4">
-        @if (!$done)
-            <div class="fs-6 lh-lg text-justify mb-5">
+        @if ($done == false)
+            <div class="fs-6 lh-lg text-justify">
                 <div class="row justify-content-between">
                     <div class="col-5">
                         <h5 class="fw-bold mb-3">Perhatikan Soal Berikut!</h5>
                     </div>
 
-                    <div class="col-5">
-                        @if (session()->has('success'))
+                    @if (session()->has('success'))
+                        <div class="col-5">
                             <div class="alert alert-success alert-oke alert-dismissible fade show d-flex align-items-center py-2 m-0" role="alert">
                                 <i class="bi bi-check-circle-fill pe-3"></i>
                                 <div>
                                     {{ session('success') }}
                                 </div>
                             </div>
-                        @endif
-                        @if (session()->has('end'))
-                            <div class="alert alert-success alert-dismissible fade show d-flex align-items-center py-2 m-0" role="alert">
-                                <i class="bi bi-check-circle-fill pe-3"></i>
-                                <div>
-                                    Tes sudah selesai, silahkan klik tombol selesai di bawah!
-                                </div>
-                            </div>
-                        @endif
-                    </div>
+                        </div>
+                    @endif
                 </div>
                 
-                @foreach ($datatest as $dt)
+                @foreach ($logics as $logic)
                     <p>
-                        {{ $dt->no }} {{ $dt->que }}
+                        {{ $logic->id }}. {{ $logic->que }}
                     </p>
+
+                    @if ($logic->id == 7)
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-07.png" alt="tikus" width="500px">
+                    @endif
+
+                    @if ($logic->id == 8)
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-08.png" alt="ikan" width="500px">
+                    @endif
 
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="editor-container" style="height: 780px">
+                                    <div class="editor-container" style="height: 630px">
                                         <pre id="editor" class="editor"></pre>
                                     </div>
                                 </div>
                             </div>
-                            <form method="post" action="/home/pretest/begin" id="myform" class="d-md-flex justify-content-center">
+                            <form method="post" action="/home/logicsii/begin" id="myform" class="d-md-flex justify-content-center">
                                 @csrf
                                 <input type="hidden" name="code" id="code" value="">
-                                <input type="hidden" name="id" value="{{ $dt->id }}">
+                                <input type="hidden" name="no" value="{{ $logic->id }}">
+                                <input type="hidden" name="type" value="{{ $logic->type }}">
+                                <input type="hidden" name="answer" value="{{ $logic->answer }}">
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-blue btn btn-blue py-2 my-3" data-bs-toggle="modal" data-bs-target="#mulaiModal">
@@ -80,22 +82,35 @@
                                         data-bs-title="Tidak ada kode inputan seperti scanf, semua nilai disimpan dalam suatu variabel"></i>
                                     </div>
                                     <div class="card-body">
-                                        <p class="font-monospace"> {!! $dt->answer->program !!}</p>
+                                        <p class="font-monospace"> {!! $logic->program !!}</p>
                                     </div>
                                 </div>
-                                
+                                @if (isset($data))
+                                    @if ($data["logic_" . $logic->id] !== null)
+                                        @if ($logic->id == 10)
+                                            <div class="alert alert-success" role="alert">
+                                                Sudah terisi, silahkan klik selesai di bawah!
+                                            </div>  
+                                        @else
+                                            <div class="alert alert-success" role="alert">
+                                                Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
+                                            </div>   
+                                        @endif
+                                    @endif
+                                @endif
                             </div>
                         </div>
                     </div>
-                    @if (session()->has('end'))
+                    @if ($logic->id == 10 && isset($data) && $data["logic_" . $logic->id] !== null)
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="text-center">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#selesaiModal">
-                                {{ session('end') }}
+                                Selesai
                                 </button>
                             </div>
                         </div>
+                        
                         <!-- Modal -->
                         <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -104,7 +119,7 @@
                                     <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
                                 </div>
                                 <div class="modal-footer justify-content-center ">
-                                    <a href="/home/pretest/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
+                                    <a href="/home/logicsii/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
                                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
                                 </div>
                                 </div>
@@ -112,6 +127,9 @@
                         </div>
                     @endif
                 @endforeach
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $logics->links() }}
             </div>
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">

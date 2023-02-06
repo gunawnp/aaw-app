@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataLogic;
+use App\Models\DataLogicii;
 use App\Models\Logic;
 use Illuminate\Http\Request;
 
-function execute(Request $request)
+function executee(Request $request)
 {
     $validatedData = $request->validate([
         'code' => [
@@ -37,11 +37,12 @@ function execute(Request $request)
 }
 
 
-class LogicController extends Controller
+class LogiciiController extends Controller
 {
 
-    public function index() {
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+    public function index()
+    {
+        $data = DataLogicii::firstWhere('user_id', auth()->user()->id);
 
         if ($data) {
             $done = true;
@@ -52,7 +53,7 @@ class LogicController extends Controller
             $done = false;
         }
 
-        return view('home.logics.index', [
+        return view('home.logicsii.index', [
             "title" => "Tes Berpikir Logis",
             "header" => "Pendahuluan Tes Berpikir Logis",
             "data" => $data,
@@ -60,14 +61,15 @@ class LogicController extends Controller
         ]);
     }
 
-    public function exone(Request $request) {
-        $output = execute($request);
+    public function exone(Request $request)
+    {
+        $output = executee($request);
         return redirect()->back()->with('output', $output);
-        
     }
 
-    public function indextwo() {
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+    public function indextwo()
+    {
+        $data = DataLogicii::firstWhere('user_id', auth()->user()->id);
 
         if ($data) {
             $done = true;
@@ -78,7 +80,7 @@ class LogicController extends Controller
             $done = false;
         }
 
-        return view('home.logics.indextwo', [
+        return view('home.logicsii.indextwo', [
             "title" => "Tes Berpikir Logis",
             "header" => "Pendahuluan Tes Berpikir Logis",
             "data" => $data,
@@ -86,18 +88,19 @@ class LogicController extends Controller
         ]);
     }
 
-    public function show() {
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+    public function show()
+    {
+        $data = DataLogicii::firstWhere('user_id', auth()->user()->id);
         $logics = Logic::paginate(1)->withQueryString();
         if ($data) {
             $done = true;
             if ($data->sum === null) {
                 $done = false;
             }
-        }else {
+        } else {
             $done = false;
         }
-        return view('home.logics.show', [
+        return view('home.logicsii.show', [
             "title" => "Tes Berpikir Logis",
             "header" => "Tes Berpikir Logis",
             "logics" => $logics,
@@ -106,45 +109,46 @@ class LogicController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $type = $request->type;
         $answer = $request->answer;
         $no = $request->no;
         $code = $request->code;
-        
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+
+        $data = DataLogicii::firstWhere('user_id', auth()->user()->id);
 
         if (str_contains($code, $type)) {
             $output = execute($request);
+
             if (preg_match("/$answer/", $output)) {
 
                 if ($data) {
                     // kalo ada datanya, update
                     $dataInput['logic_' . $no] = 1;
                     //update ke database
-                    DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+                    DataLogicii::where('user_id', auth()->user()->id)->update($dataInput);
                 } else {
                     // ga ada, isi
                     $dataInput['user_id'] = auth()->user()->id;
                     $dataInput['logic_' . $no] = 1;
                     //isi ke database
-                    DataLogic::create($dataInput);
+                    DataLogicii::create($dataInput);
                 }
-
-            }else {
+            } else {
 
                 if ($data) {
                     // kalo ada datanya, update
                     $dataInput['logic_' . $no] = 0;
                     //update ke database
-                    DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+                    DataLogicii::where('user_id', auth()->user()->id)->update($dataInput);
                 } else {
                     // ga ada, isi
                     $dataInput['user_id'] = auth()->user()->id;
                     $dataInput['logic_' . $no] = 0;
                     //isi ke database
-                    DataLogic::create($dataInput);
+                    DataLogicii::create($dataInput);
                 }
             }
         } else {
@@ -153,29 +157,30 @@ class LogicController extends Controller
                 // kalo ada datanya, update
                 $dataInput['logic_' . $no] = 0;
                 //update ke database
-                DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+                DataLogicii::where('user_id', auth()->user()->id)->update($dataInput);
             } else {
                 // ga ada, isi
                 $dataInput['user_id'] = auth()->user()->id;
                 $dataInput['logic_' . $no] = 0;
                 //isi ke database
-                DataLogic::create($dataInput);
+                DataLogicii::create($dataInput);
             }
         }
 
         //selesai, kasih alert berhasil submit, lanjutkan ke nomor berikutnya.
         if ($no == 10) {
-            return redirect('home/logics/begin?page=' . $no)->with('success', 'Nomor ' . $no . ' sudah terisi!');
+            return redirect('home/logicsii/begin?page=' . $no)->with('success', 'Nomor ' . $no . ' sudah terisi!');
         } else {
-            return redirect('home/logics/begin?page=' . $no + 1)->with('success', 'Nomor ' . $no . ' sudah terisi!');
+            return redirect('home/logicsii/begin?page=' . $no + 1)->with('success', 'Nomor ' . $no . ' sudah terisi!');
         }
     }
 
-    public function score() {
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
+    public function score()
+    {
+        $data = DataLogicii::firstWhere('user_id', auth()->user()->id);
         if ($data && $data->sum === null) {
             $sum = 0;
-            for ($i=1; $i < 11; $i++) { 
+            for ($i = 1; $i < 11; $i++) {
                 $val = $data['logic_' . $i];
                 $done = true;
                 if ($val === null) {
@@ -183,25 +188,23 @@ class LogicController extends Controller
                 }
                 $sum = $sum + $val;
             }
-    
+
             if ($done) {
                 $dataInput['sum'] = $sum;
                 //update ke database
                 $data->update($dataInput);
             }
-        }elseif ($data && $data->sum !== null) {
+        } elseif ($data && $data->sum !== null) {
             $done = true;
-        }else {
+        } else {
             $done = false;
         }
 
-        return view('home.logics.score', [
+        return view('home.logicsii.score', [
             "title" => "Tes Berpikir Logis",
             "header" => "Penilaian Tes Berpikir Logis",
             "data" => $data,
             "done" => $done
         ]);
     }
-
-    
 }

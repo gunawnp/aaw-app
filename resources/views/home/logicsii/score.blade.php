@@ -6,7 +6,7 @@
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
                     <h5 class="fs-4 fw-bold mb-4">Data belum tersedia, silahkan ikuti tes!</h5>
-                    <a href="/home/logics" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
+                    <a href="/home/logicsii" type="button" class="btn btn-blue mb-5">Mulai Tes</a>
                 </div>
             </div>
         @else
@@ -92,10 +92,9 @@
                 </table>
             </div>
             
-            <hr>
+            
             <div class="text-center">
-                <p class="fs-6 my-4"> Tes tingkatan berpikir logis anda telah selesai, silahkan lanjutkan dengan mengikuti tes berikutnya <br> dengan cara menekan tombol di bawah ini atau pilih Pretest Asesmen Adaptif pada sidebar untuk memulainya.</p>
-                <a href="/home/pretest" type="button" class="btn btn-blue mb-5">Pretest Asesmen Adaptif</a>
+                <a href="/home/profile" type="button" class="btn btn-blue mt-3 mb-5">Selesai</a>
             </div>
         @endif
     </main>

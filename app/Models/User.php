@@ -56,6 +56,16 @@ class User extends Authenticatable
 
     public function dataPretest()
     {
-        return $this->hasOne(DataPretest::class);
+        return $this->hasOne(Pretest::class);
+    }
+
+    public function dataPosttest()
+    {
+        return $this->hasOne(Posttest::class);
+    }
+
+    public function dataLogicii()
+    {
+        return $this->hasOne(DataLogicii::class);
     }
 }

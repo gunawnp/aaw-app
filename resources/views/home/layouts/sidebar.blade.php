@@ -20,18 +20,18 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('home/logics*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-logic" role="button" aria-expanded="false" aria-controls="collapse-logic">
-                <i class="fs-5 bi-card-checklist pe-2"></i>
+                <a class="nav-link {{ Request::is('home/logics/*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-logic" role="button" aria-expanded="false" aria-controls="collapse-logic">
+                <i class="fs-5 bi-lightbulb pe-2"></i>
                 Tes Berpikir Logis
                 </a>
-                <div class="collapse {{ Request::is('home/logics*') ? 'show' : '' }}" id="collapse-logic">
+                <div class="collapse {{ Request::is('home/logics/*') ? 'show' : '' }}" id="collapse-logic">
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics', 'home/logics/next', 'home/logics/begin') ? 'active' : '' }}" href="/home/logics">Mulai</a>
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/logics/score') ? 'active' : '' }}" href="/home/logics/score">Penilaian</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('home/pretest*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-pretest" role="button" aria-expanded="false" aria-controls="collapse-pretest">
-                <i class="fs-5 bi-card-checklist pe-2"></i>
+                <i class="fs-5 bi-file-earmark-code pe-2"></i>
                 Pretest Asesmen
                 <p class="ms-4 ps-2 mb-0">Adaptif</p> 
                 </a>
@@ -42,19 +42,29 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('home/materi*') ? 'active' : '' }}" href="/home/materi">
-                <i class="fs-5 bi-card-checklist pe-2"></i>
+                <i class="fs-5 bi-journal-bookmark pe-2"></i>
                 Materi Pembelajaran
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('home/posttest*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-posttest" role="button" aria-expanded="false" aria-controls="collapse-posttest">
-                <i class="fs-5 bi-card-checklist pe-2"></i>
+                <i class="fs-5 bi-file-earmark-code pe-2"></i>
                 Posttest Asesmen
                 <p class="ms-4 ps-2 mb-0">Adaptif</p> 
                 </a>
                 <div class="collapse {{ Request::is('home/posttest*') ? 'show' : '' }}" id="collapse-posttest">
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/posttest', 'home/posttest/begin') ? 'active' : '' }}" href="/home/posttest">Mulai</a>
                     <a class="nav-link ms-4 ps-4 {{ Request::is('home/posttest/score') ? 'active' : '' }}" href="/home/posttest/score">Penilaian</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('home/logicsii*') ? 'active' : '' }}" data-bs-toggle="collapse" href="#collapse-logicii" role="button" aria-expanded="false" aria-controls="collapse-logicii">
+                <i class="fs-5 bi-lightbulb pe-2"></i>
+                Tes Berpikir Logis 2
+                </a>
+                <div class="collapse {{ Request::is('home/logicsii*') ? 'show' : '' }}" id="collapse-logicii">
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/logicsii', 'home/logicsii/next', 'home/logicsii/begin') ? 'active' : '' }}" href="/home/logicsii">Mulai</a>
+                    <a class="nav-link ms-4 ps-4 {{ Request::is('home/logicsii/score') ? 'active' : '' }}" href="/home/logicsii/score">Penilaian</a>
                 </div>
             </li>
         </ul>

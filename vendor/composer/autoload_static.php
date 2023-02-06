@@ -531,6 +531,7 @@ class ComposerStaticInit1bc08b0ddffdd205ab2ef6231537d615
     );
 
     public static $classMap = array (
+        'App\\Charts\\PosttestChart' => __DIR__ . '/../..' . '/app/Charts/PosttestChart.php',
         'App\\Charts\\PretestChart' => __DIR__ . '/../..' . '/app/Charts/PretestChart.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -538,6 +539,7 @@ class ComposerStaticInit1bc08b0ddffdd205ab2ef6231537d615
         'App\\Http\\Controllers\\LogicController' => __DIR__ . '/../..' . '/app/Http/Controllers/LogicController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\MateriController' => __DIR__ . '/../..' . '/app/Http/Controllers/MateriController.php',
+        'App\\Http\\Controllers\\PosttestController' => __DIR__ . '/../..' . '/app/Http/Controllers/PosttestController.php',
         'App\\Http\\Controllers\\PretestController' => __DIR__ . '/../..' . '/app/Http/Controllers/PretestController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\StyleController' => __DIR__ . '/../..' . '/app/Http/Controllers/StyleController.php',
@@ -557,6 +559,7 @@ class ComposerStaticInit1bc08b0ddffdd205ab2ef6231537d615
         'App\\Http\\Requests\\UpdateTestsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTestsRequest.php',
         'App\\Models\\Answer' => __DIR__ . '/../..' . '/app/Models/Answer.php',
         'App\\Models\\DataLogic' => __DIR__ . '/../..' . '/app/Models/DataLogic.php',
+        'App\\Models\\DataLogicii' => __DIR__ . '/../..' . '/app/Models/DataLogicii.php',
         'App\\Models\\DataStyle' => __DIR__ . '/../..' . '/app/Models/DataStyle.php',
         'App\\Models\\Logic' => __DIR__ . '/../..' . '/app/Models/Logic.php',
         'App\\Models\\Maintest' => __DIR__ . '/../..' . '/app/Models/Maintest.php',

@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Charts\\PosttestChart' => $baseDir . '/app/Charts/PosttestChart.php',
     'App\\Charts\\PretestChart' => $baseDir . '/app/Charts/PretestChart.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -13,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\LogicController' => $baseDir . '/app/Http/Controllers/LogicController.php',
     'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\MateriController' => $baseDir . '/app/Http/Controllers/MateriController.php',
+    'App\\Http\\Controllers\\PosttestController' => $baseDir . '/app/Http/Controllers/PosttestController.php',
     'App\\Http\\Controllers\\PretestController' => $baseDir . '/app/Http/Controllers/PretestController.php',
     'App\\Http\\Controllers\\RegisterController' => $baseDir . '/app/Http/Controllers/RegisterController.php',
     'App\\Http\\Controllers\\StyleController' => $baseDir . '/app/Http/Controllers/StyleController.php',
@@ -32,6 +34,7 @@ return array(
     'App\\Http\\Requests\\UpdateTestsRequest' => $baseDir . '/app/Http/Requests/UpdateTestsRequest.php',
     'App\\Models\\Answer' => $baseDir . '/app/Models/Answer.php',
     'App\\Models\\DataLogic' => $baseDir . '/app/Models/DataLogic.php',
+    'App\\Models\\DataLogicii' => $baseDir . '/app/Models/DataLogicii.php',
     'App\\Models\\DataStyle' => $baseDir . '/app/Models/DataStyle.php',
     'App\\Models\\Logic' => $baseDir . '/app/Models/Logic.php',
     'App\\Models\\Maintest' => $baseDir . '/app/Models/Maintest.php',

@@ -87,26 +87,32 @@
                                 </div>
                                 @if (isset($data))
                                     @if ($data["logic_" . $logic->id] !== null)
-                                        <div class="alert alert-success" role="alert">
-                                            Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
-                                        </div>
+                                        @if ($logic->id == 10)
+                                            <div class="alert alert-success" role="alert">
+                                                Sudah terisi, silahkan klik selesai di bawah!
+                                            </div>  
+                                        @else
+                                            <div class="alert alert-success" role="alert">
+                                                Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
+                                            </div>   
+                                        @endif
                                     @endif
                                 @endif
                             </div>
                         </div>
                     </div>
-                    @if ($logic->id == 10)
+                    @if ($logic->id == 10 && isset($data) && $data["logic_" . $logic->id] !== null)
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="text-center">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#selesaiModal">
                                 Selesai
                                 </button>
                             </div>
                         </div>
                         
                         <!-- Modal -->
-                        <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content" style="border-radius: 15px">
                                 <div class="modal-body">

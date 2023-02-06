@@ -5,7 +5,9 @@ use App\Http\Controllers\LogicController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StyleController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\LogiciiController;
 use App\Http\Controllers\PretestController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PosttestController;
 use App\Http\Controllers\RegisterController;
 
@@ -82,4 +84,19 @@ Route::controller(PosttestController::class)->group(function () {
     Route::get('/home/posttest/begin', 'show')->middleware('auth');
     Route::post('/home/posttest/begin', 'store')->middleware('auth');
     Route::get('/home/posttest/score', 'score')->middleware('auth');
+});
+
+Route::controller(LogiciiController::class)->group(function () {
+    Route::get('/home/logicsii', 'index')->middleware('auth');
+    Route::post('/home/logicsii', 'exone')->middleware('auth');
+    Route::get('/home/logicsii/next', 'indextwo')->middleware('auth');
+    Route::get('/home/logicsii/begin', 'show')->middleware('auth');
+    Route::post('/home/logicsii/begin', 'store')->middleware('auth');
+    Route::get('/home/logicsii/score', 'score')->middleware('auth');
+});
+
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/home/profile', 'index')->middleware('auth');
+    Route::post('/home/profile/update', 'update')->middleware('auth');
+    Route::post('/home/profile/delete', 'delete')->middleware('auth');
 });
