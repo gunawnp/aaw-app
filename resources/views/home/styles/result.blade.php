@@ -60,7 +60,7 @@
             <hr>
             <div class="text-center">
                 <p class="fs-6 my-4"> Tes gaya belajar Kolb anda telah selesai, silahkan lanjutkan dengan mengikuti tes berpikir logis <br> dengan cara menekan tombol di bawah ini atau pilih Tes Berpikir Logis pada sidebar untuk memulainya.</p>
-                <a href="/home/logics" type="button" class="btn btn-blue mb-5">Tes Berpikir Logis</a>
+                <a href="/home/logics/desc" type="button" class="btn btn-blue mb-5">Tes Berpikir Logis</a>
             </div>
         @endif
     </main>

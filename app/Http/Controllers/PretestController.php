@@ -241,6 +241,11 @@ class PretestController extends Controller
 
     public function score() {
         $data = Pretest::firstWhere('user_id', auth()->user()->id);
+
+        $array = [];
+        $datachart = [];
+        $chart = null;
+
         if ($data && $data->correct === null) {
             $correct = 0;
             for ($i = 1; $i < 21; $i++) {
@@ -265,30 +270,43 @@ class PretestController extends Controller
                 $dataInput['sum'] = $sum;
                 //update ke database
                 $data->update($dataInput);
+
+
+                for ($i = 1; $i < 21; $i++) {
+                    $no = explode(',', $data['no_' . $i]);
+                    $co = explode(',', $data['co_' . $i]);
+                    $combine = array_combine($no, $co);
+                    array_push($array, $combine);
+
+                    $value = substr($data['no_' . $i], -1);
+                    array_push($datachart, $value);
+                }
+
+                $chart = new PretestChart;
+                $chart->labels(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
+                $chart->dataset('Grafik Hasil Pretest', 'line', $datachart);
             }
         } elseif ($data && $data->correct !== null) {
             $done = true;
+
+            for ($i = 1; $i < 21; $i++) {
+                $no = explode(',', $data['no_' . $i]);
+                $co = explode(',', $data['co_' . $i]);
+                $combine = array_combine($no, $co);
+                array_push($array, $combine);
+
+                $value = substr($data['no_' . $i], -1);
+                array_push($datachart, $value);
+            }
+
+            $chart = new PretestChart;
+            $chart->labels(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
+            $chart->dataset('Grafik Hasil Pretest', 'line', $datachart);
+            
         } else {
             $done = false;
         }
 
-        
-        $array = [];
-        $datachart = [];
-        for ($i=1; $i < 21; $i++) { 
-            $no = explode(',', $data['no_'. $i]);
-            $co = explode(',', $data['co_'. $i]);
-            $combine = array_combine($no,$co);
-            array_push($array, $combine);
-
-            $value = substr($data['no_' . $i], -1);
-            array_push($datachart, $value);
-        }
-
-        $chart = new PretestChart;
-        $chart->labels(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
-        $chart->dataset('Grafik Hasil Pretest', 'line', $datachart);
-    
 
         return view('home.pretest.score', [
             "title" => "Pretest Asesmen Adaptif",

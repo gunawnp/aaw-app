@@ -18,7 +18,7 @@
                     
                     <div class="row">
                         <div class="col-md-5">
-                            <button type="button" class="btn btn-outline-primary px-3 py-2" style="border-radius: 10px; font-size: 11pt;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-blue px-3 py-2" style="border-radius: 10px; font-size: 11pt;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Setting Foto Profil
                             </button>
                         </div>
@@ -138,7 +138,7 @@
                                 <p class="card-text">
                                     Anda belum mengisi tes, silahkan isi tes terlebih dahulu.
                                 </p>
-                                <a href="/home/logics" class="card-link">Isi Tes</a>
+                                <a href="/home/logics/desc" class="card-link">Isi Tes</a>
                             @endif
                         </div>
                     </div>

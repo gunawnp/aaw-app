@@ -1,6 +1,6 @@
-    <header class="navbar navbar-light bg-light sticky-top flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-5 fw-bold text-dark" href="/">
-            <img class="me-2" src="/img/logo-aaw-b.png" alt="Logo AAW" width="30" height="30" />
+    <header class="navbar navbar-light bg-light sticky-top flex-md-nowrap py-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 py-3 fs-5 fw-bold text-light" href="/" style="background-color: #0476d0">
+            <img class="me-2" src="/img/logo-aaw.png" alt="Logo AAW" width="30" height="30" />
             AAW
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,17 +21,17 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li>
+                        <a href="/home/profile" class="dropdown-item">
+                            <i class="bi bi-person me-3"></i>Profile
+                        </a>
+                    </li>
+                    <li>
                         <form action="/logout" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item">
                                 <i class="bi bi-box-arrow-right me-3"></i>Sign out
                             </button>
                         </form>
-                    </li>
-                    <li>
-                        <a href="/home/profile" class="dropdown-item">
-                            <i class="bi bi-person me-3"></i>Profile
-                        </a>
                     </li>
                 </ul>
             </div>

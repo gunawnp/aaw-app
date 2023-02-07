@@ -111,9 +111,8 @@
             <div class="text-center">
                 <a href="/home/styles/pref" type="button" class="btn btn-blue mt-3 mb-5">Selesai</a>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            {!! $chart->script() !!}
         @endif
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    {!! $chart->script() !!}
 @endsection 
