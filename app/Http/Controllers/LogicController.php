@@ -6,37 +6,6 @@ use App\Models\DataLogic;
 use App\Models\Logic;
 use Illuminate\Http\Request;
 
-function execute(Request $request)
-{
-    $validatedData = $request->validate([
-        'code' => [
-            'required',
-            'string',
-            'max:2000',
-            // 'regex:/^(system|exec|popen|passthru|shell_exec|proc_open)$/i'
-        ],
-    ]);
-
-    $code = $validatedData['code'];
-
-    // simpan kode ke file
-    $file = storage_path('app/code.c');
-    file_put_contents($file, $code);
-
-    // eksekusi kode C menggunakan shell_exec
-    $run = shell_exec("gcc $file -o " . storage_path('app/code') . " 2>&1");
-
-    // menjalankan program, berhasil atau error
-    if ($run == null) {
-        $output = shell_exec(storage_path('app/code'));
-    } else {
-        $output = 'error';
-    }
-
-    return $output;
-}
-
-
 class LogicController extends Controller
 {
 
@@ -55,33 +24,6 @@ class LogicController extends Controller
         return view('home.logics.index', [
             "title" => "Tes Berpikir Logis",
             "header" => "Pendahuluan Tes Berpikir Logis",
-            "data" => $data,
-            "done" => $done
-        ]);
-    }
-
-    public function exone(Request $request) {
-        $output = execute($request);
-        return redirect()->back()->with('output', $output);
-        
-    }
-
-    public function indextwo() {
-        $data = DataLogic::firstWhere('user_id', auth()->user()->id);
-
-        if ($data) {
-            $done = true;
-            if ($data->sum === null) {
-                $done = false;
-            }
-        } else {
-            $done = false;
-        }
-
-        return view('home.logics.indextwo', [
-            "title" => "Tes Berpikir Logis",
-            "header" => "Pendahuluan Tes Berpikir Logis",
-            "data" => $data,
             "done" => $done
         ]);
     }
@@ -108,17 +50,19 @@ class LogicController extends Controller
 
     public function store(Request $request) {
 
-        $type = $request->type;
-        $answer = $request->answer;
         $no = $request->no;
-        $code = $request->code;
-        
+        $answer1 = $request->answer1;
+        $answer2 = $request->answer2;
+
         $data = DataLogic::firstWhere('user_id', auth()->user()->id);
 
-        if (str_contains($code, $type)) {
-            $output = execute($request);
-            if (preg_match("/$answer/", $output)) {
+        if($no == 9 || $no == 10) {
+            $validated = $request->validate([
+                'answerText' => 'required',
+            ]);
 
+
+            if ($validated['answerText'] == $answer1) {
                 if ($data) {
                     // kalo ada datanya, update
                     $dataInput['logic_' . $no] = 1;
@@ -131,9 +75,7 @@ class LogicController extends Controller
                     //isi ke database
                     DataLogic::create($dataInput);
                 }
-
-            }else {
-
+            } else {
                 if ($data) {
                     // kalo ada datanya, update
                     $dataInput['logic_' . $no] = 0;
@@ -147,21 +89,41 @@ class LogicController extends Controller
                     DataLogic::create($dataInput);
                 }
             }
-        } else {
+        }else{
+            $validated = $request->validate([
+                'answerOption' => 'required',
+                'answerReason' => 'required',
+            ]);
 
-            if ($data) {
-                // kalo ada datanya, update
-                $dataInput['logic_' . $no] = 0;
-                //update ke database
-                DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+            if ($validated['answerOption'] == $answer1 && $validated['answerReason'] == $answer2) {
+                if ($data) {
+                    // kalo ada datanya, update
+                    $dataInput['logic_' . $no] = 1;
+                    //update ke database
+                    DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+                } else {
+                    // ga ada, isi
+                    $dataInput['user_id'] = auth()->user()->id;
+                    $dataInput['logic_' . $no] = 1;
+                    //isi ke database
+                    DataLogic::create($dataInput);
+                }
             } else {
-                // ga ada, isi
-                $dataInput['user_id'] = auth()->user()->id;
-                $dataInput['logic_' . $no] = 0;
-                //isi ke database
-                DataLogic::create($dataInput);
+                if ($data) {
+                    // kalo ada datanya, update
+                    $dataInput['logic_' . $no] = 0;
+                    //update ke database
+                    DataLogic::where('user_id', auth()->user()->id)->update($dataInput);
+                } else {
+                    // ga ada, isi
+                    $dataInput['user_id'] = auth()->user()->id;
+                    $dataInput['logic_' . $no] = 0;
+                    //isi ke database
+                    DataLogic::create($dataInput);
+                }
             }
         }
+
 
         //selesai, kasih alert berhasil submit, lanjutkan ke nomor berikutnya.
         if ($no == 10) {

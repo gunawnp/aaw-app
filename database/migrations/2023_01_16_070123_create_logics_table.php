@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('logics', function (Blueprint $table) {
             $table->id();
             $table->text('que');
-            $table->text('program')->nullable();
-            $table->string('answer');
-            $table->string('type');
+            $table->text('option')->nullable();
+            $table->text('reason')->nullable();
+            $table->text('answer1');
+            $table->text('answer2');
             $table->timestamps();
         });
     }

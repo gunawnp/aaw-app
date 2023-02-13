@@ -23,7 +23,7 @@
                 
                 @foreach ($logics as $logic)
                     <p>
-                        {{ $logic->id }}. {{ $logic->que }}
+                        {{ $logic->id }}. {!! $logic->que !!}
                     </p>
 
                     @if ($logic->id == 7)
@@ -34,29 +34,174 @@
                         <img class="img-fluid mx-auto d-block my-4" src="/img/logic-08.png" alt="ikan" width="500px">
                     @endif
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="editor-container" style="height: 630px">
-                                        <pre id="editor" class="editor"></pre>
+                    <form method="post" action="/home/logics/begin" id="myform" class="justify-content-center">
+                        @csrf
+
+                        <div class="row">
+                            @if ($logic->id == 9 || $logic->id == 10)
+                                <div class="mb-3">
+                                    <label for="text-area" class="form-label">Jawaban</label>
+                                    <textarea class="form-control" id="text-area" rows="3" name="answerText" required></textarea>
+                                </div>
+                                @error('answerText')
+                                    <div class="alert alert-danger" role="alert">
+                                        Silahkan isi terlebih dahulu!
+                                    </div>
+                                @enderror
+                            @else
+
+                                <div class="col-md-4">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            @php
+                                                $array = explode('&',$logic->option);
+                                            @endphp
+
+                                            @if ($logic->id == 7 || $logic->id == 8)
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-1" value="A">
+                                                    <label class="form-check-label" for="answer1-1">
+                                                        {{ $array[0] }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-2" value="B">
+                                                    <label class="form-check-label" for="answer1-2">
+                                                        {{ $array[1] }}
+                                                    </label>
+                                                </div>
+
+                                            @else
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-1" value="A">
+                                                    <label class="form-check-label" for="answer1-1">
+                                                        {{ $array[0] }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-2" value="B">
+                                                    <label class="form-check-label" for="answer1-2">
+                                                        {{ $array[1] }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-3" value="C">
+                                                    <label class="form-check-label" for="answer1-3">
+                                                        {{ $array[2] }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-4" value="D">
+                                                    <label class="form-check-label" for="answer1-4">
+                                                        {{ $array[3] }}
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="answerOption" id="answer1-5" value="E">
+                                                    <label class="form-check-label" for="answer1-5">
+                                                        {{ $array[4] }}
+                                                    </label>
+                                                </div>
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                    
+                                    @error('answerOption')
+                                        <div class="alert alert-danger" role="alert">
+                                            Isi salah satu!
+                                        </div>
+                                    @enderror
+                                </div>
+                                                
+                                <div class="col-md-8">
+                                    <div class="card mb-3 px-0">
+                                        <div class="card-body">
+                                            @php
+                                                $array = explode('&',$logic->reason);
+                                            @endphp
+                                            
+                                            @foreach ($array as $ar)    
+                                                <div class="form-check">
+                                                    <input class="form-check-input p-2 me-2" type="radio" name="answerReason" id="answer2- . {{ $loop->iteration }}" value="{{ $loop->iteration }}">
+                                                    <label class="form-check-label" for="answer2- . {{ $loop->iteration }}">
+                                                        {{ $ar }}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @error('answerReason')
+                                        <div class="alert alert-danger" role="alert">
+                                            Isi salah satu!
+                                        </div>
+                                    @enderror
+                                </div>
+
+                            @endif
+                        </div>
+
+                        @if (isset($data))
+                            @if ($data["logic_" . $logic->id] !== null)
+                                @if ($logic->id == 10)
+                                    <div class="alert alert-success" role="alert">
+                                        Sudah terisi, silahkan klik selesai di bawah!
+                                    </div>  
+                                @else
+                                    <div class="alert alert-success" role="alert">
+                                        Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
+                                    </div>   
+                                @endif
+                            @endif
+                        @endif
+
+                        <input type="hidden" name="no" value="{{ $logic->id }}">
+                        <input type="hidden" name="answer1" value="{{ $logic->answer1 }}">
+                        <input type="hidden" name="answer2" value="{{ $logic->answer2 }}">
+
+
+                        @if ($logic->id == 10 && isset($data) && $data["logic_" . $logic->id] !== null)
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="text-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#selesaiModal">
+                                    Selesai
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="border-radius: 15px">
+                                    <div class="modal-body">
+                                        <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
+                                    </div>
+                                    <div class="modal-footer justify-content-center ">
+                                        <a href="/home/logics/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
+                                        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
-                            <form method="post" action="/home/logics/begin" id="myform" class="d-md-flex justify-content-center">
-                                @csrf
-                                <input type="hidden" name="code" id="code" value="">
-                                <input type="hidden" name="no" value="{{ $logic->id }}">
-                                <input type="hidden" name="type" value="{{ $logic->type }}">
-                                <input type="hidden" name="answer" value="{{ $logic->answer }}">
+                        
+                        @else
 
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-blue btn btn-blue py-2 my-3" data-bs-toggle="modal" data-bs-target="#mulaiModal">
+                            <!-- Button trigger modal -->
+                            <div class="text-center">
+                                <button type="button" class="btn btn-blue btn btn-blue py-2 my-3 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#mulaiModal">
                                 Submit
                                 </button>
+                            </div>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
+                            <!-- Modal -->
+                            <div class="modal fade" id="mulaiModal" tabindex="-1" aria-labelledby="mulaiModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="border-radius: 15px">
                                     <div class="modal-body">
@@ -68,64 +213,12 @@
                                     </div>
                                     </div>
                                 </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="card mb-4 px-0 fs-6">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h6>Hasil Program</h6>
-                                        <i class="bi bi-question-circle" 
-                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="custom-tooltip"
-                                        data-bs-title="Tidak ada kode inputan seperti scanf, semua nilai disimpan dalam suatu variabel"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="font-monospace"> {!! $logic->program !!}</p>
-                                    </div>
-                                </div>
-                                @if (isset($data))
-                                    @if ($data["logic_" . $logic->id] !== null)
-                                        @if ($logic->id == 10)
-                                            <div class="alert alert-success" role="alert">
-                                                Sudah terisi, silahkan klik selesai di bawah!
-                                            </div>  
-                                        @else
-                                            <div class="alert alert-success" role="alert">
-                                                Sudah terisi, silahkan lanjutkan ke nomor berikutnya!
-                                            </div>   
-                                        @endif
-                                    @endif
-                                @endif
                             </div>
-                        </div>
-                    </div>
-                    @if ($logic->id == 10 && isset($data) && $data["logic_" . $logic->id] !== null)
-                        <div class="d-flex justify-content-center align-items-center">
-                            <div class="text-center">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-blue mb-5" data-bs-toggle="modal" data-bs-target="#selesaiModal">
-                                Selesai
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content" style="border-radius: 15px">
-                                <div class="modal-body">
-                                    <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
-                                </div>
-                                <div class="modal-footer justify-content-center ">
-                                    <a href="/home/logics/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
-                                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                            
+                        @endif
+
+                    </form>
+
                 @endforeach
             </div>
             <div class="d-flex justify-content-center">
@@ -139,30 +232,5 @@
                 </div>
             </div>
         @endif
-        
-        <script>
-
-            var editor = document.querySelector("#editor");
-
-            ace.edit(editor, {
-                theme: 'ace/theme/xcode',
-                mode: 'ace/mode/c_cpp',
-                enableBasicAutocompletion: true
-            })
-            
-            var editor = ace.edit("editor");
-
-            editor.setValue("#include <stdio.h>\nint main(){\n\n\t\n\n\treturn 0;\n}");
-
-            var position = {row: 3, column: 1};
-
-            editor.moveCursorToPosition(position);
-            editor.clearSelection();
-            editor.textInput.focus();
-
-            setTimeout(function() {
-                $(".alert-oke").alert('close');
-            }, 2500);
-        </script>
     </main>
 @endsection

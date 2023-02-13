@@ -59,7 +59,6 @@ Route::controller(StyleController::class)->group(function () {
 Route::controller(LogicController::class)->group(function () {
     Route::get('/home/logics/desc', 'index')->middleware('auth');
     Route::post('/home/logics', 'exone')->middleware('auth');
-    Route::get('/home/logics/next', 'indextwo')->middleware('auth');
     Route::get('/home/logics/begin', 'show')->middleware('auth');
     Route::post('/home/logics/begin', 'store')->middleware('auth');
     Route::get('/home/logics/score', 'score')->middleware('auth');
