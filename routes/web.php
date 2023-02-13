@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogicController;
 use App\Http\Controllers\LoginController;
@@ -99,4 +100,9 @@ Route::controller(ProfileController::class)->group(function () {
     Route::get('/home/profile', 'index')->middleware('auth');
     Route::post('/home/profile/update', 'update')->middleware('auth');
     Route::post('/home/profile/delete', 'delete')->middleware('auth');
+});
+
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/home/admin', 'index')->middleware('admin');
+    Route::get('/home/admin/dashboard', 'dashboard')->middleware('admin');
 });
