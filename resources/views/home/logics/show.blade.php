@@ -26,22 +26,37 @@
                         {{ $logic->id }}. {!! $logic->que !!}
                     </p>
 
+                    @if ($logic->id == 3 || $logic->id == 4)
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-1.png" alt="tikus" width="500px">
+                    @endif
+
                     @if ($logic->id == 7)
-                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-07.png" alt="tikus" width="500px">
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-2.png" alt="tikus" width="500px">
                     @endif
 
                     @if ($logic->id == 8)
-                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-08.png" alt="ikan" width="500px">
+                        <img class="img-fluid mx-auto d-block my-4" src="/img/logic-3.png" alt="ikan" width="500px">
                     @endif
 
                     <form method="post" action="/home/logics/begin" id="myform" class="justify-content-center">
                         @csrf
 
                         <div class="row">
-                            @if ($logic->id == 9 || $logic->id == 10)
+                            @if ($logic->id == 9)
                                 <div class="mb-3">
                                     <label for="text-area" class="form-label">Jawaban</label>
-                                    <textarea class="form-control" id="text-area" rows="3" name="answerText" required></textarea>
+                                    <textarea class="form-control" id="text-area" rows="3" name="answerText" required placeholder="DTA, DTB, DIA, ..."></textarea>
+                                </div>
+                                @error('answerText')
+                                    <div class="alert alert-danger" role="alert">
+                                        Silahkan isi terlebih dahulu!
+                                    </div>
+                                @enderror
+
+                            @elseif($logic->id == 10)
+                                <div class="mb-3">
+                                    <label for="text-area" class="form-label">Jawaban</label>
+                                    <textarea class="form-control" id="text-area" rows="3" name="answerText" required placeholder="BKHM, BKMH, BHMK, ..."></textarea>
                                 </div>
                                 @error('answerText')
                                     <div class="alert alert-danger" role="alert">
