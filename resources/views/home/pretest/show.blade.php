@@ -31,21 +31,55 @@
                 
                 @foreach ($datatest as $dt)
                     <p>
-                        {{ $dt->no }} {{ $dt->que }}
+                        {{ $dt->no }} {!! $dt->que !!}
                     </p>
 
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="editor-container" style="height: 780px">
-                                        <pre id="editor" class="editor"></pre>
+                                    @php
+                                        $array = explode('#',$dt->answer->answer);
+                                    @endphp
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answerOption" id="answer1-1" value="A">
+                                        <label class="form-check-label ms-4" for="answer1-1">
+                                            {!! $array[0] !!}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answerOption" id="answer1-2" value="B">
+                                        <label class="form-check-label ms-4" for="answer1-2">
+                                            {!! $array[1] !!}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answerOption" id="answer1-3" value="C">
+                                        <label class="form-check-label ms-4" for="answer1-3">
+                                            {!! $array[2] !!}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answerOption" id="answer1-4" value="D">
+                                        <label class="form-check-label ms-4" for="answer1-4">
+                                            {!! $array[3] !!}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="answerOption" id="answer1-5" value="E">
+                                        <label class="form-check-label ms-4" for="answer1-5">
+                                            {!! $array[4] !!}
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <form method="post" action="/home/pretest/begin" id="myform" class="d-md-flex justify-content-center">
                                 @csrf
-                                <input type="hidden" name="code" id="code" value="">
                                 <input type="hidden" name="id" value="{{ $dt->id }}">
 
                                 <!-- Button trigger modal -->
@@ -70,21 +104,7 @@
                             </form>
                         </div>
                         <div class="col-lg-6">
-                            <div class="row">
-                                <div class="card mb-4 px-0 fs-6">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h6>Hasil Program</h6>
-                                        <i class="bi bi-question-circle" 
-                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="custom-tooltip"
-                                        data-bs-title="Tidak ada kode inputan seperti scanf, semua nilai disimpan dalam suatu variabel"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="font-monospace"> {!! $dt->answer->program !!}</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                            
                         </div>
                     </div>
                     @if (session()->has('end'))
@@ -121,30 +141,5 @@
                 </div>
             </div>
         @endif
-        
-        <script>
-
-            var editor = document.querySelector("#editor");
-
-            ace.edit(editor, {
-                theme: 'ace/theme/xcode',
-                mode: 'ace/mode/c_cpp',
-                enableBasicAutocompletion: true
-            })
-            
-            var editor = ace.edit("editor");
-
-            editor.setValue("#include <stdio.h>\nint main(){\n\n\t\n\n\treturn 0;\n}");
-
-            var position = {row: 3, column: 1};
-
-            editor.moveCursorToPosition(position);
-            editor.clearSelection();
-            editor.textInput.focus();
-
-            setTimeout(function() {
-                $(".alert-oke").alert('close');
-            }, 2500);
-        </script>
     </main>
 @endsection

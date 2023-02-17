@@ -253,23 +253,23 @@ class DatabaseSeeder extends Seeder
 
         Answer::create([
             'answer' =>
-                'a.	if(harga>100000){ <br>
+            'a.	if(harga>100000){ <br>
                     &nbsp; diskon = harga + 0.3; <br>
                 }#
 
-                b.	if(harga>100000){
+                b.	if(harga>100000){ <br>
                     &nbsp; diskon = harga * 0.5; <br>
                 }#
 
-                c.	if(harga>100000){
+                c.	if(harga>100000){ <br>
                     &nbsp; diskon = harga * 0.3; <br>
                 }#
 
-                d.	if(harga<100000){
+                d.	if(harga<100000){ <br>
                     &nbsp; diskon = harga * 0.3; <br>
                 }#
 
-                e.	if(harga<150000){
+                e.	if(harga<150000){ <br>
                     &nbsp; diskon = harga * 0.3; <br>
                 }'
         ]);
@@ -303,8 +303,9 @@ class DatabaseSeeder extends Seeder
             'no' => '1.1.',
             'que' =>
             'Dari kode berikut, bagian mana yang menjalankan pemeriksaan harga yang lebih dari Rp. 100.000 untuk mendapatkan diskon 30%?
-            <br><br>
-            #include <stdio.h> <br>
+            <br>
+            #include &lt;stdio.h&gt;
+ <br>
             int main(){ <br>
                 &nbsp; int harga, diskon, total; <br>
                 &nbsp; diskon = 0; <br>
@@ -317,7 +318,7 @@ class DatabaseSeeder extends Seeder
                 &nbsp; total = harga - diskon; <br>
                 &nbsp; printf("Total bayar: %d", total); <br>
                 &nbsp; <br>
-                &nbsp; return 0;
+                &nbsp; return 0; <br>
             }',
             
             'answer_id' => '1',
