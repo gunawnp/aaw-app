@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->text('answer');
+            $table->text('option');
+            $table->string('answer');
             $table->timestamps();
         });
     }
