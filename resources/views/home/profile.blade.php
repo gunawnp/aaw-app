@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
                             <p class="card-title fs-6 fw-bold text-center mb-3">Tes Tingkatan Berpikir Logis</p>
@@ -161,9 +161,9 @@
                             @endif
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="row justify-content-center">
+            {{-- <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         
     </main>

@@ -36,7 +36,7 @@
                         <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/styles/result') ? ' bg-blued' : '' }}" href="/home/styles/result">Hasil Tes</a>
                     </div>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/logics/*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-logic" role="button" aria-expanded="false" aria-controls="collapse-logic">
                     <i class="fs-5 bi-lightbulb pe-2"></i>
                     Tes Berpikir Logis
@@ -83,7 +83,7 @@
                         <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/logicsii', 'home/logicsii/next', 'home/logicsii/begin') ? ' bg-blued' : '' }}" href="/home/logicsii">Mulai</a>
                         <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/logicsii/score') ? ' bg-blued' : '' }}" href="/home/logicsii/score">Penilaian</a>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         @endcan
 
