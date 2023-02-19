@@ -1939,25 +1939,641 @@ class DatabaseSeeder extends Seeder
         Answer::create([
             'option' =>
             'a.	if(harga>100000){ <br>
-                    &nbsp; diskon = harga + 0.3; <br>
-                }#
+                &nbsp; diskon = harga + 0.3; <br>
+            }#
 
-                b.	if(harga>100000){ <br>
-                    &nbsp; diskon = harga * 0.5; <br>
-                }#
+            b.	if(harga>100000){ <br>
+                &nbsp; diskon = harga * 0.5; <br>
+            }#
 
-                c.	if(harga>100000){ <br>
-                    &nbsp; diskon = harga * 0.3; <br>
-                }#
+            c.	if(harga>100000){ <br>
+                &nbsp; diskon = harga * 0.3; <br>
+            }#
 
-                d.	if(harga<100000){ <br>
-                    &nbsp; diskon = harga * 0.3; <br>
-                }#
+            d.	if(harga<100000){ <br>
+                &nbsp; diskon = harga * 0.3; <br>
+            }#
 
-                e.	if(harga<150000){ <br>
-                    &nbsp; diskon = harga * 0.3; <br>
+            e.	if(harga<150000){ <br>
+                &nbsp; diskon = harga * 0.3; <br>
+            }',
+            'answer' => 'c'
+        ]);
+
+        
+        //2
+        Answer::create([
+            'option' =>
+            'a.	if(baju>10){<br>
+                &nbsp; baju = baju * 3;<br>
+            }#
+
+            b.	if(baju<10){<br>
+                &nbsp; baju = baju * 3;<br>
+            }#
+
+            c.	if(baju<10){<br>
+                &nbsp; baju = baju + 3;<br>
+            }#
+
+            d.	if(baju>13){<br>
+                &nbsp; baju = baju + 3;<br>
+            }#
+
+            e.	if(baju>10){<br>
+                &nbsp; baju = baju + 3;<br>
+            }',
+            'answer' => 'e'
+        ]);
+
+        
+        //3
+        Answer::create([
+            'option' =>
+            'a.	if(bilangan % 2 = 0){<br>
+                &nbsp; printf("Bilangan tersebut ganjil");<br>
+            } else{<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            }
+
+            b.	if(bilangan % 3 = 0){<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            } else{<br>
+                &nbsp; printf("Bilangan tersebut ganjil");<br>
+            }
+
+            c.	if(bilangan % 2 == 0){<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            } else{<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            }
+
+            d.	if(bilangan % 2 == 1){<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            } else{<br>
+                &nbsp; printf("Bilangan tersebut ganjil");<br>
+            }
+
+            e.	if(bilangan % 2 == 0){<br>
+                &nbsp; printf("Bilangan tersebut genap");<br>
+            } else{<br>
+                &nbsp; printf("Bilangan tersebut ganjil");<br>
+            }',
+            'answer' => 'e'
+        ]);
+
+        
+        //4
+        Answer::create([
+            'option' =>
+            'a.	if(kecepatan > 80){<br>
+                &nbsp; printf("terlalu lambat, terkena tilang");<br>
+            }else{<br>
+                &nbsp; printf("kecepatan normal");<br>
+            }
+
+            b.	if(kecepatan > 80){<br>
+                &nbsp; printf("terlalu cepat, terkena tilang");<br>
+            }else{<br>
+                &nbsp; printf("kecepatan normal");<br>
+            }
+
+            c.	if(kecepatan > 80){<br>
+                &nbsp; printf("terlalu cepat, terkena tilang");<br>
+            }else{<br>
+                &nbsp; printf("kecepatan cepat");<br>
+            }
+
+            d.	if(kecepatan < 80){<br>
+                &nbsp; printf("terlalu cepat, terkena tilang");<br>
+            }else{<br>
+                &nbsp; printf("kecepatan normal");<br>
+            }
+
+            e.	if(kecepatan > 80){<br>
+                &nbsp; printf("kecepatan normal");<br>
+            }else{<br>
+                &nbsp; printf("terlalu cepat, terkena tilang");<br>
+            }',
+            'answer' => 'b'
+        ]);
+
+        
+        //5
+        Answer::create([
+            'option' =>
+            'a.	if(paket == 1){<br>
+                &nbsp; harga = 12000;<br>
+            }else if(paket == 2){<br>
+                &nbsp; harga = 15000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 18000;<br>
+            }else if(paket == 4){<br>
+                &nbsp; harga = 20000;<br>
+            }else{<br>
+                &nbsp; printf("tidak ada paket tersebut");<br>
+                &nbsp; harga = 200000;<br>
+            }
+
+            b.	if(paket == 1){<br>
+                &nbsp; harga = 15000;<br>
+            }else if(paket == 2){<br>
+                &nbsp; harga = 12000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 18000;<br>
+            }else if(paket == 4){<br>
+                &nbsp; harga = 20000;<br>
+            }else{<br>
+                &nbsp; printf("tidak ada paket tersebut");<br>
+                &nbsp; harga = 200000;<br>
+            }
+
+            c.	if(paket == 1){<br>
+                &nbsp; harga = 12000;<br>
+            }else if(paket == 2){<br>
+                &nbsp; harga = 18000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 15000;<br>
+            }else if(paket == 4){<br>
+                &nbsp; harga = 20000;<br>
+            }else{<br>
+                &nbsp; printf("tidak ada paket tersebut");<br>
+                &nbsp; harga = 200000;<br>
+            }
+
+            d.	if(paket == 1){<br>
+                &nbsp; harga = 12000;<br>
+            }else if(paket == 2){<br>
+                &nbsp; harga = 15000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 18000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 20000;<br>
+            }else{<br>
+                &nbsp; printf("tidak ada paket tersebut");<br>
+                &nbsp; harga = 200000;<br>
+            }
+
+            e.	if(paket == 4){<br>
+                &nbsp; harga = 12000;<br>
+            }else if(paket == 3){<br>
+                &nbsp; harga = 15000;<br>
+            }else if(paket == 2){<br>
+                &nbsp; harga = 18000;<br>
+            }else if(paket == 1){<br>
+                &nbsp; harga = 20000;<br>
+            }else{<br>
+                &nbsp; printf("tidak ada paket tersebut");<br>
+                &nbsp; harga = 200000;<br>
+            }',
+            'answer' => 'a'
+        ]);
+
+        
+        //6
+        Answer::create([
+            'option' =>
+            'a.	if(motor == 1){<br>
+                &nbsp; kecepatan = 20;<br>
+            }else if(motor == 2){<br>
+                &nbsp; kecepatan = 50;<br>
+            }else if(motor == 3){<br>
+                &nbsp; kecepatan = 80;<br>
+            }else{<br>
+                &nbsp; kecepatan = 25;<br>
+            }
+
+            b.	if(motor == 1){<br>
+                    &nbsp; kecepatan = 25;<br>
+                }else if(motor == 2){<br>
+                    &nbsp; kecepatan = 55;<br>
+                }else if(motor == 3){<br>
+                    &nbsp; kecepatan = 80;<br>
+                }else{<br>
+                    &nbsp; kecepatan = 20;<br>
+                }
+
+
+            c.	if(motor == 1){<br>
+                    &nbsp; kecepatan = 25;<br>
+                }else if(motor == 2){<br>
+                    &nbsp; kecepatan = 50;<br>
+                }else if(motor == 3){<br>
+                    &nbsp; kecepatan = 85;<br>
+                }else{<br>
+                    &nbsp; kecepatan = 25;<br>
+                }
+
+            d.	if(motor == 1){<br>
+                    &nbsp; kecepatan = 25;<br>
+                }else if(motor == 2){<br>
+                    &nbsp; kecepatan = 50;<br>
+                }else if(motor == 3){<br>
+                    &nbsp; kecepatan = 80;<br>
+                }else{<br>
+                    &nbsp; kecepatan = 20;<br>
+                }
+
+            e.	if(motor == 1){<br>
+                    &nbsp; kecepatan = 30;<br>
+                }else if(motor == 2){<br>
+                    &nbsp; kecepatan = 50;<br>
+                }else if(motor == 3){<br>
+                    &nbsp; kecepatan = 85;<br>
+                }else{<br>
+                    &nbsp; kecepatan = 20;<br>
+                }',
+            'answer' => 'd'
+        ]);
+
+        
+        //7
+        Answer::create([
+            'option' =>
+            'a.	switch (nomor){<br>
+                    &nbsp; case a:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Beat");<br>
+                        &nbsp; harga = 50000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case b:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vario");<br>
+                        &nbsp; harga = 70000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case c:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vespa");<br>
+                        &nbsp; harga = 110000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            b.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Beat");<br>
+                        &nbsp; harga == 50000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vario");<br>
+                        &nbsp; harga == 70000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vespa");<br>
+                        &nbsp; harga == 100000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            c.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Beat");<br>
+                        &nbsp; harga = 50000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vario");<br>
+                        &nbsp; harga = 70000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vespa");<br>
+                        &nbsp; harga = 100000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            d.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Beat");<br>
+                        &nbsp; harga = 70000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vario");<br>
+                        &nbsp; harga = 100000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vespa");<br>
+                        &nbsp; harga = 50000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            e.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Beat");<br>
+                        &nbsp; harga = 500000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vario");<br>
+                        &nbsp; harga = 700000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Motor yang dipilih yaitu motor Vespa");<br>
+                        &nbsp; harga = 1000000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
                 }',
             'answer' => 'c'
+        ]);
+
+        
+        //8
+        Answer::create([
+            'option' =>
+            'a.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Ventela");<br>
+                        &nbsp; harga = 300000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Adidas");<br>
+                        &nbsp; harga = 500000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 4:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Converse");<br>
+                        &nbsp; harga = 600000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Nike");<br>
+                        &nbsp; harga = 850000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            b.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Ventela");<br>
+                        &nbsp; harga = 300000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Adidas");<br>
+                        &nbsp; harga = 500000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Converse");<br>
+                        &nbsp; harga = 650000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 4:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Nike");<br>
+                        &nbsp; harga = 800000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            c.	switch (nomor){<br>
+                    &nbsp; case 1:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Ventela");<br>
+                        &nbsp; harga == 30000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Adidas");<br>
+                        &nbsp; harga = 50000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Converse");<br>
+                        &nbsp; harga == 65000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 4:<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Nike");<br>
+                        &nbsp; harga = 80000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default:<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                }
+
+            d.	switch (nomor){<br>
+                    &nbsp; case 1=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Adidas");<br>
+                        &nbsp; harga = 300000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Ventela");<br>
+                        &nbsp; harga = 500000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Converse");<br>
+                        &nbsp; harga = 650000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 4=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Nike");<br>
+                        &nbsp; harga = 800000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default=<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                        }
+
+            e.	switch (nomor){<br>
+                    &nbsp; case 1=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Ventela");<br>
+                        &nbsp; harga = 300000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 2=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Converse");<br>
+                        &nbsp; harga = 500000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 3=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Adidas");<br>
+                        &nbsp; harga = 650000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; case 4=<br>
+                        &nbsp; printf("Sepatu yang dipilih yaitu sepatu Nike");<br>
+                        &nbsp; harga = 800000;<br>
+                        &nbsp; break;<br>
+                    &nbsp; default=<br>
+                        &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
+                        &nbsp; harga = 0;<br>
+                        &nbsp; break;<br>
+                        }',
+            'answer' => 'b'
+        ]);
+
+        
+        //9
+        Answer::create([
+            'option' =>
+            'a.	if(member == ‘y’){<br>
+                    &nbsp; if(beli < 200000){<br>
+                        &nbsp; &nbsp; diskon = 30000;<br>
+                    &nbsp; }if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 50000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 10000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }
+
+            b.	if(member == ‘y’){<br>
+                    &nbsp; if(beli < 200000){<br>
+                        &nbsp; &nbsp; diskon = 10000;<br>
+                    &nbsp; }if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 50000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 30000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }
+
+            c.	if(member == ‘y’){<br>
+                    &nbsp; if(beli < 200000){<br>
+                        &nbsp; &nbsp; diskon = 50000;<br>
+                    &nbsp; }else if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 10000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; if(beli < 100000){<br>
+                        &nbsp; &nbsp; diskon = 30000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }
+
+            d.	if(member == ‘y’){<br>
+                    &nbsp; if(beli > 100000){<br>
+                        &nbsp; &nbsp; diskon = 50000;<br>
+                    &nbsp; }else if(beli > 200000){<br>
+                        &nbsp; &nbsp; diskon = 30000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; if(beli > 200000){<br>
+                        &nbsp; &nbsp; diskon = 10000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }
+
+            e.	if(member == ‘y’){<br>
+                    &nbsp; if(beli > 200000){<br>
+                        &nbsp; &nbsp; diskon = 50000;<br>
+                    &nbsp; }else if(beli > 100000){<br>
+                        &nbsp; &nbsp; diskon = 30000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; if(beli > 100000){<br>
+                        &nbsp; &nbsp; diskon = 10000;<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; diskon = 0;<br>
+                    &nbsp; }<br>
+                }',
+            'answer' => 'e'
+        ]);
+
+        
+        //10
+        Answer::create([
+            'option' =>
+            'a.	if(jk==1){<br>
+                    &nbsp; if(tinggi <= 165){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else if(jk==2){<br>
+                    &nbsp; if(tinggi <= 155){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; printf("Tidak ada pilihan tersebut");<br>
+                }
+
+            b.	if(jk==1){<br>
+                    &nbsp; if(tinggi <= 165){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }if(jk==2){<br>
+                    &nbsp; if(tinggi <= 155){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; printf("Tidak ada pilihan tersebut");<br>
+                }
+
+            c.	if(jk==1){<br>
+                    &nbsp; if(tinggi >= 165){<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi ");<br>
+                    &nbsp; }<br>
+                }else if(jk==2){<br>
+                    &nbsp; if(tinggi >= 155){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; printf("Tidak ada pilihan tersebut");<br>
+                }
+
+            d.	if(jk==1){<br>
+                    &nbsp; if(tinggi >= 165){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else if(jk==2){<br>
+                    &nbsp; if(tinggi >= 155){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; printf("Tidak ada pilihan tersebut");<br>
+                }
+
+            e.	if(jk==1){<br>
+                    &nbsp; if(tinggi >= 165){<br>
+                        &nbsp; &nbsp; printf("Selamat anda lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else if(jk==2){<br>
+                    &nbsp; else{<br>
+                        &nbsp; &nbsp; printf("Maaf, anda tidak lolos seleksi");<br>
+                    &nbsp; }<br>
+                }else{<br>
+                    &nbsp; printf("Tidak ada pilihan tersebut");<br>
+                }',
+            'answer' => 'd'
         ]);
 
         
