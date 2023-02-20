@@ -2576,6 +2576,534 @@ class DatabaseSeeder extends Seeder
             'answer' => 'd'
         ]);
 
+        //11
+        Answer::create([
+            'option' =>
+            'a.	for(i=12;i>100;i=i+3){<br>
+                    &nbsp; if(angka % 10 = 0){<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }<br>
+                    &nbsp; angka++;<br>
+                    &nbsp; printf("%d ", i);<br>
+                }
+
+            b.	for(i=12;i<100;i=i+3){<br>
+                    &nbsp; if(angka % 10 == 0){<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }<br>
+                    &nbsp; angka++;<br>
+                    &nbsp; printf("%d ", i);<br>
+                }
+
+            c.	for(i=100;i<12;i=i+3){<br>
+                    &nbsp; if(angka % 10 == 0){<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }<br>
+                    &nbsp; angka+;<br>
+                    &nbsp; printf("%d ", i);<br>
+                }
+
+            d.	if(i=12;i<100;i=i+3){<br>
+                    &nbsp; for(angka % 10 == 0){<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }<br>
+                    &nbsp; angka++;<br>
+                    &nbsp; printf("%d ", i);<br>
+                }
+
+            e.	if(angka % 10 == 0){<br>
+                    &nbsp; for(i=12;i<100;i=i+3){<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }<br>
+                    &nbsp; angka++;<br>
+                    &nbsp; printf("%d ", i);<br>
+                }',
+            'answer' => 'b'
+        ]);
+
+
+        //12
+        Answer::create([
+            'option' =>
+            'a.	for(i=1;i<=orang;i++){<br>
+                    &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
+                    &nbsp; scanf("%d", &risol);<br>
+                    &nbsp; harga = risol * 2500;<br>
+                    &nbsp; total = total + harga;<br>
+                    &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
+                }
+
+            b.	for(i=0;i<=orang;i++){<br>
+                    &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
+                    &nbsp; scanf("%d", &risol);<br>
+                    &nbsp; harga = risol * 2000;<br>
+                    &nbsp; total = total * harga;<br>
+                    &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
+                }
+
+            c.	for(i=0;i<=orang;i++){<br>
+                    &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
+                    &nbsp; scanf("%d", &risol);<br>
+                    &nbsp; harga = risol + 2500;<br>
+                    &nbsp; total = total + harga;<br>
+                    &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
+                }
+
+            d.	for(i=1;i<=orang;i++){<br>
+                    &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
+                    &nbsp; scanf("%d", &risol);<br>
+                    &nbsp; harga = risol + 2500;<br>
+                    &nbsp; total = total * harga;<br>
+                    &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
+                }
+
+            e.	for(i=2;i<=orang;i++){<br>
+                    &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
+                    &nbsp; scanf("%d", &risol);<br>
+                    &nbsp; harga = risol * 2500;<br>
+                    &nbsp; total = total * harga;<br>
+                    &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
+                }',
+            'answer' => 'a'
+        ]);
+
+
+        //13
+        Answer::create([
+            'option' =>
+            'a.	while(i>=bulan){<br>
+                &nbsp; tabungan = tabungan * uang;<br>
+                &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
+                &nbsp; i++;<br>
+            }
+
+            b.	while(i<=bulan){<br>
+                &nbsp; tabungan = tabungan + uang;<br>
+                &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
+                &nbsp; i++;<br>
+            }
+
+            c.	while(i<=bulan){<br>
+                &nbsp; tabungan = tabungan - uang;<br>
+                &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
+                &nbsp; tabungan++;<br>
+            }
+
+            d.	for(i<=bulan){<br>
+                &nbsp; tabungan = tabungan + uang;<br>
+                &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
+                &nbsp; i++;<br>
+            }
+
+            e.	for(i=0;i<=bulan;i++){<br>
+                &nbsp; tabungan = tabungan + uang;<br>
+                &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
+                &nbsp; i++;<br>
+            }',
+            'answer' => 'b'
+        ]);
+
+
+        //14
+        Answer::create([
+            'option' =>
+            'a.	while(i<=siswa){<br>
+                    &nbsp; if(i%2==0){<br>
+                        &nbsp; &nbsp; printf("absen: %d\n", i);<br>
+                    &nbsp; }<br>
+                    &nbsp; siswa++;<br>
+                }
+
+            b.	for(i<=siswa){<br>
+                    &nbsp; if(i%2==1){<br>
+                        &nbsp; &nbsp; genap++;<br>
+                        &nbsp; &nbsp; printf("absen: %d\n", i);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }
+
+            c.	for(i<=siswa){<br>
+                    &nbsp; if(i%2==0){<br>
+                        &nbsp; &nbsp; ganjil++;<br>
+                        &nbsp; &nbsp; printf("absen: %d\n", i);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }
+
+            d.	while(i<=siswa){<br>
+                    &nbsp; if(i%2==0){<br>
+                        &nbsp; &nbsp; genap++;<br>
+                        &nbsp; &nbsp; printf("absen: %d\n", i);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }
+
+            e.	do(i<=siswa){<br>
+                    &nbsp; if(i%2==0){<br>
+                        &nbsp; &nbsp; genap++;<br>
+                        &nbsp; &nbsp; printf("absen: %d\n", i);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }while;',
+            'answer' => 'd'
+        ]);
+
+
+        //15
+        Answer::create([
+            'option' =>
+            'a.	do{<br>
+                    &nbsp; if(i%3==0){<br>
+                        &nbsp; &nbsp; poin++;<br>
+                        &nbsp; &nbsp; printf("Lap ke-%d\n", i);<br>
+                        &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }while(i<=lap);
+
+            b.	do{<br>
+                    &nbsp; if(i%3==0){<br>
+                        &nbsp; &nbsp; poin--;<br>
+                        &nbsp; &nbsp; printf("Lap ke-%d\n", i);<br>
+                        &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }while(i<=lap);
+
+            c.	do{<br>
+                    &nbsp; if(i%3==0){<br>
+                        &nbsp; &nbsp; poin++;<br>
+                        &nbsp; &nbsp; printf("Lap ke-%d\n", i);<br>
+                        &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
+                    &nbsp; }<br>
+                    &nbsp; i++;<br>
+                }while(i>=lap);
+
+            d.	while(i<=lap){<br>
+                    &nbsp; if(i%2==0){<br>
+                        &nbsp; &nbsp; poin++;<br>
+                        &nbsp; &nbsp; printf("Lap ke-%d\n", i);<br>
+                        &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
+                    &nbsp; }<br>
+                    &nbsp; lap++;<br>
+                }do;
+
+            e.	while(i<=lap){<br>
+                    &nbsp; if(i%3==0){<br>
+                        &nbsp; &nbsp; lap++;<br>
+                        &nbsp; &nbsp; printf("Lap ke-%d\n", i);<br>
+                        &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
+                    &nbsp; }<br>
+                    &nbsp; poin++;<br>
+                }do;',
+            'answer' => 'a'
+        ]);
+
+
+        //16
+        Answer::create([
+            'option' =>
+            'a.	for(nomor!=4){<br>
+                    &nbsp; printf("Masukkan nomor bola: ");<br>
+                    &nbsp; scanf("%d", &nomor);<br>
+                    &nbsp; if(nomor==1){<br>
+                        &nbsp; &nbsp; kuning++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==2){<br>
+                        &nbsp; &nbsp; biru++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==3){<br>
+                        &nbsp; &nbsp; merah++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==4){<br>
+                        &nbsp; &nbsp; printf("Anda keluar dari perhitungan!\n\n");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
+                    &nbsp; }<br>
+                };
+
+            b.	do{<br>
+                    &nbsp; printf("Masukkan nomor bola: ");<br>
+                    &nbsp; scanf("%d", &nomor);<br>
+                    &nbsp; if(nomor==4){<br>
+                        &nbsp; &nbsp; biru++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==3){<br>
+                        &nbsp; &nbsp; kuning++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==2){<br>
+                        &nbsp; &nbsp; merah++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==1){<br>
+                        &nbsp; &nbsp; printf("Anda keluar dari perhitungan!\n\n");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
+                    &nbsp; }<br>
+                }while(nomor!=4);
+
+            c.	do{<br>
+                    &nbsp; printf("Masukkan nomor bola: ");<br>
+                    &nbsp; scanf("%d", &nomor);<br>
+                    &nbsp; if(nomor==1){<br>
+                        &nbsp; &nbsp; biru++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==2){<br>
+                        &nbsp; &nbsp; kuning++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==3){<br>
+                        &nbsp; &nbsp; merah++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==4){<br>
+                        &nbsp; &nbsp; printf("Anda keluar dari perhitungan!\n\n");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
+                    &nbsp; }<br>
+                }while(nomor!=4);
+
+            d.	do{<br>
+                    &nbsp; printf("Masukkan nomor bola: ");<br>
+                    &nbsp; scanf("%d", &nomor);<br>
+                    &nbsp; if(nomor==1){<br>
+                        &nbsp; &nbsp; merah++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==2){<br>
+                        &nbsp; &nbsp; kuning++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==3){<br>
+                        &nbsp; &nbsp; biru++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==4){<br>
+                        &nbsp; &nbsp; printf("Anda keluar dari perhitungan!\n\n");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
+                    &nbsp; }<br>
+                }while(nomor!=4);
+
+            e.	for(nomor!=4){<br>
+                    &nbsp; printf("Masukkan nomor bola: ");<br>
+                    &nbsp; scanf("%d", &nomor);<br>
+                        &nbsp; &nbsp; if(nomor==1){<br>
+                        &nbsp; &nbsp; biru++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==2){<br>
+                        &nbsp; &nbsp; merah++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==3){<br>
+                        &nbsp; &nbsp; kuning++;<br>
+                        &nbsp; &nbsp; printf("Bola dihitung!\n");<br>
+                    &nbsp; }else if(nomor==4){<br>
+                        &nbsp; &nbsp; printf("Anda keluar dari perhitungan!\n\n");<br>
+                    &nbsp; }else{<br>
+                        &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
+                    &nbsp; }<br>
+                };',
+            'answer' => 'c'
+        ]);
+
+
+        //17
+        Answer::create([
+            'option' =>
+            'a.	for(i=0;i<6;i++){<br>
+                    &nbsp; for(j=0;j<6;j++){<br>
+                        &nbsp; &nbsp; printf("%c", tua[i]);<br>
+                        &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
+                    &nbsp; }<br>
+                }
+
+            b.	for(i=0;i<3;i++){<br>
+                    &nbsp; while(j<3){<br>
+                        &nbsp; &nbsp; printf("%c", tua[i]);<br>
+                        &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
+                    &nbsp; }<br>
+                }
+
+            c.	for(i=0;i<3;i++){<br>
+                    &nbsp; for(j=0;j<3;j++){<br>
+                        &nbsp; &nbsp; printf("%c", tua[i]);<br>
+                        &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
+                    &nbsp; }<br>
+                }
+
+            d.	for(i=0;i3;i++){<br>
+                    &nbsp; while(j>3){<br>
+                        &nbsp; &nbsp; printf("%c", tua[i]);<br>
+                        &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
+                    &nbsp; }<br>
+                }
+
+            e.	for(i=0;i<6;i++){<br>
+                    &nbsp; for(j=0;j<3;j++){<br>
+                        &nbsp; &nbsp; printf("%c", tua[i]);<br>
+                        &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
+                    &nbsp; }<br>
+                }',
+            'answer' => 'c'
+        ]);
+
+
+        //18
+        Answer::create([
+            'option' =>
+            'a.	for(i=1;i<=input;i++){<br>
+                    &nbsp; if(j<=input){<br>
+                        &nbsp; &nbsp; hitung = i + j;<br>
+                        &nbsp; &nbsp; printf("%d ", hitung);<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            b.	for(i=1;i<=input;i++){<br>
+                    &nbsp; if(j<=input){<br>
+                        &nbsp; &nbsp; hitung = i - j;<br>
+                        &nbsp; &nbsp; printf("%d ", hitung);<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            c.	for(i=1;i<=input;i++){<br>
+                    &nbsp; if(j<=input){<br>
+                        &nbsp; &nbsp; hitung = i / j;<br>
+                        &nbsp; &nbsp; printf("%d ", hitung);<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            d.	for(i=1;i<=input;i++){<br>
+                    &nbsp; for(j=1;j<=input;j++){<br>
+                        &nbsp; &nbsp; hitung = i * j;<br>
+                        &nbsp; &nbsp; printf("%d ", hitung);<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            e.	for(i=1;i>=input;i++){<br>
+                    &nbsp; for(j=1;j>=input;j++){<br>
+                        &nbsp; &nbsp; hitung = i * j;<br>
+                        &nbsp; &nbsp; printf("%d ", hitung);<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }',
+            'answer' => 'd'
+        ]);
+
+
+        //19
+        Answer::create([
+            'option' =>
+            'a.	for(i=0;i<=3;i++){<br>
+                    &nbsp; while(j<=3){<br>
+                        &nbsp; &nbsp; printf("%c - ", pergi[i]);<br>
+                        &nbsp; &nbsp; printf("%c | ", pulang[j]);<br>
+                        &nbsp; &nbsp; hitung++;<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            b.	while(i<=3){<br>
+                    &nbsp; for(j=0;j<=3;j++){<br>
+                        &nbsp; &nbsp; printf("%c - ", pergi[i]);<br>
+                        &nbsp; &nbsp; printf("%c | ", pulang[j]);<br>
+                        &nbsp; &nbsp; hitung++;<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            c.	for(i=0;i>=3;i++){<br>
+                    &nbsp; for(j=0;j>=3;j++){<br>
+                        &nbsp; &nbsp; printf("%c - ", pergi[i]);<br>
+                        &nbsp; &nbsp; printf("%c | ", pulang[j]);<br>
+                        &nbsp; &nbsp; hitung++;<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            d.	for(i=0;i>=3;i++){<br>
+                    &nbsp; for(j=0;j<=3;j++){<br>
+                        &nbsp; &nbsp; printf("%c - ", pergi[j]);<br>
+                        &nbsp; &nbsp; printf("%c | ", pulang[i]);<br>
+                        &nbsp; &nbsp; hitung++;<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }
+
+            e.	for(i=0;i<=3;i++){<br>
+                    &nbsp; for(j=0;j<=3;j++){<br>
+                        &nbsp; &nbsp; printf("%c - ", pergi[i]);<br>
+                        &nbsp; &nbsp; printf("%c | ", pulang[j]);<br>
+                        &nbsp; &nbsp; hitung++;<br>
+                    &nbsp; }<br>
+                    &nbsp; printf("\n");<br>
+                }',
+            'answer' => 'e'
+        ]);
+
+
+        //20
+        Answer::create([
+            'option' =>
+            'a.	for(i=0;i<3;i++){<br>
+                    &nbsp; for(j=0;j<3;j++){<br>
+                        &nbsp; &nbsp; for(k=0;k<3;k++){<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", tiga[i]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", dua[j]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c\n", satu[k]);<br>
+                            &nbsp; &nbsp; &nbsp; jumlah++;<br>
+                        &nbsp; &nbsp; }<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }
+                }
+
+            b.	for(i=0;i<3;i++){<br>
+                    &nbsp; while(j<3){<br>
+                        &nbsp; &nbsp; for(k=0;k<3;k++){<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", satu[i]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", dua[j]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c\n", tiga[k]);<br>
+                            &nbsp; &nbsp; &nbsp; jumlah++;<br>
+                        &nbsp; &nbsp; }<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }
+                }
+
+            c.	for(i=0;i<3;i++){<br>
+                    &nbsp; for(j=0;j<3;j++){<br>
+                        &nbsp; &nbsp; for(k=0;k<3;k++){<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", satu[i]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", dua[j]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c\n", tiga[k]);<br>
+                            &nbsp; &nbsp; &nbsp; jumlah++;<br>
+                        &nbsp; &nbsp; }<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }
+                }
+
+            d.	for(i=0;i<3;i++){<br>
+                    &nbsp; while(j<3){<br>
+                        &nbsp; &nbsp; for(k=0;k<3;k++){<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", satu[k]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", dua[j]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c\n", tiga[i]);<br>
+                            &nbsp; &nbsp; &nbsp; jumlah++;<br>
+                        &nbsp; &nbsp; }<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }
+                }
+
+            e.	for(i=0;i>3;i++){<br>
+                    &nbsp; for(j=0;j>3;j++){<br>
+                        &nbsp; &nbsp; for(k=0;k>3;k++){<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", satu[i]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c", dua[j]);<br>
+                            &nbsp; &nbsp; &nbsp; printf("%c\n", tiga[k]);<br>
+                            &nbsp; &nbsp; &nbsp; jumlah++;<br>
+                        &nbsp; &nbsp; }<br>
+                        &nbsp; &nbsp; printf("\n");<br>
+                    &nbsp; }
+                }',
+            'answer' => 'c'
+        ]);
+
         
     }
 }
