@@ -1994,25 +1994,25 @@ class DatabaseSeeder extends Seeder
                 &nbsp; printf("Bilangan tersebut ganjil");<br>
             } else{<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
-            }
+            }#
 
             b.	if(bilangan % 3 = 0){<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
             } else{<br>
                 &nbsp; printf("Bilangan tersebut ganjil");<br>
-            }
+            }#
 
             c.	if(bilangan % 2 == 0){<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
             } else{<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
-            }
+            }#
 
             d.	if(bilangan % 2 == 1){<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
             } else{<br>
                 &nbsp; printf("Bilangan tersebut ganjil");<br>
-            }
+            }#
 
             e.	if(bilangan % 2 == 0){<br>
                 &nbsp; printf("Bilangan tersebut genap");<br>
@@ -2030,25 +2030,25 @@ class DatabaseSeeder extends Seeder
                 &nbsp; printf("terlalu lambat, terkena tilang");<br>
             }else{<br>
                 &nbsp; printf("kecepatan normal");<br>
-            }
+            }#
 
             b.	if(kecepatan > 80){<br>
                 &nbsp; printf("terlalu cepat, terkena tilang");<br>
             }else{<br>
                 &nbsp; printf("kecepatan normal");<br>
-            }
+            }#
 
             c.	if(kecepatan > 80){<br>
                 &nbsp; printf("terlalu cepat, terkena tilang");<br>
             }else{<br>
                 &nbsp; printf("kecepatan cepat");<br>
-            }
+            }#
 
             d.	if(kecepatan < 80){<br>
                 &nbsp; printf("terlalu cepat, terkena tilang");<br>
             }else{<br>
                 &nbsp; printf("kecepatan normal");<br>
-            }
+            }#
 
             e.	if(kecepatan > 80){<br>
                 &nbsp; printf("kecepatan normal");<br>
@@ -2073,7 +2073,7 @@ class DatabaseSeeder extends Seeder
             }else{<br>
                 &nbsp; printf("tidak ada paket tersebut");<br>
                 &nbsp; harga = 200000;<br>
-            }
+            }#
 
             b.	if(paket == 1){<br>
                 &nbsp; harga = 15000;<br>
@@ -2086,7 +2086,7 @@ class DatabaseSeeder extends Seeder
             }else{<br>
                 &nbsp; printf("tidak ada paket tersebut");<br>
                 &nbsp; harga = 200000;<br>
-            }
+            }#
 
             c.	if(paket == 1){<br>
                 &nbsp; harga = 12000;<br>
@@ -2099,7 +2099,7 @@ class DatabaseSeeder extends Seeder
             }else{<br>
                 &nbsp; printf("tidak ada paket tersebut");<br>
                 &nbsp; harga = 200000;<br>
-            }
+            }#
 
             d.	if(paket == 1){<br>
                 &nbsp; harga = 12000;<br>
@@ -2112,7 +2112,7 @@ class DatabaseSeeder extends Seeder
             }else{<br>
                 &nbsp; printf("tidak ada paket tersebut");<br>
                 &nbsp; harga = 200000;<br>
-            }
+            }#
 
             e.	if(paket == 4){<br>
                 &nbsp; harga = 12000;<br>
@@ -2134,14 +2134,14 @@ class DatabaseSeeder extends Seeder
         Answer::create([
             'option' =>
             'a.	if(motor == 1){<br>
-                &nbsp; kecepatan = 20;<br>
-            }else if(motor == 2){<br>
-                &nbsp; kecepatan = 50;<br>
-            }else if(motor == 3){<br>
-                &nbsp; kecepatan = 80;<br>
-            }else{<br>
-                &nbsp; kecepatan = 25;<br>
-            }
+                    &nbsp; kecepatan = 20;<br>
+                }else if(motor == 2){<br>
+                    &nbsp; kecepatan = 50;<br>
+                }else if(motor == 3){<br>
+                    &nbsp; kecepatan = 80;<br>
+                }else{<br>
+                    &nbsp; kecepatan = 25;<br>
+                }#
 
             b.	if(motor == 1){<br>
                     &nbsp; kecepatan = 25;<br>
@@ -2151,7 +2151,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; kecepatan = 80;<br>
                 }else{<br>
                     &nbsp; kecepatan = 20;<br>
-                }
+                }#
 
 
             c.	if(motor == 1){<br>
@@ -2162,7 +2162,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; kecepatan = 85;<br>
                 }else{<br>
                     &nbsp; kecepatan = 25;<br>
-                }
+                }#
 
             d.	if(motor == 1){<br>
                     &nbsp; kecepatan = 25;<br>
@@ -2172,7 +2172,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; kecepatan = 80;<br>
                 }else{<br>
                     &nbsp; kecepatan = 20;<br>
-                }
+                }#
 
             e.	if(motor == 1){<br>
                     &nbsp; kecepatan = 30;<br>
@@ -2207,7 +2207,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             b.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2226,7 +2226,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             c.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2245,7 +2245,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             d.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2264,7 +2264,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             e.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2312,7 +2312,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             b.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2335,7 +2335,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             c.	switch (nomor){<br>
                     &nbsp; case 1:<br>
@@ -2358,7 +2358,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                }
+                }#
 
             d.	switch (nomor){<br>
                     &nbsp; case 1=<br>
@@ -2381,7 +2381,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; printf("Tidak tersedia pilihan tersebut!");<br>
                         &nbsp; harga = 0;<br>
                         &nbsp; break;<br>
-                        }
+                }#
 
             e.	switch (nomor){<br>
                     &nbsp; case 1=<br>
@@ -2426,7 +2426,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; diskon = 0;<br>
                     &nbsp; }<br>
-                }
+                }#
 
             b.	if(member == ‘y’){<br>
                     &nbsp; if(beli < 200000){<br>
@@ -2442,7 +2442,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; diskon = 0;<br>
                     &nbsp; }<br>
-                }
+                }#
 
             c.	if(member == ‘y’){<br>
                     &nbsp; if(beli < 200000){<br>
@@ -2458,7 +2458,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; diskon = 0;<br>
                     &nbsp; }<br>
-                }
+                }#
 
             d.	if(member == ‘y’){<br>
                     &nbsp; if(beli > 100000){<br>
@@ -2474,7 +2474,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; diskon = 0;<br>
                     &nbsp; }<br>
-                }
+                }#
 
             e.	if(member == ‘y’){<br>
                     &nbsp; if(beli > 200000){<br>
@@ -2512,7 +2512,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                 }else{<br>
                     &nbsp; printf("Tidak ada pilihan tersebut");<br>
-                }
+                }#
 
             b.	if(jk==1){<br>
                     &nbsp; if(tinggi <= 165){<br>
@@ -2528,7 +2528,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                 }else{<br>
                     &nbsp; printf("Tidak ada pilihan tersebut");<br>
-                }
+                }#
 
             c.	if(jk==1){<br>
                     &nbsp; if(tinggi >= 165){<br>
@@ -2544,7 +2544,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                 }else{<br>
                     &nbsp; printf("Tidak ada pilihan tersebut");<br>
-                }
+                }#
 
             d.	if(jk==1){<br>
                     &nbsp; if(tinggi >= 165){<br>
@@ -2560,7 +2560,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                 }else{<br>
                     &nbsp; printf("Tidak ada pilihan tersebut");<br>
-                }
+                }#
 
             e.	if(jk==1){<br>
                     &nbsp; if(tinggi >= 165){<br>
@@ -2585,7 +2585,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                     &nbsp; angka++;<br>
                     &nbsp; printf("%d ", i);<br>
-                }
+                }#
 
             b.	for(i=12;i<100;i=i+3){<br>
                     &nbsp; if(angka % 10 == 0){<br>
@@ -2593,7 +2593,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                     &nbsp; angka++;<br>
                     &nbsp; printf("%d ", i);<br>
-                }
+                }#
 
             c.	for(i=100;i<12;i=i+3){<br>
                     &nbsp; if(angka % 10 == 0){<br>
@@ -2601,7 +2601,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                     &nbsp; angka+;<br>
                     &nbsp; printf("%d ", i);<br>
-                }
+                }#
 
             d.	if(i=12;i<100;i=i+3){<br>
                     &nbsp; for(angka % 10 == 0){<br>
@@ -2609,7 +2609,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }<br>
                     &nbsp; angka++;<br>
                     &nbsp; printf("%d ", i);<br>
-                }
+                }#
 
             e.	if(angka % 10 == 0){<br>
                     &nbsp; for(i=12;i<100;i=i+3){<br>
@@ -2631,7 +2631,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; harga = risol * 2500;<br>
                     &nbsp; total = total + harga;<br>
                     &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
-                }
+                }#
 
             b.	for(i=0;i<=orang;i++){<br>
                     &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
@@ -2639,7 +2639,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; harga = risol * 2000;<br>
                     &nbsp; total = total * harga;<br>
                     &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
-                }
+                }#
 
             c.	for(i=0;i<=orang;i++){<br>
                     &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
@@ -2647,7 +2647,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; harga = risol + 2500;<br>
                     &nbsp; total = total + harga;<br>
                     &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
-                }
+                }#
 
             d.	for(i=1;i<=orang;i++){<br>
                     &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
@@ -2655,7 +2655,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; harga = risol + 2500;<br>
                     &nbsp; total = total * harga;<br>
                     &nbsp; printf("Harganya: Rp.%d\n\n", harga);<br>
-                }
+                }#
 
             e.	for(i=2;i<=orang;i++){<br>
                     &nbsp; printf("Banyak risol orang ke-%d: ", i);<br>
@@ -2675,25 +2675,25 @@ class DatabaseSeeder extends Seeder
                 &nbsp; tabungan = tabungan * uang;<br>
                 &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
                 &nbsp; i++;<br>
-            }
+            }#
 
             b.	while(i<=bulan){<br>
                 &nbsp; tabungan = tabungan + uang;<br>
                 &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
                 &nbsp; i++;<br>
-            }
+            }#
 
             c.	while(i<=bulan){<br>
                 &nbsp; tabungan = tabungan - uang;<br>
                 &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
                 &nbsp; tabungan++;<br>
-            }
+            }#
 
             d.	for(i<=bulan){<br>
                 &nbsp; tabungan = tabungan + uang;<br>
                 &nbsp; printf("Bulan ke-%d mendapatkan Rp. %d\n", i, tabungan);<br>
                 &nbsp; i++;<br>
-            }
+            }#
 
             e.	for(i=0;i<=bulan;i++){<br>
                 &nbsp; tabungan = tabungan + uang;<br>
@@ -2712,7 +2712,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("absen: %d\n", i);<br>
                     &nbsp; }<br>
                     &nbsp; siswa++;<br>
-                }
+                }#
 
             b.	for(i<=siswa){<br>
                     &nbsp; if(i%2==1){<br>
@@ -2720,7 +2720,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("absen: %d\n", i);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }
+                }#
 
             c.	for(i<=siswa){<br>
                     &nbsp; if(i%2==0){<br>
@@ -2728,7 +2728,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("absen: %d\n", i);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }
+                }#
 
             d.	while(i<=siswa){<br>
                     &nbsp; if(i%2==0){<br>
@@ -2736,7 +2736,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("absen: %d\n", i);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }
+                }#
 
             e.	do(i<=siswa){<br>
                     &nbsp; if(i%2==0){<br>
@@ -2759,7 +2759,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }while(i<=lap);
+                }while(i<=lap);#
 
             b.	do{<br>
                     &nbsp; if(i%3==0){<br>
@@ -2768,7 +2768,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }while(i<=lap);
+                }while(i<=lap);#
 
             c.	do{<br>
                     &nbsp; if(i%3==0){<br>
@@ -2777,7 +2777,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
                     &nbsp; }<br>
                     &nbsp; i++;<br>
-                }while(i>=lap);
+                }while(i>=lap);#
 
             d.	while(i<=lap){<br>
                     &nbsp; if(i%2==0){<br>
@@ -2786,7 +2786,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("Poin: %d\n\n", poin);<br>
                     &nbsp; }<br>
                     &nbsp; lap++;<br>
-                }do;
+                }do;#
 
             e.	while(i<=lap){<br>
                     &nbsp; if(i%3==0){<br>
@@ -2820,7 +2820,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
                     &nbsp; }<br>
-                };
+                };#
 
             b.	do{<br>
                     &nbsp; printf("Masukkan nomor bola: ");<br>
@@ -2839,7 +2839,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
                     &nbsp; }<br>
-                }while(nomor!=4);
+                }while(nomor!=4);#
 
             c.	do{<br>
                     &nbsp; printf("Masukkan nomor bola: ");<br>
@@ -2858,7 +2858,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
                     &nbsp; }<br>
-                }while(nomor!=4);
+                }while(nomor!=4);#
 
             d.	do{<br>
                     &nbsp; printf("Masukkan nomor bola: ");<br>
@@ -2877,7 +2877,7 @@ class DatabaseSeeder extends Seeder
                     &nbsp; }else{<br>
                         &nbsp; &nbsp; printf("Tidak ada pilihan tersebut!\n\n");<br>
                     &nbsp; }<br>
-                }while(nomor!=4);
+                }while(nomor!=4);#
 
             e.	for(nomor!=4){<br>
                     &nbsp; printf("Masukkan nomor bola: ");<br>
@@ -2909,28 +2909,28 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("%c", tua[i]);<br>
                         &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
                     &nbsp; }<br>
-                }
+                }#
 
             b.	for(i=0;i<3;i++){<br>
                     &nbsp; while(j<3){<br>
                         &nbsp; &nbsp; printf("%c", tua[i]);<br>
                         &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
                     &nbsp; }<br>
-                }
+                }#
 
             c.	for(i=0;i<3;i++){<br>
                     &nbsp; for(j=0;j<3;j++){<br>
                         &nbsp; &nbsp; printf("%c", tua[i]);<br>
                         &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
                     &nbsp; }<br>
-                }
+                }#
 
             d.	for(i=0;i3;i++){<br>
                     &nbsp; while(j>3){<br>
                         &nbsp; &nbsp; printf("%c", tua[i]);<br>
                         &nbsp; &nbsp; printf("%c\n", muda[j]);<br>
                     &nbsp; }<br>
-                }
+                }#
 
             e.	for(i=0;i<6;i++){<br>
                     &nbsp; for(j=0;j<3;j++){<br>
@@ -2951,7 +2951,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("%d ", hitung);<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             b.	for(i=1;i<=input;i++){<br>
                     &nbsp; if(j<=input){<br>
@@ -2959,7 +2959,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("%d ", hitung);<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             c.	for(i=1;i<=input;i++){<br>
                     &nbsp; if(j<=input){<br>
@@ -2967,7 +2967,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("%d ", hitung);<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             d.	for(i=1;i<=input;i++){<br>
                     &nbsp; for(j=1;j<=input;j++){<br>
@@ -2975,7 +2975,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; printf("%d ", hitung);<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             e.	for(i=1;i>=input;i++){<br>
                     &nbsp; for(j=1;j>=input;j++){<br>
@@ -2998,7 +2998,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; hitung++;<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             b.	while(i<=3){<br>
                     &nbsp; for(j=0;j<=3;j++){<br>
@@ -3007,7 +3007,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; hitung++;<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             c.	for(i=0;i>=3;i++){<br>
                     &nbsp; for(j=0;j>=3;j++){<br>
@@ -3016,7 +3016,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; hitung++;<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             d.	for(i=0;i>=3;i++){<br>
                     &nbsp; for(j=0;j<=3;j++){<br>
@@ -3025,7 +3025,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; hitung++;<br>
                     &nbsp; }<br>
                     &nbsp; printf("\n");<br>
-                }
+                }#
 
             e.	for(i=0;i<=3;i++){<br>
                     &nbsp; for(j=0;j<=3;j++){<br>
@@ -3052,7 +3052,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; }<br>
                         &nbsp; &nbsp; printf("\n");<br>
                     &nbsp; }
-                }
+                }#
 
             b.	for(i=0;i<3;i++){<br>
                     &nbsp; while(j<3){<br>
@@ -3064,7 +3064,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; }<br>
                         &nbsp; &nbsp; printf("\n");<br>
                     &nbsp; }
-                }
+                }#
 
             c.	for(i=0;i<3;i++){<br>
                     &nbsp; for(j=0;j<3;j++){<br>
@@ -3076,7 +3076,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; }<br>
                         &nbsp; &nbsp; printf("\n");<br>
                     &nbsp; }
-                }
+                }#
 
             d.	for(i=0;i<3;i++){<br>
                     &nbsp; while(j<3){<br>
@@ -3088,7 +3088,7 @@ class DatabaseSeeder extends Seeder
                         &nbsp; &nbsp; }<br>
                         &nbsp; &nbsp; printf("\n");<br>
                     &nbsp; }
-                }
+                }#
 
             e.	for(i=0;i>3;i++){<br>
                     &nbsp; for(j=0;j>3;j++){<br>

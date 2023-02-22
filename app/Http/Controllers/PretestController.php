@@ -54,47 +54,46 @@ class PretestController extends Controller
 
     public function store(Request $request)
     {
-        $data = Pretest::firstWhere('user_id', auth()->user()->id);
+        $validated = $request->validate([
+            'answerOption' => 'required',
+        ]);
 
         $id = $request->id;
-        $code = $request->code;
-
+        $data = Pretest::firstWhere('user_id', auth()->user()->id);
         $datatest = Maintest::firstWhere('id', $id);
-
-        $no = $datatest->answer_id;
+        
+        $no = $datatest->no;
         $score = $datatest->score;
-
-        $type = $datatest->answer->type;
         $answer = $datatest->answer->answer;
 
-        $iftrue = executetwo($request);
-
-        $code_trim = str_replace(' ', '', $code);
-
-        if (str_contains($code_trim, $answer) && str_contains($code, $type) && $iftrue) { //cek apakah kode syarat seperti else if dan >100000 dan cek apakah kodenya berjalan atau tidak
+        if ($validated['answerOption'] == $answer) {
 
             if ($data) { //cek apakah datanya ada
                 $judge = $data->judge;
 
-                if ($data['no_'. $no]) {
-                    $datano = collect(explode(',', $data['no_' . $no]));
-                    $dataco = collect(explode(',', $data['co_' . $no]));
+                if ($data['no_'. $id]) {
+                    $datano = collect(explode(',', $data['no_' . $id]));
+                    $dataco = collect(explode(',', $data['co_' . $id]));
 
                     $datano->push($score);
-                    $dataco->push(1);
+                    $dataco->push($score);
 
-                    $dataInput['no_' . $no] = implode(',', $datano->all());
-                    $dataInput['co_' . $no] = implode(',', $dataco->all());
+                    $dataInput['no_' . $id] = implode(',', $datano->all());
+                    $dataInput['co_' . $id] = implode(',', $dataco->all());
                 }else {
-                    $dataInput['no_' . $no] = $score;
-                    $dataInput['co_' . $no] = 1;
+                    $dataInput['no_' . $id] = $score;
+                    $dataInput['co_' . $id] = $score;
                 }
 
                 // kalo ada datanya, update
                 
                 $judge = $judge + 1;
                 if ($judge == 2) {
-                    $picker = $id + 4;
+                    if (str_contains($no, '5')) {
+                        $picker = $id + 5;
+                    }else{
+                        $picker = $id + 4;
+                    }
                     $dataInput['judge'] = 0;
                 }else{
                     $picker = $id + 5;
@@ -107,14 +106,14 @@ class PretestController extends Controller
                 $dataInput['total'] = $total;
 
                 Pretest::where('user_id', auth()->user()->id)->update($dataInput);
-                if ($no == 20) {
-                    return redirect('home/pretest/begin?page=' . $id)->with(['success' => 'Nomor ' . $no . ' sudah terisi!', 'end' => 'Selesai']);
+                if ($id == 20) {
+                    return redirect('home/pretest/begin?page=' . $id)->with(['success' => 'Nomor ' . $id . ' sudah terisi!', 'end' => 'Selesai']);
                 }
             } else {
                 // ga ada, isi
                 $dataInput['user_id'] = auth()->user()->id;
-                $dataInput['no_' . $no] = $score;
-                $dataInput['co_' . $no] = 1;
+                $dataInput['no_' . $id] = $score;
+                $dataInput['co_' . $id] = $score;
                 $dataInput['judge'] = 1;
                 $dataInput['total'] = 1;
                 $picker = $id + 5;
@@ -122,21 +121,22 @@ class PretestController extends Controller
                 Pretest::create($dataInput);
             }
         } else {
+            
             if ($data) { //cek apakah datanya ada
                 // kalo ada datanya, update
 
-                if ($data['no_' . $no]) {
-                    $datano = collect(explode(',', $data['no_' . $no]));
-                    $dataco = collect(explode(',', $data['co_' . $no]));
+                if ($data['no_' . $id]) {
+                    $datano = collect(explode(',', $data['no_' . $id]));
+                    $dataco = collect(explode(',', $data['co_' . $id]));
 
                     $datano->push($score);
                     $dataco->push(0);
 
-                    $dataInput['no_' . $no] = implode(',', $datano->all());
-                    $dataInput['co_' . $no] = implode(',', $dataco->all());
+                    $dataInput['no_' . $id] = implode(',', $datano->all());
+                    $dataInput['co_' . $id] = implode(',', $dataco->all());
                 } else {
-                    $dataInput['no_' . $no] = $score;
-                    $dataInput['co_' . $no] = 0;
+                    $dataInput['no_' . $id] = $score;
+                    $dataInput['co_' . $id] = 0;
                 }
                 $dataInput['judge'] = 0;
 
@@ -147,19 +147,20 @@ class PretestController extends Controller
                 //update ke database
                 Pretest::where('user_id', auth()->user()->id)->update($dataInput);
 
-                if (str_contains($datatest->no, 'b')) {
+                if (str_contains($no, '.1.')) {
                     $picker = $id + 5;
-                    if ($no == 20) {
-                        return redirect('home/pretest/begin?page=' . $id)->with(['success' => 'Nomor ' . $no . ' sudah terisi!', 'end' => 'Selesai']);
-                    }
                 }else {
                     $picker = $id + 1;
+                }
+                
+                if ($id == 20) {
+                    return redirect('home/pretest/begin?page=' . $id)->with(['success' => 'Nomor ' . $id . ' sudah terisi!', 'end' => 'Selesai']);
                 }
             } else {
                 // ga ada, isi
                 $dataInput['user_id'] = auth()->user()->id;
-                $dataInput['no_' . $no] = $score;
-                $dataInput['co_' . $no] = 0;
+                $dataInput['no_' . $id] = $score;
+                $dataInput['co_' . $id] = 0;
                 $dataInput['judge'] = 0;
                 $dataInput['total'] = 1;
                 $picker = $id + 1;
@@ -168,7 +169,7 @@ class PretestController extends Controller
             }
         }
         
-        return redirect('home/pretest/begin?page=' . $picker)->with('success', 'Nomor ' . $no . ' sudah terisi!');
+        return redirect('home/pretest/begin?page=' . $picker)->with('success', 'Nomor ' . $id . ' sudah terisi!');
 
     }
 

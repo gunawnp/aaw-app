@@ -36,7 +36,7 @@
                         <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/styles/result') ? ' bg-blued' : '' }}" href="/home/styles/result">Hasil Tes</a>
                     </div>
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/logics/*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-logic" role="button" aria-expanded="false" aria-controls="collapse-logic">
                     <i class="fs-5 bi-lightbulb pe-2"></i>
                     Tes Berpikir Logis
@@ -46,6 +46,7 @@
                         <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/logics/score') ? ' bg-blued' : '' }}" href="/home/logics/score">Penilaian</a>
                     </div>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/pretest*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-pretest" role="button" aria-expanded="false" aria-controls="collapse-pretest">
                     <i class="fs-5 bi-file-earmark-code pe-2"></i>
@@ -63,6 +64,7 @@
                     Materi Pembelajaran
                     </a>
                 </li>
+                {{-- 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/posttest*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-posttest" role="button" aria-expanded="false" aria-controls="collapse-posttest">
                     <i class="fs-5 bi-file-earmark-code pe-2"></i>
