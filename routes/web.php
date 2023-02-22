@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Models\OneTrial;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LogicController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StyleController;
@@ -9,8 +10,10 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\LogiciiController;
 use App\Http\Controllers\PretestController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OneTrialController;
 use App\Http\Controllers\PosttestController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TwoTrialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +49,20 @@ Route::get('/home', function() {
         "header" => "Home"
     ]);
 })->middleware('auth');
+
+//uji coba
+Route::controller(OneTrialController::class)->group(function () {
+    Route::get('/home/trials-1', 'index')->middleware('auth');
+    Route::get('/home/trials-1/begin', 'show')->middleware('auth');
+    Route::post('/home/trials-1/begin', 'store')->middleware('auth');
+});
+
+Route::controller(TwoTrialController::class)->group(function () {
+    Route::get('/home/trials-2', 'index')->middleware('auth');
+    Route::get('/home/trials-2/begin', 'show')->middleware('auth');
+    Route::post('/home/trials-2/begin', 'store')->middleware('auth');
+});
+//end uji coba
 
 Route::controller(StyleController::class)->group(function () {
     Route::get('/home/styles', 'index')->middleware('auth');

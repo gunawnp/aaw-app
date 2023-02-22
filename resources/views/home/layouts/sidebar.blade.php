@@ -24,7 +24,8 @@
                     Home
                     </a>
                 </li>
-                <li class="nav-item">
+
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/styles*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-style" role="button" aria-expanded="false" aria-controls="collapse-style">
                     <i class="fs-5 bi-card-checklist pe-2"></i>
                     Tes Gaya Belajar
@@ -63,7 +64,7 @@
                     <i class="fs-5 bi-journal-bookmark pe-2"></i>
                     Materi Pembelajaran
                     </a>
-                </li>
+                </li> --}}
                 {{-- 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('home/posttest*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-posttest" role="button" aria-expanded="false" aria-controls="collapse-posttest">

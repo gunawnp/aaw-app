@@ -68,4 +68,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(DataLogicii::class);
     }
+
+    public function dataOneTrial()
+    {
+        return $this->hasOne(OneTrial::class);
+    }
+
+    public function dataTwoTrial()
+    {
+        return $this->hasOne(OneTrial::class);
+    }
 }
