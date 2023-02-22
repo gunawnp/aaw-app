@@ -8,7 +8,7 @@
                     @if ( $user->image )
                         <img src="{{ asset('storage/' . $user->image) }}" style="border-radius: 20px" alt="profile" width="165px" class="d-block mx-auto">
                     @else
-                        <img src="{{ asset('storage/profile-image/profile.png') }}" style="border-radius: 20px" alt="profile" width="165px" class="d-block mx-auto">
+                        <img src="/img/profile.png" style="border-radius: 20px" alt="profile" width="165px" class="d-block mx-auto">
                     @endif
                 </div>
                 <div class="col-md-5">
@@ -16,7 +16,7 @@
                     <p class="fs-6 my-2"><span class="text-muted me-3">username</span> {{ $user->username }}</p>
                     <p class="fs-6"><span class="text-muted me-5">email </span> {{ $user->email }}</p>
                     
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-5">
                             <button type="button" class="btn btn-blue px-3 py-2" style="border-radius: 10px; font-size: 11pt;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Setting Foto Profil
@@ -41,7 +41,6 @@
                                     <i class="bi bi-exclamation-circle pe-3"></i>
                                     <div>
                                         {{ $message }}
-                                        {{-- Format atau ukuran tidak bisa, silahkan coba lagi! --}}
                                     </div>
                                     <button type="button" class="btn-close px-3" style="padding-top: 6px" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
@@ -58,11 +57,11 @@
                         }, 3000);
                         </script>
 
-                    </div>
+                    </div> --}}
                     
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -94,7 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                 </div>
             </div>
@@ -104,7 +103,7 @@
 
         <div id="summary" class="mb-5">
             <div class="row mb-4">
-                <p class="fs-5 fw-bold text-center">Rangkuman Tes</p>
+                {{-- <p class="fs-5 fw-bold text-center">Rangkuman Tes</p>
                 <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
@@ -123,7 +122,7 @@
                             @endif
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
