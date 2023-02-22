@@ -76,6 +76,6 @@ class User extends Authenticatable
 
     public function dataTwoTrial()
     {
-        return $this->hasOne(OneTrial::class);
+        return $this->hasOne(TwoTrial::class);
     }
 }
