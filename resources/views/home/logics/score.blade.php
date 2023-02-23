@@ -94,8 +94,8 @@
             
             <hr>
             <div class="text-center">
-                <p class="fs-6 my-4"> Tes tingkatan berpikir logis anda telah selesai, silahkan lanjutkan dengan mengikuti tes berikutnya <br> dengan cara menekan tombol di bawah ini atau pilih Pretest Asesmen Adaptif pada sidebar untuk memulainya.</p>
-                <a href="/home/pretest" type="button" class="btn btn-blue mb-5">Pretest Asesmen Adaptif</a>
+                <p class="fs-6 my-4"> Tes tingkatan berpikir logis anda telah selesai, silahkan lihat hasil dari ke dua tes.</p>
+                <a href="/home/profile" type="button" class="btn btn-blue mb-5">Profile</a>
             </div>
         @endif
     </main>

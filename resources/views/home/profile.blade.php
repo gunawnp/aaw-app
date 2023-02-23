@@ -5,6 +5,7 @@
         <div id="header-profile">
             <div class="row mt-4 justify-content-center">
                 <div class="col-md-3">
+                    
                     @if ( $user->image )
                         <img src="{{ asset('storage/' . $user->image) }}" style="border-radius: 20px" alt="profile" width="165px" class="d-block mx-auto">
                     @else
@@ -57,11 +58,11 @@
                         }, 3000);
                         </script>
 
-                    </div> --}}
+                    </div>
                     
 
                     <!-- Modal -->
-                    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -103,7 +104,7 @@
 
         <div id="summary" class="mb-5">
             <div class="row mb-4">
-                {{-- <p class="fs-5 fw-bold text-center">Rangkuman Tes</p>
+                <p class="fs-5 fw-bold text-center">Rangkuman Tes</p>
                 <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
@@ -122,8 +123,8 @@
                             @endif
                         </div>
                     </div>
-                </div> --}}
-                {{-- <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">
                             <p class="card-title fs-6 fw-bold text-center mb-3">Tes Tingkatan Berpikir Logis</p>
@@ -142,6 +143,7 @@
                         </div>
                     </div>
                 </div>
+                {{--
                 <div class="col-md-4">
                     <div class="card py-3">
                         <div class="card-body text-center">

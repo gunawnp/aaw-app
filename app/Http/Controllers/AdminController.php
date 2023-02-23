@@ -24,6 +24,16 @@ class AdminController extends Controller
             "title" => "Dashboard",
             "header" => "Dashboard Admin",
             "users" => User::all(),
+        ]);
+    }
+
+    public function dashboard_2()
+    {
+        $this->authorize('admin');
+        return view('home.admin.dashboard-2', [
+            "title" => "Dashboard",
+            "header" => "Dashboard Admin",
+            "users" => User::all(),
             "tests" => Maintest::all()
         ]);
     }
