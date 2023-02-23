@@ -11,10 +11,11 @@
             <ol>
                 <li>Tes Gaya Belajar</li>
                 <li>Tes Berpikir Logis</li>
+                <li>Tes Berpikir Logis 2</li>
                 <li>Pretest Asesmen Adaptif</li>
                 <li>Materi Pembelajaran</li>
                 <li>Posttest Asesmen Adaptif</li>
-                <li>Tes Berpikir Logis 2</li>
+                <li>Tes Berpikir Logis 3</li>
             </ol>
             <p>Untuk memulai tes, silahkan menekan tombol di bawah ini atau memilih tab tes gaya belajar di bagian sidebar.</p>
         </div>

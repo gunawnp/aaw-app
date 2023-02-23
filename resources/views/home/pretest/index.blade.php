@@ -44,8 +44,8 @@
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
-                    <h5 class="fs-4 fw-bold mb-4">Data sudah diisi, silahkan lihat bagian penilaian</h5>
-                    <a href="/home/pretest/score" type="button" class="btn btn-blue mb-5">Penilaian</a>
+                    <h5 class="fs-4 fw-bold mb-4">Data sudah diisi, terima kasih!</h5>
+                    {{-- <a href="/home/pretest/score" type="button" class="btn btn-blue mb-5">Penilaian</a> --}}
                 </div>
             </div>
         @endif

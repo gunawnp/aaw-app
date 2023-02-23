@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LogicController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StyleController;
+use App\Http\Controllers\LogiccController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\LogiciiController;
 use App\Http\Controllers\PretestController;
@@ -83,19 +84,24 @@ Route::controller(StyleController::class)->group(function () {
 
 Route::controller(LogicController::class)->group(function () {
     Route::get('/home/logics/desc', 'index')->middleware('auth');
-    Route::post('/home/logics', 'exone')->middleware('auth');
     Route::get('/home/logics/begin', 'show')->middleware('auth');
     Route::post('/home/logics/begin', 'store')->middleware('auth');
     Route::get('/home/logics/score', 'score')->middleware('auth');
 });
 
-// Route::controller(PretestController::class)->group(function () {
-//     Route::get('/home/pretest', 'index')->middleware('auth');
-//     Route::post('/home/pretest', 'exone')->middleware('auth');
-//     Route::get('/home/pretest/begin', 'show')->middleware('auth');
-//     Route::post('/home/pretest/begin', 'store')->middleware('auth');
-//     Route::get('/home/pretest/score', 'score')->middleware('auth');
-// });
+Route::controller(LogiccController::class)->group(function () {
+    Route::get('/home/logics2/desc', 'index')->middleware('auth');
+    Route::get('/home/logics2/begin', 'show')->middleware('auth');
+    Route::post('/home/logics2/begin', 'store')->middleware('auth');
+});
+
+Route::controller(PretestController::class)->group(function () {
+    Route::get('/home/pretest', 'index')->middleware('auth');
+    Route::post('/home/pretest', 'exone')->middleware('auth');
+    Route::get('/home/pretest/begin', 'show')->middleware('auth');
+    Route::post('/home/pretest/begin', 'store')->middleware('auth');
+    // Route::get('/home/pretest/score', 'score')->middleware('auth');
+});
 
 // Route::controller(MateriController::class)->group(function () {
 //     Route::get('home/materi', 'index')->middleware('auth');

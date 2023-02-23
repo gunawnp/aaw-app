@@ -40,7 +40,8 @@
                             <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <input type="hidden" name="id" value="{{ $dt->id }}">
+                                        <input type="hidden" name="id_soal" value="{{ $dt->id }}">
+                                        <input type="hidden" name="id_jawaban" value="{{ $dt->answer_id }}">
 
                                         @php
                                             $array = explode('#',$dt->answer->option);
@@ -130,7 +131,7 @@
                                     <p class="fs-6 my-3 text-center">Apakah anda yakin menyelesaikan tes?</p> 
                                 </div>
                                 <div class="modal-footer justify-content-center ">
-                                    <a href="/home/pretest/score" type="button" class="btn btn-blue px-4 py-2">Ya</a>
+                                    <a href="/home" type="button" class="btn btn-blue px-4 py-2">Ya</a>
                                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Tidak</button>
                                 </div>
                                 </div>
@@ -142,8 +143,8 @@
         @else
             <div style="height: 500px" class="d-flex justify-content-center align-items-center">
                 <div class="text-center">
-                    <h5 class="fs-4 fw-bold mb-4">Data sudah diisi, silahkan lihat bagian penilaian</h5>
-                    <a href="/home/pretest/score" type="button" class="btn btn-blue mb-5">Penilaian</a>
+                    <h5 class="fs-4 fw-bold mb-4">Data sudah diisi, terima kasih!</h5>
+                    {{-- <a href="/home/pretest/score" type="button" class="btn btn-blue mb-5">Penilaian</a> --}}
                 </div>
             </div>
         @endif

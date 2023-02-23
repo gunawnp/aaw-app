@@ -15,7 +15,7 @@
                     @if ( auth()->user()->image )
                         <img src="{{ asset('storage/' . auth()->user()->image) }}" alt="profile" width="35px" class="rounded-circle me-2">
                     @else
-                        <img src="{{ asset('storage/profile-image/profile.png') }}" alt="profile" width="35px" class="rounded-circle me-2">
+                        <img src="/img/profile.png" alt="profile" width="35px" class="rounded-circle me-2">
                     @endif
                     {{ auth()->user()->name }}
                 </button>
