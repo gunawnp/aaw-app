@@ -103,11 +103,15 @@ Route::controller(PretestController::class)->group(function () {
     // Route::get('/home/pretest/score', 'score')->middleware('auth');
 });
 
-// Route::controller(MateriController::class)->group(function () {
-//     Route::get('home/materi', 'index')->middleware('auth');
-//     Route::get('home/materi/percabangan', 'nest')->middleware('auth');
-//     Route::get('home/materi/perulangan', 'loop')->middleware('auth');
-// });
+Route::controller(MateriController::class)->group(function () {
+    Route::get('home/materi', 'index')->middleware('auth');
+    Route::get('home/materi/percabangan', 'nest')->middleware('auth');
+    Route::get('home/materi/percabangan/exercise', 'exercise')->middleware('auth');
+    Route::post('home/materi/percabangan/exercise', 'store')->middleware('auth');
+    Route::get('home/materi/perulangan', 'loop')->middleware('auth');
+    Route::get('home/materi/perulangan/exercise', 'exercisee')->middleware('auth');
+    Route::post('home/materi/perulangan/exercise', 'storee')->middleware('auth');
+});
 
 // Route::controller(PosttestController::class)->group(function () {
 //     Route::get('/home/posttest', 'index')->middleware('auth');

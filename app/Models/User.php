@@ -83,4 +83,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(TwoTrial::class);
     }
+
+    public function exercise()
+    {
+        return $this->hasOne(Exercise::class);
+    }
+
+    public function exercisee()
+    {
+        return $this->hasOne(Exercisee::class);
+    }
 }

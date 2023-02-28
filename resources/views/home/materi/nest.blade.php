@@ -89,20 +89,23 @@
                                     <li>Program Selesai</li>
                                 </ol>
 
-                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman C adalah sebagai berikut.</p>
-                                <div class="editor-container mb-4">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-        int main() {
+                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman Java adalah sebagai berikut.</p>
+                                <div class="editor-container mb-5">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-            int nilai;
-            printf("masukkan nilai:");
-            scanf("%d", &nilai);
-            if (nilai < 80){
-                printf("Tidak Lulus\n");
-            }
-
-            return 0;
-        }</pre>
+public class ketLulus {
+    public static void main(String[] args) {
+        int nilai;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nilai: ");
+        nilai = scanner.nextInt();
+        if (nilai < 80) {
+            System.out.println("Tidak Lulus");
+        }
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -159,23 +162,25 @@
                                     <li>Program Selesai</li>
                                 </ol>
 
-                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman C adalah sebagai berikut.</p>
-                                <div class="editor-container mb-4">
-                                            <pre id="editor" class="editor">#include &lt;stdio.h&gt
-        int main() {
+                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman Java adalah sebagai berikut.</p>
+                                <div class="editor-container mb-5" style="height: 250px">
+                                            <pre id="editor" class="editor">
+import java.util.Scanner;
 
-            int nilai;
-            printf("masukkan nilai:");
-            scanf("%d", &nilai);
-            if (nilai > 75){
-                printf("Lulus\n");
-            }
-            else {
-                printf("Tidak Lulus\n");
-            }
-
-            return 0;
-        }</pre>
+public class ketLulus {
+    public static void main(String[] args) {
+        int nilai;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nilai: ");
+        nilai = scanner.nextInt();
+        if (nilai > 75) {
+            System.out.println("Lulus");
+        } else {
+            System.out.println("Tidak Lulus");
+        }
+    }
+}
+                                            </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -232,24 +237,26 @@
                                 </p>
 
                                 <p>Contoh pada percabangan bertingkat yaitu sebagai berikut.</p>
-                                <div class="editor-container mb-4" style="height: 300px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-    int main() {
+                                <div class="editor-container mb-4" style="height: 320px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int x;
-    printf(“Masukkan nilai x: ”); scanf(“%d”, &x);
-    if (x > 0){
-        printf(“x adalah bilangan positif”);
+public class Bilangan {
+    public static void main(String[] args) {
+        int x;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nilai x: ");
+        x = scanner.nextInt();
+        if (x > 0) {
+            System.out.println("x adalah bilangan positif");
+        } else if (x < 0) {
+            System.out.println("x adalah bilangan negatif");
+        } else {
+            System.out.println("x adalah bilangan nol");
+        }
     }
-    else if (x < 0){
-        printf(“x adalah bilangan negatif”);
-    }
-    else{
-        printf(“x adalah bilangan nol”);
-    }
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <p>
@@ -271,34 +278,32 @@
                                 {{--  --}}
 
                                 <p>Contoh lainnya pada percabangan bertingkat yaitu sebagai berikut.</p>
-                                <div class="editor-container mb-4" style="height: 470px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 450px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int nilai;
-    char huruf;
-    printf("Masukkan nilai: "); scanf("%d", &nilai);
-
-    if (nilai >= 81 && nilai <= 100){
-        huruf ='A';
+public class konversiNilai {
+    public static void main(String[] args) {
+        int nilai;
+        char huruf;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nilai: ");
+        nilai = scanner.nextInt();
+        if (nilai >= 81 && nilai <= 100) {
+            huruf = 'A';
+        } else if (nilai >= 71 && nilai < 81) {
+            huruf = 'B';
+        } else if (nilai >= 61 && nilai < 71) {
+            huruf = 'C';
+        } else if (nilai >= 51 && nilai < 61) {
+            huruf = 'D';
+        } else {
+            huruf = 'E';
+        }
+        System.out.println("Nilai yang dikonversi ke huruf adalah: " + huruf);
     }
-    else if (nilai >= 71 && nilai < 81){
-        huruf ='B';
-    }
-    else if (nilai >= 61 && nilai < 71){
-        huruf ='C';
-    }
-    else if (nilai >= 51 && nilai < 61){
-        huruf ='D';
-    }
-    else {
-        huruf ='E';
-    }
-
-    printf("Nilai yang dikonversi ke huruf adalah: %d\n“, huruf);
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <p>
@@ -352,43 +357,46 @@ int main() {
                                 <br>
 
                                 <p>Untuk lebih jelasnya, mari kita perhatikan suatu contoh berikut ini.</p>
-                                <div class="editor-container mb-4" style="height: 630px">
-                                            <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 670px">
+                                            <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int x;
-    printf(
-    "Selamat datang di provider favoritmu!\n"
-    "Silahkan memilih menu pilihan Anda:\n"
-    "1. Paket promosi\n"
-    "2. Paket internet\n"
-    "3. Paket telepon\n"
-    "4. Paket sms\n"
-    "5. Cek info nomor\n"
-        );
-    printf("Masukkan pilihan menu (1-5): "); scanf("%d", &x);
-    switch (x) {
-        case 1:
-            printf("Anda memilih bagian 1 untuk paket promosi");
-            break;
-        case 2:
-            printf("Anda memilih bagian 2 untuk paket internet");
-            break;
-        case 3:
-            printf("Anda memilih bagian 3 untuk paket telepon");
-            break;
-        case 4:
-            printf("Anda memilih bagian 4 untuk paket sms");
-            break;
-        case 5:
-            printf("Anda memilih bagian 5 untuk cek info nomor");
-            break;
-        default:
-            printf("Pilihan tidak tersedia");
+public class Menu {
+    public static void main(String[] args) {
+        int x;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Selamat datang di provider favoritmu!");
+        System.out.println("Silahkan memilih menu pilihan Anda:");
+        System.out.println("1. Paket promosi");
+        System.out.println("2. Paket internet");
+        System.out.println("3. Paket telepon");
+        System.out.println("4. Paket sms");
+        System.out.println("5. Cek info nomor");
+        System.out.print("Masukkan pilihan menu (1-5): ");
+        x = scanner.nextInt();
+        switch (x) {
+            case 1:
+                System.out.println("Anda memilih bagian 1 untuk paket promosi");
+                break;
+            case 2:
+                System.out.println("Anda memilih bagian 2 untuk paket internet");
+                break;
+            case 3:
+                System.out.println("Anda memilih bagian 3 untuk paket telepon");
+                break;
+            case 4:
+                System.out.println("Anda memilih bagian 4 untuk paket sms");
+                break;
+            case 5:
+                System.out.println("Anda memilih bagian 5 untuk cek info nomor");
+                break;
+            default:
+                System.out.println("Pilihan tidak tersedia");
+                break;
+        }
     }
-
-    return 0;
-}</pre>
+}
+                                            </pre>
                                 </div>
 
                                 <p>
@@ -476,33 +484,40 @@ int main() {
                             <br>
 
                             <p>Contoh pada percabangan bersarang yaitu sebagai berikut.</p>
-                            <div class="editor-container mb-4" style="height: 450px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                            <div class="editor-container mb-4" style="height: 560px">
+                                <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int nilai, kehadiran;
-    char indeks, status[20];
-    printf("Masukkan nilai: "); scanf("%d", &nilai);
-    printf("Masukkan jumlah kehadiran: "); scanf("%d", &kehadiran);
+public class ketLulus {
+    public static void main(String[] args) {
+        int nilai, kehadiran;
+        char indeks;
+        String status;
+        Scanner input = new Scanner(System.in);
 
-    if (nilai >= 75){
-        indeks = "A";
-        if (kehadiran == 25){
-            status = "Lulus";
-        }else{
-            status = "Lulus Bersyarat";
+        System.out.print("Masukkan nilai: ");
+        nilai = input.nextInt();
+
+        System.out.print("Masukkan jumlah kehadiran: ");
+        kehadiran = input.nextInt();
+
+        if (nilai >= 75) {
+            indeks = 'A';
+            if (kehadiran == 25) {
+                status = "Lulus";
+            } else {
+                status = "Lulus Bersyarat";
+            }
+        } else {
+            indeks = 'C';
+            status = "Gagal";
         }
-    }
-    else{
-        indeks = "C";
-        status = "Gagal";
-    }
 
-    printf("Indeks nilai siswa: %s", indeks);
-    printf("Status kelulusan siswa: %s", status);
-
-    return 0;
-}</pre>
+        System.out.println("Indeks nilai siswa: " + indeks);
+        System.out.println("Status kelulusan siswa: " + status);
+    }
+}
+                                </pre>
                             </div>
 
                             <p>
@@ -536,66 +551,6 @@ int main() {
 
                     <hr>
 
-                    {{-- Tak bersyarat --}}
-                    <div id="unconditional-if">
-                        <h4 class="fw-bold mt-5">Percabangan Tidak Bersyarat</h4>
-                        <div class="fs-6 lh-lg mt-4">
-                            <p>
-                                Percabangan tidak bersyarat merupakan percabangan yang tidak diharuskan melakukan pengecekan terhadap kondisi atau syarat tertentu yang memperhatikan hasil pengecekan berupa <i>true</i> atau <i>false</i> untuk menuju pernyataan yang akan dikerjakan dan akan langsung diarahkan pada labelnya.
-                            </p>
-
-                            <p>Percabangan tidak bersyarat dinotasikan sebagai berikut:</p>
-                            <div class="card mb-3" style="width: 20rem;">
-                                <div class="card-body">
-                                    <p class="font-monospace ms-5 mb-0">
-                                        <b>goto</b> label <br>
-                                        <b>...</b><br>
-                                        label:<br>
-                                            &nbsp; pernyataan <br>
-                                    </p>
-                                </div>
-                            </div>    
-                            <p>
-                                Penggunaan percabangan tidak bersyarat ini, menggunakan kode <i>goto</i> dengan diikuti label yang dapat kita tentukan sendiri penamaannya, label di sini merupakan sebuah <i>identifier</i> yang diikuti dengan tanda titik dua ( : ). Penamaan label ini harus mengikuti aturan pembuatan variabel. Sehingga, label: yaitu sebagai <i>identifier</i> dan <i>goto</i> label sebagai penggunaan <i>goto</i>.
-                            </p>
-
-                            <br>
-
-                            <p>Contoh pada percabangan tidak bersyarat yaitu sebagai berikut.</p>
-                            <div class="editor-container mb-4" style="height: 220px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    printf("hello rpl! \n");
-    goto akhir;
-    printf("tes?");
-
-    akhir:
-    printf("program berakhir");
-
-    return 0;
-}</pre>
-                            </div>
-
-                            <p>
-                                Pada program di atas akan diawali dengan menampilkan tulisan hello rpl! Kemudian akan langsung ke bagian identifier, karena telah melakukan pemanggilan goto pada identifier tersebut, dan tampilan “tes?” tidak akan dijalankan. 
-                            </p>
-
-                            <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
-                            <div class="card mb-5" style="width: 22rem;">
-                                <div class="card-body">
-                                    <p class="font-monospace ms-3 mb-0">
-                                        hello rpl! <br>
-                                        program berakhir
-                                    </p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <hr>
-
                     {{-- Catatan Percabangan --}}
                     <div id="note-if" class="mb-5">
                         <h4 class="fw-bold mt-5">Catatan Untuk Percabangan</h4>
@@ -624,27 +579,31 @@ int main() {
                             <p>
                                 Contoh pembuatan program percabangan dengan pernyataan majemuk dengan kasus pembelian barang dengan diskon.
                             </p>
-                            <div class="editor-container mb-4" style="height: 350px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                            <div class="editor-container mb-4" style="height: 400px">
+                                <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    long int beli, diskon, total;
-    printf("masukkan harga pembelian:"); scanf("%d", &beli);
+public class Diskon {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        long beli, diskon, total;
 
-    if (beli >= 100000){
-        diskon = 0.2*beli;
-        total = beli-diskon;
+        System.out.print("masukkan harga pembelian:");
+        beli = input.nextLong();
+
+        if (beli >= 100000) {
+            diskon = (long) (0.2 * beli);
+            total = beli - diskon;
+        } else {
+            diskon = (long) (0.1 * beli);
+            total = beli - diskon;
+        }
+
+        System.out.println("diskon berjumlah: " + diskon);
+        System.out.println("total harga pembelian adalah: " + total);
     }
-    else {
-        diskon = 0.1*beli;
-        total = beli-diskon;
-    }
-
-    printf("diskon berjumlah: %ld\n", diskon);
-    printf("total harga pembelian adalah: %ld\n", total);
-
-    return 0;
-}</pre>
+}
+                                </pre>
                             </div>
 
                             <p>
@@ -675,9 +634,16 @@ int main() {
 
                     <hr>
 
+                    <div id="exercise" class="mb-5 text-center">
+                        <h5 class="fw-bold mt-5 mb-4">Halaman Kerja Materi Percabangan</h5>
+                        <a href="/home/materi/percabangan/exercise" class="btn btn-blue p-3 px-5">Mulai</a>
+                    </div>
+
+                    <hr>
+
                     <div id="dl-modul" class="mb-4">
                         <h5 class="fw-bold mt-5 mb-4">Unduh Modul Materi Percabangan</h5>
-                        <a href="https://drive.google.com/u/0/uc?id=1HJasMP96J55tTFRQF5UZBCjSyHLf9cOa&export=download" class="btn btn-blue p-2 px-4">Unduh</a>
+                        <a href="https://drive.google.com/u/0/uc?id=1dOsDBwXFCFp9DiWquDrUkW_sslePYZ9r&export=download" class="btn btn-blue p-2 px-4">Unduh</a>
                     </div>
 
                     <div id="reference" class="mb-5 fs-6 lh-lg">
@@ -696,6 +662,9 @@ int main() {
                         </p>
                         <p>
                             Muhardian, Ahmad. 2019. “Belajar Pemrograman C #07: Mengenal 6 Macam Bentuk Blok Percabangan”, https://www.petanikode.com/c-percabangan/
+                        </p>
+                        <p>
+                            Muhardian, Ahmad. 2015. “Belajar Java: Memahami 3 Bentuk Percabangan dalam Java”, https://www.petanikode.com/java-percabangan/
                         </p>
                     </div>
 
@@ -716,6 +685,7 @@ int main() {
                             <li class="mb-2"><a href="#unconditional-if" class="text-decoration-none text-muted">Percabangan Tidak Bersyarat</a></li>
                             <hr>
                             <li class="mb-2"><a href="#note-if" class="text-decoration-none text-muted">Catatan Percabangan</a></li>
+                            <li class="mb-2"><a href="#exercise" class="text-decoration-none text-muted">Halaman Kerja</a></li>
                             <li class="mb-2"><a href="#dl-modul" class="text-decoration-none text-muted">Unduh Modul</a></li>
                         </ol>
                     </div>

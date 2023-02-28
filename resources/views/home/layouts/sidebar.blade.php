@@ -60,26 +60,17 @@
                         Tes Berpikir Logis 2
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white {{ Request::is('home/pretest', 'home/pretest/begin') ? ' bg-blued' : '' }}" href="/home/pretest">
+                        <i class="fs-5 bi-file-earmark-code pe-2"></i>
+                        Pretest Asesmen
+                    </a>
+                </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('home/pretest*') ? ' bg-blued' : '' }} text-white" data-bs-toggle="collapse" href="#collapse-pretest" role="button" aria-expanded="false" aria-controls="collapse-pretest">
-                        <i class="fs-5 bi-file-earmark-code pe-2"></i>
-                        Pretest Asesmen
-                        <p class="ms-4 ps-2 mb-0">Adaptif</p> 
-                    </a>
-                    {{-- <a class="nav-link {{ Request::is('home/pretest*') ? ' bg-blued' : '' }} text-white-50 disabled" data-bs-toggle="collapse" href="#collapse-pretest" role="button" aria-expanded="false" aria-controls="collapse-pretest">
-                        <i class="fs-5 bi-file-earmark-code pe-2"></i>
-                        Pretest Asesmen
-                        <p class="ms-4 ps-2 mb-0">Adaptif</p> 
-                    </a> --}}
-                    <div class="collapse {{ Request::is('home/pretest*') ? 'show' : '' }}" id="collapse-pretest">
-                        <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/pretest', 'home/pretest/begin') ? ' bg-blued' : '' }}" href="/home/pretest">Mulai</a>
-                        {{-- <a class="nav-link text-white ms-4 ps-4 {{ Request::is('home/pretest/score') ? ' bg-blued' : '' }}" href="/home/pretest/score">Penilaian</a> --}}
-                    </div>
-                </li>
-                <li class="nav-item">
-                    {{-- <a class="nav-link {{ Request::is('home/materi*') ? ' bg-blued' : '' }} text-white" href="/home/materi"> --}}
-                    <a class="nav-link {{ Request::is('home/materi*') ? ' bg-blued' : '' }} text-white-50 disabled" href="">
+                    <a class="nav-link {{ Request::is('home/materi*') ? ' bg-blued' : '' }} text-white" href="/home/materi">
+                    {{-- <a class="nav-link {{ Request::is('home/materi*') ? ' bg-blued' : '' }} text-white-50 disabled" href=""> --}}
                         <i class="fs-5 bi-journal-bookmark pe-2"></i>
                         Materi Pembelajaran
                     </a>

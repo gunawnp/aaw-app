@@ -117,18 +117,17 @@
                                     <li>Hingga pada akhirnya variabel i akan bernilai 11, dari sini variabel i tidak memenuhi kondisi, kemudian perulangan akan berhenti dan pernyataan tidak akan dilaksanakan.</li>
                                 </ol>
 
-                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman C adalah sebagai berikut.</p>
-                                <div class="editor-container mb-4" style="height: 200px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int i;
-    for(i=1; i<=10; i++){
-        printf("%d\n", i);
-    }
-
-    return 0;
-}</pre>
+                                <p>Algoritma program di atas jika ditulis dalam bahasa pemrograman Java adalah sebagai berikut.</p>
+                                <div class="editor-container mb-4" style="height: 160px">
+                                    <pre id="editor" class="editor">
+public class Main {
+   public static void main(String[] args) {
+      for (int i = 1; i <= 10; i++) {
+         System.out.println(i);
+      }
+   }
+}
+                                    </pre>
                                 </div>
 
                                 <div class="card mb-3" style="width: 15rem;">
@@ -162,17 +161,16 @@ int main() {
 
                                 <p><b>Contoh 2</b></p>
                                 <p>Pada contoh sebelumnya, digunakan iterasi variabel naik. Bagaimana jika kita menginginkan iterasi turun? Caranya kurang lebih sama, namun ada perbedaan pada bagian inisialisasi, kondisi/batas, dan iterasinya. Untuk lebih jelasnya perhatikan contoh berikut.</p>
-                                <div class="editor-container mb-4" style="height: 180px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int i;
-    for(i=10; i>=1; i--){
-        printf("%d\n", i);
+                                <div class="editor-container mb-4" style="height: 160px">
+                                    <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        for(int i=10; i>=1; i--){
+            System.out.println(i);
+        }
     }
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <div class="card mb-3" style="width: 15rem;">
@@ -209,17 +207,16 @@ int main() {
 
                                 <p><b>Contoh 3</b></p>
                                 <p>Jika kita menginginkan mencetak tulisan yang sama sebanyak 10 buah, maka kita dapat ubah pernyataannya.</p>
-                                <div class="editor-container mb-4" style="height: 180px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int i;
-    for(i=1; i<=10; i++){
-        printf("Belajar perulangan\n");
+                                <div class="editor-container mb-4" style="height: 150px">
+                                    <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        for(int i=1; i<=10; i++){
+            System.out.println("Belajar perulangan");
+        }
     }
-
-    return 0;
-}</pre>
+}                            
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -245,18 +242,22 @@ int main() {
 
                                 <p><b>Contoh 4</b></p>
                                 <p>Contoh selanjutnya yaitu, bagaimana jika kita menginginkan batas perulangan sesuai dengan yang kita input ke dalam suatu variabel. Maka dari itu perhatikanlah algoritma program berikut ini.</p>
-                                <div class="editor-container mb-4" style="height: 200px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 250px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int i, j;
-    printf("masukkan batas: "); scanf("%d", &j);
-    for(i=1; i<=j; i++){
-        printf("%d\n", i);
+public class Main {
+    public static void main(String[] args) {
+        int i, j;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan batas: ");
+        j = input.nextInt();
+        for(i=1; i<=j; i++){
+            System.out.println(i);
+        }
     }
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -281,25 +282,31 @@ int main() {
 
                                 <p><b>Contoh 5</b></p>
                                 <p>Contoh selanjutnya yaitu membuat sebuah algoritma yang menghitung nilai rata dari bilangan yang diinputkan dan sebanyak n yang diinputkan pula ke dalam suatu variabel.</p>
-                                <div class="editor-container mb-4" style="height: 320px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 390px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int i, j;
-    float rata, nilai, jumlah;
-	printf("masukkan banyak bilangan: ");
-	scanf("%d", &j);
-	jumlah = 0;
-	for(i=1; i<=j; i++){
-		printf("masukkan bilangan ke-%d: ", i);
-		scanf("%f", &nilai);
-		jumlah = jumlah + nilai;
-	}
-	rata = jumlah/j;
-	printf("rata-rata: %f", rata);
+public class Main {
+    public static void main(String[] args) {
+        int i, j;
+        float rata, nilai, jumlah;
 
-    return 0;
-}</pre>
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan banyak bilangan: ");
+        j = input.nextInt();
+
+        jumlah = 0;
+        for(i=1; i<=j; i++){
+            System.out.print("masukkan bilangan ke-" + i + ": ");
+            nilai = input.nextFloat();
+            jumlah = jumlah + nilai;
+        }
+
+        rata = jumlah/j;
+        System.out.print("rata-rata: " + rata);
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -364,21 +371,20 @@ int main() {
 
                                 <p>Contoh penggunaan perulangan <i>while</i> yaitu sebagai berikut.</p>
                                 <p><b>Contoh 1</b></p>
-                                <p>Pada contoh pertama, mari kita gunakan contoh 1 pada perulangan <i>for</i> sehingga jika dituliskan algoritma programnya dalam bahasa pemrograman C akan seperti berikut ini.</p>
+                                <p>Pada contoh pertama, mari kita gunakan contoh 1 pada perulangan <i>for</i> sehingga jika dituliskan algoritma programnya dalam bahasa pemrograman Java akan seperti berikut ini.</p>
                                 
-                                <div class="editor-container mb-4" style="height: 200px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int i;
-    i = 1;
-    while(i<=10){
-        printf("%d\n", i);
-        i++;
+                                <div class="editor-container mb-4" style="height: 180px">
+                                    <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        while(i<=10){
+            System.out.println(i);
+            i++;
+        }
     }
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -410,46 +416,50 @@ int main() {
 
                                 <p><b>Contoh 2</b></p>
                                 <p>Contoh 2 untuk lebih memperjelas bagaimana penggunaan while, mari kita pahami contoh ini yang bersumber dari website petanikode.</p>
-                                <div class="editor-container mb-4" style="height: 330px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 500px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    char ulangi = 'y';
-    int counter = 0;
+public class PerulanganWhile {
+    public static void main(String[] args) {
 
-    while(ulangi == 'y'){
-        printf("Apakah kamu mau mengulang?\n");
-        printf("Jawab (y/t): ");
-        scanf(" %c", &ulangi);
-        counter++;
+	    // membuat variabel dan scanner
+        boolean running = true;
+        int counter = 0;
+        String jawab;
+        Scanner scan = new Scanner(System.in);
+
+        while( running ) {
+            System.out.println("Apakah anda ingin keluar?");
+            System.out.print("Jawab [ya/tidak]> ");
+
+            jawab = scan.nextLine();
+
+            // cek jawabnnya, kalau ya maka berhenti mengulang
+            if( jawab.equalsIgnoreCase("ya") ){
+                running = false;
+            }
+
+            counter++;
+        }
+        System.out.println("Anda sudah melakukan perulangan sebanyak " + counter + " kali");
+
     }
-
-    printf("\n----------\n");
-    printf("Perulangan Selesai!\n");
-    printf("Kamu mengulang sebanyak %i kali.\n", counter);
-
-    return 0;
-}</pre>
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
                                 <div class="card mb-3" style="width: 23rem;">
                                     <div class="card-body">
                                         <p class="font-monospace ms-3 mb-0">
-                                            Apakah kamu mau mengulang? <br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): t<br><br>
-
-                                            ----------<br>
-                                            Perulangan Selesai!<br>
-                                            Kamu mengulang sebanyak 5 kali.
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> tidak<br>
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> tidak<br>
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> ya<br>
+                                            Anda sudah melakukan perulangan sebanyak 3 kali
                                         </p>
                                     </div>
                                 </div>
@@ -457,10 +467,10 @@ int main() {
                                     Pada contoh kasus ini, dijelaskan pada poin-poin berikut ini.
                                 </p>
                                 <ol>
-                                    <li>Diawali dengan variabel “ulangi” yang bernilai “y”.</li>
-                                    <li>Kondisi yang berada pada while berupa boolean yang membandingkan antara variabel char. Variabel char yang dibandingkan yaitu variabel “ulangi”.</li>
-                                    <li>Kemudian pernyataan di dalamnya berisi masukkan/input yang harus diisi dengan “y” atau “t”.</li>
-                                    <li>Jika variabel yang diisi ini bernilai y maka kondisi memenuhi dan akan terus dilakukan perulangan. Namun jika variabel tersebut diisi “t”, maka tidak memenuhi kondisi dan akan keluar dari perulangan.</li>
+                                    <li>Diawali dengan pendeklarasian variabel-variabel yang dibutuhkan.</li>
+                                    <li>Kondisi yang berada pada while berupa pemeriksaan kondisi yang membandingkan antara variabel jawab dengan string “ya”.</li>
+                                    <li>Kemudian pernyataan di dalamnya berisi masukkan/input yang harus diisi dengan “ya” atau “tidak”.</li>
+                                    <li>variabel yang diisi ini bernilai ya maka kondisi memenuhi dan akan terus dilakukan perulangan. Namun jika variabel tersebut diisi “tidak”, maka tidak memenuhi kondisi dan akan keluar dari perulangan.</li>
                                     <li>Selain itu, pada pernyataan terdapat variabel “counter” yang digunakan sebagai pengihitung, sehingga ketika kita memenuhi syarat yang harus dipenuhi pada kondisi, “counter” akan menghitung berapa kali memenuhi syarat atau berapa kali kita telah melakukan perulangan.</li>
                                     <li>Diakhiri dengan pencetakan perulangan telah selesai dan memberikan jumlah hasil berapa kali telah melakukan perulangan.</li>
                                 </ol>
@@ -502,21 +512,22 @@ int main() {
 
                                 <p>Agar lebih jelas bagaimana penggunaan repeat, perhatikan contoh berikut.</p>
                                 <p><b>Contoh 1</b></p>
-                                <p>Untuk contoh pertama, seperti biasa kita akan mencoba algoritma program sederhana seperti contoh pada materi perulangan sebelumnya. Perhatikanlah algoritma program berikut yang menggunakan bahasa pemrograman C.</p>
+                                <p>Untuk contoh pertama, seperti biasa kita akan mencoba algoritma program sederhana seperti contoh pada materi perulangan sebelumnya. Perhatikanlah algoritma program berikut yang menggunakan bahasa pemrograman Java.</p>
                                 
                                 <div class="editor-container mb-4" style="height: 210px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int i;
-    i = 1;
-    do{
-        printf("angka ke-%d\n", i);
-        i++;
-    }while(i<=10);
-
-    return 0;
-}</pre>
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        do {
+            System.out.printf("angka ke-%d\n", i);
+            i++;
+        } while (i <= 10);
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -548,20 +559,21 @@ int main() {
                                 </ol>
 
                                 <p><b>Contoh 2</b></p>
-                                <p>Pada contoh kedua kita akan membuat program untuk membuat deret dengan kelipatan 5. Perhatikan algoritma program berikut dalam bahasa pemrograman C.</p>
+                                <p>Pada contoh kedua kita akan membuat program untuk membuat deret dengan kelipatan 5. Perhatikan algoritma program berikut dalam bahasa pemrograman Java.</p>
                                 <div class="editor-container mb-4" style="height: 210px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    int i;
-    i = 1;
-    do{
-        printf("%d  ", i*5);
-        i++;
-    }while(i<=5);
-
-    return 0;
-}</pre>
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        do {
+            System.out.print(i * 5 + " ");
+            i++;
+        } while (i <= 5);
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -585,20 +597,18 @@ int main() {
                                 <p><b>Contoh 3</b></p>
                                 <p>Untuk membuktikan apakah memang benar repeat akan menjalankan pernyataan dalam perulangannya terlebih dahulu satu kali? Untuk membuktikannya, perhatikan contoh berikut.</p>
                                 
-                                <div class="editor-container mb-4" style="height: 220px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int i;
-    i = 8;
-    do{
-        printf("%d  ", i*2);
-        i++;
-    }while(i<=4);
-
-
-    return 0;
-}</pre>
+                                <div class="editor-container mb-4" style="height: 180px">
+                                    <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        int i = 8;
+        do {
+            System.out.print(i * 2 + " ");
+            i++;
+        } while (i <= 4);
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -626,41 +636,50 @@ int main() {
 
                                 <p><b>Contoh 4</b></p>
                                 <p>Selanjutnya kita akan menggunakan contoh pada materi while namun diimplementasikan pada materi repeat.</p>
-                                <div class="editor-container mb-4" style="height: 330px">
-                                    <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
+                                <div class="editor-container mb-4" style="height: 500px">
+                                    <pre id="editor" class="editor">
+import java.util.Scanner;
 
-    char ulangi = 'y';
-    int counter = 0;
+public class PerulanganWhile {
+    public static void main(String[] args) {
 
-    do{
-        printf("Apakah kamu mau mengulang?\n");
-        printf("Jawab (y/t): ");
-        scanf(" %c", &ulangi);
+	    // membuat variabel dan scanner
+        boolean running;
+        int counter = 0;
+        String jawab;
+        Scanner scan = new Scanner(System.in);
+
+        do {
+        System.out.println("Apakah anda ingin keluar?");
+        System.out.print("Jawab [ya/tidak]> ");
+        jawab = scan.nextLine();
+
+        // cek jawabnnya, kalau ya maka berhenti	mengulang
+        if( jawab.equalsIgnoreCase("ya") ){
+            running = false;
+        } else {
+            running = true;
+        }
+
         counter++;
-    }while(ulangi == 'y');
-
-    printf("\n----------\n");
-    printf("Perulangan Selesai!\n");
-    printf("Kamu mengulang sebanyak %i kali.\n", counter);
-
-    return 0;
-}</pre>
+        } while( running );
+	    System.out.println("Anda sudah melakukan perulangan sebanyak " + counter + " kali");
+    }
+}
+                                    </pre>
                                 </div>
 
                                 <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
                                 <div class="card mb-3" style="width: 23rem;">
                                     <div class="card-body">
                                         <p class="font-monospace ms-3 mb-0">
-                                            Apakah kamu mau mengulang? <br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): y<br>
-                                            Apakah kamu mau mengulang?<br>
-                                            Jawab (y/t): t<br>
-                                            ----------<br>
-                                            Perulangan Selesai!<br>
-                                            Kamu mengulang sebanyak 3 kali.<br>
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> tidak<br>
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> tidak<br>
+                                            Apakah anda ingin keluar? <br>
+                                            Jawab [ya/tidak]> ya<br>
+                                            Anda sudah melakukan perulangan sebanyak 3 kali
                                         </p>
                                     </div>
                                 </div>
@@ -734,20 +753,20 @@ int main() {
 
                             <p>Contoh pada perulangan bersarang yaitu sebagai berikut.</p>
                             <p><b>Contoh 1</b></p>
-                            <p>Untuk contoh pertama, mari kita buat contoh yang sederhana, perhatikan algoritma program dalam bahasa pemrograman C sebagai berikut.</p>
+                            <p>Untuk contoh pertama, mari kita buat contoh yang sederhana, perhatikan algoritma program dalam bahasa pemrograman Java sebagai berikut.</p>
                             
-                            <div class="editor-container mb-4" style="height: 210px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    for(int x = 1; x < 4; x++){
-        for(int y = 1; y < 4; y++){
-            printf("perulangan ke (%d, %d)\n", x, y);
+                            <div class="editor-container mb-4" style="height: 180px">
+                                <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        for(int x = 1; x < 4; x++){
+            for(int y = 1; y < 4; y++){
+                System.out.printf("perulangan ke (%d, %d)\n", x, y);
+            }
         }
     }
-
-    return 0;
-}</pre>
+}
+                                </pre>
                             </div>
 
                             <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -778,20 +797,20 @@ int main() {
                             </ol>
 
                             <p><b>Contoh 2</b></p>
-                            <p>Contoh kedua, kita akan membuat perkalian dari 3 dan 4, perhatikan algoritma program dalam bahasa pemrograman C sebagai berikut.</p>
+                            <p>Contoh kedua, kita akan membuat perkalian dari 3 dan 4, perhatikan algoritma program dalam bahasa pemrograman Java sebagai berikut.</p>
                             <div class="editor-container mb-4" style="height: 210px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    for(int x = 3; x <= 4; x++){
-        for(int y = 1; y <= 10; y++){
-            printf("%d x %d = %d\n", x, y, x*y);
+                                <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        for(int x = 3; x <= 4; x++){
+            for(int y = 1; y <= 10; y++){
+                System.out.printf("%d x %d = %d\n", x, y, x*y);
+            }
+            System.out.println("-------------");
         }
-        printf("-------------\n");
     }
-
-    return 0;
-}</pre>
+}
+                                </pre>
                             </div>
 
                             <p>Jika program dijalankan, hasilnya akan seperti berikut:</p>
@@ -835,25 +854,25 @@ int main() {
                             </ol>
 
                             <p><b>Contoh 3</b></p>
-                            <p>Bagaimana jika kita menggunakan contoh di atas, namun menggunakan perulangan while, perhatikan algoritma program dalam bahasa pemrograman C sebagai berikut dan hasilnya akan sama, algoritma programnya hanya sedikit modifikasi kode saja.</p>
+                            <p>Bagaimana jika kita menggunakan contoh di atas, namun menggunakan perulangan while, perhatikan algoritma program dalam bahasa pemrograman Java sebagai berikut dan hasilnya akan sama, algoritma programnya hanya sedikit modifikasi kode saja.</p>
                             
                             <div class="editor-container mb-5" style="height: 280px">
-                                <pre id="editor" class="editor">#include &lt;stdio.h&gt
-int main() {
-
-    int x = 3;
-    while(x <= 4){
-        int y = 1;
-        while(y <= 10){
-            printf("%d x %d = %d\n", x, y, x*y);
-            y++;
+                                <pre id="editor" class="editor">
+public class Main {
+    public static void main(String[] args) {
+        int x = 3;
+        while (x <= 4) {
+            int y = 1;
+            while (y <= 10) {
+                System.out.print("%d x %d = %d\n", x, y, x*y);
+                y++;
+            }
+            x++;
+            System.out.println("-------------");
         }
-        x++;
-        printf("-------------\n");
     }
-
-    return 0;
-}</pre>
+}
+                                </pre>
                             </div>
 
                         </div>
@@ -861,9 +880,16 @@ int main() {
 
                     <hr>
 
+                    <div id="exercise" class="mb-5 text-center">
+                        <h5 class="fw-bold mt-5 mb-4">Halaman Kerja Materi Perulangan</h5>
+                        <a href="/home/materi/perulangan/exercise" class="btn btn-blue p-3 px-5">Mulai</a>
+                    </div>
+
+                    <hr>
+
                     <div id="dl-modul" class="mb-4">
                         <h5 class="fw-bold mt-5 mb-4">Unduh Modul Materi Perulangan</h5>
-                        <a href="https://drive.google.com/u/0/uc?id=1GdNaBlDzQq-sdi2-rt988uSuzzWJBU8I&export=download" class="btn btn-blue p-2 px-4">Unduh</a>
+                        <a href="https://drive.google.com/u/0/uc?id=18cHUFX8FJ4F5ANGo-ySXY8Dhh_6A5MJy&export=download" class="btn btn-blue p-2 px-4">Unduh</a>
                     </div>
 
                     <div id="reference" class="mb-5 fs-6 lh-lg">
@@ -902,6 +928,7 @@ int main() {
                                 
                             <hr>
                             
+                            <li class="mb-2"><a href="#exercise" class="text-decoration-none text-muted">Halaman Kerja</a></li>
                             <li class="mb-2"><a href="#dl-modul" class="text-decoration-none text-muted">Unduh Modul</a></li>
                         </ol>
                     </div>
