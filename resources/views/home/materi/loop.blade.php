@@ -909,6 +909,9 @@ public class Main {
                         <p>
                             Muhardian, Ahmad. 2019. “Belajar Pemrograman C #08: Memahami Blok Perulangan pada C”, https://www.petanikode.com/c-perulangan/
                         </p>
+                        <p>
+                            Muhardian, Ahmad. 2016. “Belajar Java: Memahami 2 Jenis Perulangan dalam Java”, https://www.petanikode.com/java-perulangan/
+                        </p>
                     </div>
 
                 </div>

@@ -44,7 +44,7 @@ Route::controller(RegisterController::class)->group(function () {
 });
 
 Route::get('/home', function() {
-    return view('home.trials', [
+    return view('home.index', [
         "title" => "Home",
         "header" => "Home"
     ]);
