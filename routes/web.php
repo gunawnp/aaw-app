@@ -44,34 +44,34 @@ Route::controller(RegisterController::class)->group(function () {
 });
 
 Route::get('/home', function() {
-    return view('home.index', [
+    return view('home.trials', [
         "title" => "Home",
         "header" => "Home"
     ]);
 })->middleware('auth');
 
-//uji coba
+// uji coba
 
-// Route::get('/home/trials', function () {
-//     return view('home.trials', [
-//         "title" => "Home Trials",
-//         "header" => "Uji Coba"
-//     ]);
-// })->middleware('auth');
+Route::get('/home/trials', function () {
+    return view('home.trials', [
+        "title" => "Home Trials",
+        "header" => "Uji Coba"
+    ]);
+})->middleware('auth');
 
-// Route::controller(OneTrialController::class)->group(function () {
-//     Route::get('/home/trials-1', 'index')->middleware('auth');
-//     Route::get('/home/trials-1/begin', 'show')->middleware('auth');
-//     Route::post('/home/trials-1/begin', 'store')->middleware('auth');
-// });
+Route::controller(OneTrialController::class)->group(function () {
+    Route::get('/home/trials-1', 'index')->middleware('auth');
+    Route::get('/home/trials-1/begin', 'show')->middleware('auth');
+    Route::post('/home/trials-1/begin', 'store')->middleware('auth');
+});
 
-// Route::controller(TwoTrialController::class)->group(function () {
-//     Route::get('/home/trials-2', 'index')->middleware('auth');
-//     Route::get('/home/trials-2/begin', 'show')->middleware('auth');
-//     Route::post('/home/trials-2/begin', 'store')->middleware('auth');
-// });
+Route::controller(TwoTrialController::class)->group(function () {
+    Route::get('/home/trials-2', 'index')->middleware('auth');
+    Route::get('/home/trials-2/begin', 'show')->middleware('auth');
+    Route::post('/home/trials-2/begin', 'store')->middleware('auth');
+});
 
-//end uji coba
+// end uji coba
 
 Route::controller(StyleController::class)->group(function () {
     Route::get('/home/styles', 'index')->middleware('auth');
